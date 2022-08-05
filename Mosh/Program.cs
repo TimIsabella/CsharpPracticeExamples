@@ -20,10 +20,15 @@ namespace Mosh
 			arr2.Array1 = new int[] { 11, 22, 33 };
 			Console.WriteLine("arr.Array1[0]: " + arr2.Array1[0]);
 
-			//Matrix
-			Matrix mat = new Matrix(new int[0, 0]);
-			mat.Matrix1 = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9} };
-			Console.WriteLine("mat.Matrix1[2][1]: " + mat.Matrix1[2,1]);
+			//Matrix (Rectangular)
+			MatrixSquare matrixSquare = new MatrixSquare(new int[0, 0]);
+			matrixSquare.Matrix1 = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+			Console.WriteLine("matrixSquare.Matrix1[2,1]: " + matrixSquare.Matrix1[2,1]);
+
+			//Matrix (Jagged)
+			MatrixJagged matrixJagged = new MatrixJagged(new int[0][]);
+			matrixJagged.Matrix1 = new int[][] { new[] { 1, 2, 3 }, new[] { 4, 5, 6 } };
+			Console.WriteLine("matrixJagged.Matrix1[1][1]: " + matrixJagged.Matrix1[1][1]);
 		}
 	}
 
@@ -76,10 +81,10 @@ namespace Mosh
 		}
 	}
 
-	public class Matrix
+	public class MatrixSquare
 	{
 		//Constructor
-		public Matrix(int[,] m1)
+		public MatrixSquare(int[,] m1)
 		{
 			matrix1 = m1;
 		}
@@ -89,6 +94,25 @@ namespace Mosh
 
 		//Properties
 		public int[,] Matrix1
+		{
+			get { return matrix1; }
+			set { matrix1 = value; }
+		}
+	}
+
+	public class MatrixJagged
+	{
+		//Constructor
+		public MatrixJagged(int[][] m1)
+		{
+			matrix1 = m1;
+		}
+
+		//Fields	
+		private int[][] matrix1 = new int[0][];
+
+		//Properties
+		public int[][] Matrix1
 		{
 			get { return matrix1; }
 			set { matrix1 = value; }
