@@ -21,7 +21,7 @@ namespace Mosh
 			Console.WriteLine("arr.Array1[0]: " + arr2.Array1[0]);
 
 			//Matrix (Rectangular)
-			MatrixSquare matrixSquare = new MatrixSquare(new int[0, 0]);
+			MatrixRectangular matrixSquare = new MatrixRectangular(new int[0, 0]);
 			matrixSquare.Matrix1 = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 			Console.WriteLine("matrixSquare.Matrix1[2,1]: " + matrixSquare.Matrix1[2,1]);
 
@@ -81,18 +81,15 @@ namespace Mosh
 		}
 	}
 
-	public class MatrixSquare
+	public class MatrixRectangular
 	{
-		//Constructor
-		public MatrixSquare(int[,] m1)
+		public MatrixRectangular(int[,] m1)
 		{
 			matrix1 = m1;
 		}
-
-		//Fields	
+		
 		private int[,] matrix1 = new int[0,0];
 
-		//Properties
 		public int[,] Matrix1
 		{
 			get { return matrix1; }
@@ -102,16 +99,13 @@ namespace Mosh
 
 	public class MatrixJagged
 	{
-		//Constructor
 		public MatrixJagged(int[][] m1)
 		{
 			matrix1 = m1;
 		}
 
-		//Fields	
 		private int[][] matrix1 = new int[0][];
 
-		//Properties
 		public int[][] Matrix1
 		{
 			get { return matrix1; }
