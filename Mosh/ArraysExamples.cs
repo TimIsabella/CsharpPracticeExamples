@@ -12,13 +12,42 @@ namespace Mosh
 
 			//Array
 			var arr2 = new[] { 11, 22, 33 };
-			Console.WriteLine("arr2[1]: " + arr1[1]);
+			Console.WriteLine("arr2[1]: " + arr2[1]);
 			
-			//Array length
-			Console.WriteLine("arr2 length: " + arr1.Length + " elements");
+			///////////Array instance memebers: accessable for objects///////////
+
+			//Array Length
+			Console.WriteLine("arr2 Length: " + arr1.Length + " elements");
+
+			//Array IsReadOnly
+			Console.WriteLine("arr2 IsReadOnly: " + arr1.IsReadOnly);
+
+			///////////Array static methods: accessable by class///////////
 
 			//Array IndexOf()
 			Console.WriteLine("arr2 IndexOf() '3': " + Array.IndexOf(arr1, 3));
+
+			//Array Clear() -- array to clear, starting index, total elements to clear
+			Array.Clear(arr1, 0, 3);
+			Console.WriteLine("arr1 contains the following: ");
+			foreach(var i in arr1)
+				{ 
+					Console.WriteLine(i);
+				}
+
+			//Array Copy() -- copy from array, copy to array, total elemtns to copy
+			var arr2Copy = new int[3];
+			Array.Copy(arr2, arr2Copy, 2);
+			Console.WriteLine("arr2Copy[1]: " + arr2Copy[1]);
+
+			//Array Sort()
+			var arrUnsorted = new int[] { 8, 3, 7, 1, 2, 11 };
+			Array.Sort(arrUnsorted);
+			Console.WriteLine("arrUnsorted[0] after sort: " + arrUnsorted[0]);
+
+			//Array Reverse()
+			Array.Reverse(arrUnsorted);
+			Console.WriteLine("arrUnsorted[0] after reverse: " + arrUnsorted[0]);
 
 			//Matrix (rectangular)
 			var mat1 = new bool[,] { 
@@ -36,7 +65,7 @@ namespace Mosh
 								   };
 			Console.WriteLine("mat2[1][5]: " + mat2[1][5]);
 
-			//Mixed types with 'object'
+			///////////Mixed types with 'object'///////////
 
 			//Matrix (rectangular) of different types
 			var mat3 = new object[,] {

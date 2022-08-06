@@ -7,8 +7,6 @@ namespace Mosh
 		static void Main()
 		{
 			Person john = new Person();
-			//john.FirstName = "John";
-			//john.LastName = "Smith";
 			john.Introduce("John", "Smith");
 
 			ArraysExamples.ArraysMain();
