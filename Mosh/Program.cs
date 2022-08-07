@@ -19,6 +19,7 @@ namespace Mosh
 			Console.WriteLine("DatesAndTimesHourAdd: " + DatesAndTimesExamples.DatesAndTimesHourAdd(TimeSpanExamples.TimeSpanHour(hourAdd)));
 
 			StringExamples.StringExamplesMain();
+			StringBuilderExamples.StringBuilderMain();
 		}
 	}
 }
