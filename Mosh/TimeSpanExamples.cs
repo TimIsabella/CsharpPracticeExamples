@@ -19,6 +19,16 @@ namespace Mosh
 			//1 hour
 			var timSpa3 = TimeSpan.FromHours(1);
 			Console.WriteLine(timSpa3);
+
+			//Total
+			Console.WriteLine("timSpa1 minutes total: " + timSpa1.TotalMinutes);
+
+			//Add
+			Console.WriteLine("timSpa + 11 minutes: " + timSpa1.Add(TimeSpan.FromMinutes(11)));
+
+			//Parse() -- create TimeSpan from string
+			string timeSpanToParse = "01:02:03";
+			Console.WriteLine("Parse: " + TimeSpan.Parse(timeSpanToParse));
 		}
 
 		public static TimeSpan TimeSpanHour(int a)
