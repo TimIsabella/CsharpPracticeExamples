@@ -20,6 +20,7 @@ namespace Mosh
 
 			StringExamples.StringExamplesMain();
 			StringBuilderExamples.StringBuilderMain();
+			FileIOexamples.FileIOexamplesMain();
 		}
 	}
 }
