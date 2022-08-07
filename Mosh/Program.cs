@@ -17,6 +17,8 @@ namespace Mosh
 			int hourAdd = 10;
 			Console.WriteLine("TimeSpanHour method: " + TimeSpanExamples.TimeSpanHour(hourAdd));
 			Console.WriteLine("DatesAndTimesHourAdd: " + DatesAndTimesExamples.DatesAndTimesHourAdd(TimeSpanExamples.TimeSpanHour(hourAdd)));
+
+			StringExamples.StringExamplesMain();
 		}
 	}
 }
