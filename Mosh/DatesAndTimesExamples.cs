@@ -35,8 +35,13 @@ namespace Mosh
 			Console.WriteLine(datTimNow.ToLongDateString());
 			Console.WriteLine(datTimNow.ToShortTimeString());
 			Console.WriteLine(datTimNow.ToString("M-dd-fffffff")); //DateTime format specifier
+		}
 
+		public static DateTime DatesAndTimesHourAdd(TimeSpan hour)
+		{
+			var datTimNow = DateTime.Now;
 
+			return (datTimNow + hour);
 		}
 	}
 }

@@ -21,20 +21,9 @@ namespace Mosh
 			Console.WriteLine(timSpa3);
 		}
 
-		public class TimeSpanHour
+		public static TimeSpan TimeSpanHour(int a)
 		{
-			public TimeSpanHour(double h1)
-			{
-				hour1 = h1;
-			}
-
-			double hour1;
-
-			public double Hour1
-			{
-				get { return hour1; }
-				set { hour1 = value; }
-			}
+			return TimeSpan.FromHours(a);
 		}
 	}
 }
