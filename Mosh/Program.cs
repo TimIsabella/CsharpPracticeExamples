@@ -11,7 +11,10 @@ namespace Mosh
 
 			ArraysExamples.ArraysMain();
 			ListExamples.ListsMain();
-			DatesAndTimesExample.DatesAndTimesMain();
+			DatesAndTimesExamples.DatesAndTimesMain();
+			TimeSpanExamples.TimeSpanMain();
+
+			Console.WriteLine(DateTime.Now.AddHours(1));
 		}
 	}
 }

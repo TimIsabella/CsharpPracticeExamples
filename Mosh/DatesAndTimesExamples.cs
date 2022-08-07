@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mosh
 {
-	public class DatesAndTimesExample
+	public class DatesAndTimesExamples
 	{
 		public static void DatesAndTimesMain()
 		{
