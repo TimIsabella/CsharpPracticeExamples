@@ -6,6 +6,8 @@ namespace Mosh
 	{
 		public static void ArraysMain()
 		{
+			Console.WriteLine("\n *********** ARRAYS *********** \n");
+			
 			//Array
 			int[] arr1 = new int[] { 1, 2, 3, };
 			Console.WriteLine("arr1[2]: " + arr1[2]);

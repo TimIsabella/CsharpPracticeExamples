@@ -10,6 +10,7 @@ namespace Mosh
 			john.Introduce("John", "Smith");
 
 			ArraysExamples.ArraysMain();
+			ListExamples.ListsMain();
 		}
 	}
 }
