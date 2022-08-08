@@ -17,9 +17,10 @@ namespace Mosh
 
 			Directory.CreateDirectory(@"d:\testDirectory");
 
-			Console.WriteLine(Directory.GetDirectories(@"d:\"));
+			var dirInfo = new DirectoryInfo(@"d:\");
 
-			Console.WriteLine(Directory.GetFiles(@"d:\"));
+			Console.WriteLine(dirInfo.GetDirectories());
+			Console.WriteLine(dirInfo.GetFiles());
 		}
 	}
 }
