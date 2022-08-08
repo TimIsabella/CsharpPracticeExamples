@@ -14,7 +14,6 @@ namespace Mosh
 
 			int[] intsForLoop = { 11, 22, 33, 44, 55 };
 
-
 			for(int i = 0; i < intsForLoop.Length; i++)
 			{
 				Console.WriteLine("intsForLoop index {0} = {1}", i, intsForLoop[i]);
