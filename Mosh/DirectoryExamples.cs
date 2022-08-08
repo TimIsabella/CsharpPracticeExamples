@@ -17,11 +17,9 @@ namespace Mosh
 
 			Directory.CreateDirectory(@"d:\testDirectory");
 
-			//GetDirectory()
+			Console.WriteLine(Directory.GetDirectories(@"d:\"));
 
-			//Exists()
-
-			//GetFiles()
+			Console.WriteLine(Directory.GetFiles(@"d:\"));
 
 			//GetDirectories
 		}
