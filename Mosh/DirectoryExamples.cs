@@ -7,7 +7,7 @@ namespace Mosh
 	{
 		public static void DirectoryExamplesMain()
 		{
-			Console.WriteLine("\n *********** Directory *********** \n");
+			Console.WriteLine("\n *********** Directory ********** \n");
 
 			if(Directory.Exists("d:\\testDirectory"))
 			{
