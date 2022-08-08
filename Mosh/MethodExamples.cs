@@ -12,22 +12,22 @@ namespace Mosh
 		{
 			Console.WriteLine("\n *********** METHOD MODIFIERS *********** \n");
 
-			//Param
+			//Params
 			var paramsResult1 = MethodExamples.ParamsModifer(new int[] { 1, 2, 3 });
-			var ParamsResult2 = MethodExamples.ParamsModifer(1, 2, 3);
+			var ParamsResult2 = MethodExamples.ParamsModifer(1, 2, 3, 4, 5, 6, 7);
 
 			//Ref
 			var refVariableA = 11;
-			Console.WriteLine("refVariableA = " + refVariableA);
+			Console.WriteLine("refVariableA = " + refVariableA); //Before
 			MethodExamples.RefModifier(ref refVariableA);
-			Console.WriteLine("refVariableA = " + refVariableA);
+			Console.WriteLine("refVariableA = " + refVariableA); //After
 
 			//Out
 			var outVariableStr = "abc";
 			var outVariableInt = 123;
-			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt);
+			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt); //Before
 			MethodExamples.OutModifier(out outVariableStr, out outVariableInt);
-			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt);
+			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt); //After
 
 
 		}
