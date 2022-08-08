@@ -22,6 +22,7 @@ namespace Mosh
 			StringBuilderExamples.StringBuilderMain();
 			FileIOexamples.FileIOexamplesMain();
 			DirectoryExamples.DirectoryExamplesMain();
+			PathExamples.PathExamplesMain();
 		}
 	}
 }
