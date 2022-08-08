@@ -20,6 +20,9 @@ namespace Mosh
 
 			//Get file extension of path
 			Console.WriteLine("File extension '{0}': ", Path.GetExtension(testPath));
+
+			//Get file directory name from path
+			Console.WriteLine("File directory '{0}': ", Path.GetDirectoryName(testPath));
 		}
 	}
 }
