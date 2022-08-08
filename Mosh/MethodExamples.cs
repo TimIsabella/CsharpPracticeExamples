@@ -24,8 +24,6 @@ namespace Mosh
 			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt); //Before
 			MethodExamples.OutModifier(out outVariableStr, out outVariableInt);
 			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt); //After
-
-
 		}
 
 		/////////// Overloading methods ///////////
