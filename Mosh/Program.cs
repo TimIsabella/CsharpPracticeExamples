@@ -40,11 +40,7 @@ namespace Mosh
 				NickName = "Jonny"
 			};
 
-
-
-
-
-
+			MethodExamples.MethodExamplesMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
