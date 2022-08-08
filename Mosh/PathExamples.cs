@@ -15,6 +15,9 @@ namespace Mosh
 			//Get filename of path
 			Console.WriteLine("File name '{0}': ", Path.GetFileName(testPath));
 
+			//Get filename WITHOUT extension
+			Console.WriteLine("File name ONLY '{0}': ", Path.GetFileNameWithoutExtension(testPath));
+
 			//Get file extension of path
 			Console.WriteLine("File extension '{0}': ", Path.GetExtension(testPath));
 		}
