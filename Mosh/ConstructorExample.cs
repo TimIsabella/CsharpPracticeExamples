@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Mosh
 {
@@ -11,18 +7,24 @@ namespace Mosh
 		//Fields
 		public int Id;
 		public string FieldName;
+		public List<Order> Orders;
 
+		//Constructor (no parameters)
 		public ConstructorExample()
 		{
+			Orders = new List<Order>();
 		}
 
-		public ConstructorExample(int id)
+		//Constructor (one parameter)
+		//'this' inherits the above constructor (constructor without parameters)
+		public ConstructorExample(int id) : this()
 		{
 			this.Id = id;
 		}
 
-		//Constructor
-		public ConstructorExample(int id, string constructorParamName)
+		//Constructor (two parameters)
+		//'this' inherits the above constructor (constructor with only one parameter)
+		public ConstructorExample(int id, string constructorParamName) : this(id)
 		{
 			this.FieldName = constructorParamName;
 			this.Id = id;

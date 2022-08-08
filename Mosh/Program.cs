@@ -30,6 +30,8 @@ namespace Mosh
 			Console.WriteLine(customer3.Id);
 			Console.WriteLine(customer3.FieldName);
 
+			var order = new Order();
+			customer1.Orders.Add(order);
 
 
 
