@@ -20,8 +20,6 @@ namespace Mosh
 			Console.WriteLine(Directory.GetDirectories(@"d:\"));
 
 			Console.WriteLine(Directory.GetFiles(@"d:\"));
-
-			//GetDirectories
 		}
 	}
 }
