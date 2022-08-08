@@ -23,6 +23,7 @@ namespace Mosh
 			FileIOexamples.FileIOexamplesMain();
 			DirectoryExamples.DirectoryExamplesMain();
 			PathExamples.PathExamplesMain();
+			ForLoopExample.ForLoopExampleMain();
 		}
 	}
 }
