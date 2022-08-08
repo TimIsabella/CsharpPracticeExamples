@@ -9,12 +9,23 @@ namespace Mosh
 	public class ConstructorExample
 	{
 		//Fields
-		public string FieldName;	
+		public int Id;
+		public string FieldName;
+
+		public ConstructorExample()
+		{
+		}
+
+		public ConstructorExample(int id)
+		{
+			this.Id = id;
+		}
 
 		//Constructor
-		public ConstructorExample(string constructorParamName)
+		public ConstructorExample(int id, string constructorParamName)
 		{
 			this.FieldName = constructorParamName;
+			this.Id = id;
 		}
 	}
 }

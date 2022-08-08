@@ -18,8 +18,17 @@ namespace Mosh
 			var newPerson = Person.Parse("Rupert");
 			Console.WriteLine("The other person is " + newPerson.Name);
 
-			var customer = new ConstructorExample("Rex");
+			var customer1 = new ConstructorExample();
+			Console.WriteLine(customer1.Id);
+			Console.WriteLine(customer1.FieldName);
 
+			var customer2 = new ConstructorExample(123);
+			Console.WriteLine(customer2.Id);
+			Console.WriteLine(customer2.FieldName);
+
+			var customer3 = new ConstructorExample(123, "Rex");
+			Console.WriteLine(customer3.Id);
+			Console.WriteLine(customer3.FieldName);
 
 
 
@@ -32,7 +41,7 @@ namespace Mosh
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
-			
+
 			//DatesAndTimesExamples.DatesAndTimesMain();
 			//TimeSpanExamples.TimeSpanMain();
 
