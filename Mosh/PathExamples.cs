@@ -9,14 +9,14 @@ namespace Mosh
 		{
 			Console.WriteLine("\n *********** Path *********** \n");
 
-			var testPath = @"d:\test-original.txt";
+			var testPath = @"D:\test-original.txt";
 			Console.WriteLine("Current path: '{0}'", testPath);
 
 			//Get filename of path
-			Console.WriteLine("File name '{0}'", Path.GetFileName(testPath));
+			Console.WriteLine("File name '{0}': ", Path.GetFileName(testPath));
 
 			//Get file extension of path
-			Console.WriteLine("File extension '{0)'", Path.GetExtension(testPath));
+			Console.WriteLine("File extension '{0}': ", Path.GetExtension(testPath));
 		}
 	}
 }
