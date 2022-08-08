@@ -7,12 +7,12 @@ namespace Mosh
 		//Fields
 		public int Id;
 		public string FieldName;
-		public List<Order> Orders;
+		public List<OrderObject> Orders;
 
 		//Constructor (no parameters)
 		public ConstructorExample()
 		{
-			Orders = new List<Order>();
+			Orders = new List<OrderObject>();
 		}
 
 		//Constructor (one parameter)

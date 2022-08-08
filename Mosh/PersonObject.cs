@@ -2,9 +2,10 @@
 
 namespace Mosh
 {
-	public class Person
+	public class PersonObject
 	{
-		public string Name;
+		public string FullName;
+		public string NickName;
 		
 
 		public void Introduce(string firstName = "Not", string lastName = "Sure")
@@ -13,10 +14,10 @@ namespace Mosh
 			Console.WriteLine("My name is {0} {1}", firstName, lastName);
 		}
 
-		public static Person Parse(string str)
+		public static PersonObject Parse(string str)
 		{
-		    var person = new Person();
-			person.Name = str;
+		    var person = new PersonObject();
+			person.FullName = str;
 
 			return person;
 		}

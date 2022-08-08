@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mosh
 {
-	public class Order
+	public class OrderObject
 	{
 		
 	}

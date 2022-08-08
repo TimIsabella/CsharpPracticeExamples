@@ -6,17 +6,17 @@ namespace Mosh
 	{
 		static void Main()
 		{
-			Person john = new Person();
+			PersonObject john = new PersonObject();
 			john.Introduce("John", "Smith");
 
 			//Without static below
-			//var newPerson = new Person();
+			//var newPerson = new PersonObject();
 			//newPerson.Parse("Rupert");
 			//Console.WriteLine("The other person is " + newPerson);
 
 			//With static below
-			var newPerson = Person.Parse("Rupert");
-			Console.WriteLine("The other person is " + newPerson.Name);
+			var newPerson = PersonObject.Parse("Rupert");
+			Console.WriteLine("The other person is " + newPerson.FullName);
 
 			var customer1 = new ConstructorExample();
 			Console.WriteLine(customer1.Id);
@@ -30,10 +30,15 @@ namespace Mosh
 			Console.WriteLine(customer3.Id);
 			Console.WriteLine(customer3.FieldName);
 
-			var order = new Order();
+			var order = new OrderObject();
 			customer1.Orders.Add(order);
 
-
+			//Object initialization
+			var personObjectInitilizer = new PersonObject
+			{
+				FullName = "John",
+				NickName = "Jonny"
+			};
 
 
 
