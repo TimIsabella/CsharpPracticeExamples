@@ -13,7 +13,7 @@ namespace Mosh
 
 		public List<OrderObject> NotInitializedOrders; //NOT initialized
 		public List<OrderObject> InitializedOrders = new List<OrderObject>(); //Initialized
-		readonly List<OrderObject> ReadOnlyOrders = new List<OrderObject>(); //List is 'readonly'
+		public readonly List<OrderObject> ReadOnlyOrders = new List<OrderObject>(); //List is 'readonly'
 
 		public FieldsExamples(int id)
 		{
