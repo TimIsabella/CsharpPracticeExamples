@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mosh
 {
-	public class PropertiesExercise
+	public class PropertiesExamples
 	{
 		public static void PropertiesExerciseMain()
 		{
+			Console.WriteLine("\n *********** PROPERTIES *********** \n");
+
 			var person = new EncapsulatedPerson();
 			person.PrivateNameProperty = "Private Name Property";
 			person.UnsetAccessNameProperty = "Unset Access Name";
 			person.PublicName = "Public Name";
 			person.InternalName = "Internal Name";
+
+			Console.WriteLine(person.GetNames()[2]);
+			Console.WriteLine(person.CurrentTime);
+			person.ListInts = new List<int> { 1, 2, 3 };
+			Console.WriteLine(person.ListInts[0]);
+			Console.WriteLine(person.LoopOfInts[1]);
 		}
 
 		public class EncapsulatedPerson
@@ -42,7 +47,30 @@ namespace Mosh
 			internal string InternalName { get; set; }
 
 			///////////
+			public DateTime CurrentTime
+			{
+				get { return DateTime.Now; }
+			}
 
+			///////////
+			public List<int> ListInts { get; set; }
+
+			public List<int> LoopOfInts
+			{
+				get
+				{
+					var returnListInts = new List<int>();
+
+					for(int i = 0; i < ListInts.Count; i++)
+					{
+						returnListInts.Add(ListInts[i] + 11);
+					}
+					
+					return returnListInts;
+				}
+			}
+
+			/////////////////////////////////
 			public string[] GetNames()
 			{
 				var returnString = new string[] { PublicName, InternalName, _privateName, UnsetAccessName };

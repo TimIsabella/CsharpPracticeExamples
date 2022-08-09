@@ -6,6 +6,8 @@ namespace Mosh
 	{
 		public static void AccessModifiersExamplesMain()
 		{
+			Console.WriteLine("\n *********** ACCESS MODIFIERS *********** \n");
+
 			var person = new EncapsulatedPerson();
 			person.PublicName = "Public Name";
 			person.InternalName = "Internal Name";
