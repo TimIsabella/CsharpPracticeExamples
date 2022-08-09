@@ -8,10 +8,11 @@ namespace Mosh
 		{
 			var person = new EncapsulatedPerson();
 			person.PublicName = "Public Name";
+			person.InternalName = "Internal Name";
 			person.SetPrivateName("Private Name");
-			person.SetInternalName("Internal Name");
+			person.SetUnsetAccessName("Unset Access Name");
 
-			Console.WriteLine(person.GetNames()[1]);
+			Console.WriteLine(person.GetNames()[2]);
 		}
 
 		public class EncapsulatedPerson
@@ -19,20 +20,21 @@ namespace Mosh
 			public string PublicName;
 			internal string InternalName;
 			private string _privateName;  //private fields start with an underscore
+			string UnsetAccessName;
 
 			public void SetPrivateName(string privateName)
 			{
 				_privateName = privateName;
 			}
 
-			public void SetInternalName(string internalName)
+			public void SetUnsetAccessName(string unsetAccessName)
 			{
-				InternalName = internalName;
+				UnsetAccessName = unsetAccessName;
 			}
 
 			public string[] GetNames()
 			{
-				var returnString = new string[] { PublicName, _privateName, InternalName };
+				var returnString = new string[] { PublicName, InternalName, _privateName, UnsetAccessName };
 				return returnString;
 			}
 		}
