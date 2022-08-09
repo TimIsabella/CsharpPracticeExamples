@@ -42,6 +42,8 @@ namespace Mosh
 
 			MethodExamples.MethodExamplesMain();
 
+			AccessModifiersExamples.AccessModifiersExamplesMain();
+
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
 
