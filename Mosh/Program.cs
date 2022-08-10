@@ -46,6 +46,7 @@ namespace Mosh
 			AccessModifiersExamples.AccessModifiersExamplesMain();
 			PropertiesExamples.PropertiesExerciseMain();
 			IndexerExamples.IndexerExamplesMain();
+			InheritanceExamples.InheritanceExamplesMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
