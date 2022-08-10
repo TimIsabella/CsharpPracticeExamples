@@ -43,6 +43,7 @@ namespace Mosh
 			MethodExamples.MethodExamplesMain();
 			AccessModifiersExamples.AccessModifiersExamplesMain();
 			PropertiesExamples.PropertiesExerciseMain();
+			IndexerExamples.IndexerExamplesMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
