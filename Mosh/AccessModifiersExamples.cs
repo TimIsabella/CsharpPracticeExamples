@@ -19,10 +19,12 @@ namespace Mosh
 
 		public class EncapsulatedPerson
 		{
-			public string PublicName;
-			internal string InternalName;
-			private string _privateName;  //private fields start with an underscore
-			string UnsetAccessName;
+			public string PublicName;							//Public - Accessable from outside of its scope
+			private string _privateName;						//Private - Only accessable within the same scope (private fields start with an underscore)
+			internal string InternalName;						//Internal - Only accessable 'internally' from within its own class (specifically used for classes)
+			protected string ProtectedName;						//Protected - Only accessable from within its own class and by inheritance of that class
+			protected internal string ProtectedInternalName;    //Protected Internal - Only accessable 'internally' from within its own class and by inheritance of that class
+			string UnsetAccessName;								//No access modifier - defaults to private
 
 			public void SetPrivateName(string privateName)
 			{
