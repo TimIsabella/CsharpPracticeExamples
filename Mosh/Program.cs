@@ -47,6 +47,7 @@ namespace Mosh
 			PropertiesExamples.PropertiesExerciseMain();
 			IndexerExamples.IndexerExamplesMain();
 			InheritanceExamples.InheritanceExamplesMain();
+			CompositionExamples.CompositionExamplesMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
