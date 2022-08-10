@@ -19,7 +19,7 @@ namespace Mosh
 			compObj3.CompositionMethod1("Method 1 message...");
 			compObj3.CompositionMethod2("Method 2 message...");
 			compObj3.CompositionMethod3("Method 3 message...");
-		}
+		} 
 
 		public class CompositionObject1
 		{
