@@ -42,7 +42,7 @@ namespace Mosh
 			}
 
 			//Fields with auto-implemented properties
-			//Properties can be auto-implimented since fields are accessable (public and internal)
+			//Properties can be auto-implimented only while fields are accessable (public and internal)
 			public string PublicName { get; set; }
 			internal string InternalName { get; set; }
 
