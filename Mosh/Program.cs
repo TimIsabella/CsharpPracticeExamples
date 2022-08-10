@@ -40,6 +40,8 @@ namespace Mosh
 				NickName = "Jonny"
 			};
 
+			Console.WriteLine("Fullname: {0} \n Nickname: {1}", personObjectInitilizer.FullName, personObjectInitilizer.NickName);
+
 			MethodExamples.MethodExamplesMain();
 			AccessModifiersExamples.AccessModifiersExamplesMain();
 			PropertiesExamples.PropertiesExerciseMain();
