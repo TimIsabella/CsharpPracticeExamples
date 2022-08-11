@@ -49,6 +49,7 @@ namespace Mosh
 			InheritanceExamples.InheritanceExamplesMain();
 			CompositionExamples.CompositionExamplesMain();
 			AccessModifiersExamplesAdvanced.AccessModifiersExamplesAdvancedMain();
+			ConstructorExampleAdvanced.ConstructorExampleAdvancedMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
