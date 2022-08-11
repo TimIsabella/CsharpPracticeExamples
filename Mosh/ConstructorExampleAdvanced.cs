@@ -16,6 +16,10 @@ namespace Mosh
 			//Derived 'Car class' will be executed second
 			var car1 = new Car();
 			var car2 = new Car("123CarReg");
+
+			///////////
+			var vehicleObj = new Vehicle("456CarReg");
+			Console.WriteLine("Vehicle: Registration Number: " + vehicleObj.VehicleMethod());
 		}
 
 		//Two different constructors - One parameterless and one with a single parameter
@@ -35,6 +39,13 @@ namespace Mosh
 				_registrationNumber = registrationNumber;
 				Console.WriteLine("Vehicle of registration '{0}' is being initialized", registrationNumber);
 			}
+
+			///////////
+			public string VehicleMethod()
+			{
+				Console.WriteLine(_registrationNumber);
+				return _registrationNumber;
+			}
 		}
 
 		//Two different constructors - One parameterless and one with a single parameter (matching 'base' derived class)
@@ -47,9 +58,9 @@ namespace Mosh
 			//Single parameter
 			//'Base' refers to derived inherited class constructor
 			//Argument will be passed to both parameters -- first to base and then to derived
-			public Car(string registrationNumber) : base(registrationNumber)
+			public Car(string regiNumb) : base(regiNumb)
 			{
-				Console.WriteLine("Car of registration '{0}' is being initialized", registrationNumber);
+				Console.WriteLine("Car of registration '{0}' is being initialized", regiNumb);
 			}
 		}
 	}
