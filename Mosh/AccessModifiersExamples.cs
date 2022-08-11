@@ -10,7 +10,6 @@ namespace Mosh
 
 			var person = new EncapsulatedPerson();
 			person.PublicName = "Public Name";
-			person.InternalName = "Internal Name";
 			person.SetPrivateName("Private Name");
 			person.SetUnsetAccessName("Unset Access Name");
 
