@@ -13,32 +13,61 @@ namespace Mosh
 			//Method overriding - modifying an implementation of an inherited method
 			Console.WriteLine("\n *********** METHOD OVERRIDING *********** \n");
 
-			var draw = new Shape();
-			draw.Draw();
+			//var draw = new Shapes.Shape(); draw.Draw();
+			//var circle = new Shapes.Circle(); circle.Draw();
+			//var square = new Shapes.Circle(); square.Draw();
+			//var triangle = new Shapes.Circle(); triangle.Draw();
+			//var image = new Image(); image.Draw();
 
-			var circle = new Circle();
-			circle.Draw();
-		}
+			var shapes = new List<Shape>();
+			shapes.Add(new Circle());
+			shapes.Add(new Square());
+			shapes.Add(new Triangle());
 
-		public class Shape 
-		{ 
-			public int Width; 
-			public int Height;
-			public virtual void Draw()	//'virtual' designation allows derived objects to replace it when inherited
-			{ Console.WriteLine("Shape: This is the default 'Draw' method."); } 
+			foreach(var shape in shapes)
+			{
+				shape.Draw();
+			}
 		}
+	}
 
-		public class Circle : Shape 
-		{ 
-			public int Radius;
-			public override void Draw()  //Replacement of inherited method by using 'override'
-			{ Console.WriteLine("Circle: This 'Draw' method has been overridden."); }
-		}
-		public class Image : Shape 
-		{
-			public int Resolution;
-			public override void Draw()
-			{ Console.WriteLine("Image: This 'Draw' method has been overridden"); }
-		}
+	//All shape objects
+	public class Circle : Shape
+	{
+		public int Radius;
+		public override void Draw()  //Replacement of inherited method by using 'override'
+		{ Console.WriteLine("Circle: This 'Draw' method has been overridden."); }
+	}
+
+	public class Square : Shape
+	{
+		public int Diameter;
+		public override void Draw()  //Replacement of inherited method by using 'override'
+		{ Console.WriteLine("Square: This 'Draw' method has been overridden."); }
+	}
+
+	public class Triangle : Shape
+	{
+		public int Tangent;
+		public override void Draw()  //Replacement of inherited method by using 'override'
+		{ Console.WriteLine("Triangle: This 'Draw' method has been overridden."); }
+	}
+
+	//Base shape object
+	public class Shape
+	{
+		public int Width;
+		public int Height;
+		public virtual void Draw()  //'virtual' designation allows derived objects to replace this default method when inherited
+		{ Console.WriteLine("Shape: This is the default 'Draw' method."); }
+	}
+
+	public class Image : Shape
+	{
+		public int Resolution;
+
+		//No method override, so default method inherited from 'Shape' will be used
+		//public override void Draw()
+		//{ Console.WriteLine("Image: This 'Draw' method has been overridden"); }
 	}
 }
