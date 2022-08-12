@@ -8,7 +8,7 @@ namespace Mosh
 {
 	public class AbstractExamples
 	{
-		public static void MethodOverridingExamplesMain()
+		public static void AbstractExamplesMain()
 		{
 			Console.WriteLine("\n *********** ABSTRACT *********** \n");
 			
@@ -44,7 +44,7 @@ namespace Mosh
 			{
 				public int Radius;
 				public override void Draw()  //Replacement of inherited method by using 'override'
-				{ Console.WriteLine("Circle: This 'Draw' method has been overridden."); }
+				{ Console.WriteLine("Circle: This abstract 'Draw' method has been overridden."); }
 				public override void OtherMethod()
 				{ }
 			}
@@ -53,7 +53,7 @@ namespace Mosh
 			{
 				public int Diameter;
 				public override void Draw()  //Replacement of inherited method by using 'override'
-				{ Console.WriteLine("Square: This 'Draw' method has been overridden."); }
+				{ Console.WriteLine("Square: This abstract 'Draw' method has been overridden."); }
 				public override void OtherMethod()
 				{ }
 			}
@@ -62,7 +62,7 @@ namespace Mosh
 			{
 				public int Tangent;
 				public override void Draw()  //Replacement of inherited method by using 'override'
-				{ Console.WriteLine("Triangle: This 'Draw' method has been overridden."); }
+				{ Console.WriteLine("Triangle: This abstract 'Draw' method has been overridden."); }
 				public override void OtherMethod()
 				{ }
 			}

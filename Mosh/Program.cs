@@ -52,6 +52,7 @@ namespace Mosh
 			ConstructorExampleAdvanced.ConstructorExampleAdvancedMain();
 			UpDownCasting.UpDownCastingMain();
 			MethodOverridingExamples.MethodOverridingExamplesMain();
+			AbstractExamples.AbstractExamplesMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
