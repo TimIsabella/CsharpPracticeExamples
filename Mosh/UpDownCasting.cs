@@ -22,8 +22,8 @@ namespace Mosh
 			{
 				Console.WriteLine("Can convert...");
 
-				shapeUp2.Width = 123;
-				shapeUp.Height = 456;
+				shapeUp2.Width = 111;
+				shapeUp.Height = 222;
 			}
 
 			else
