@@ -28,11 +28,16 @@ namespace Mosh
 		{
 			//Base shape object
 
-			public abstract class Shape
+			public abstract class Shape //The class must be declared as 'abstract' if it impliments abstract members
 			{
 				public int Width;
 				public int Height;
-				public abstract void Draw();  //'abstract' designation allows derived objects to replace this default method when inherited
+
+				//'abstract' designation allows derived objects to replace this default method when inherited
+				//Derived objects MUST impliment members marked as 'abstract'
+				public abstract void Draw();
+				public abstract void OtherMethod();
+
 			}
 
 			public class Circle : Shape
@@ -40,6 +45,8 @@ namespace Mosh
 				public int Radius;
 				public override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Circle: This 'Draw' method has been overridden."); }
+				public override void OtherMethod()
+				{ }
 			}
 
 			public class Square : Shape
@@ -47,6 +54,8 @@ namespace Mosh
 				public int Diameter;
 				public override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Square: This 'Draw' method has been overridden."); }
+				public override void OtherMethod()
+				{ }
 			}
 
 			public class Triangle : Shape
@@ -54,6 +63,8 @@ namespace Mosh
 				public int Tangent;
 				public override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Triangle: This 'Draw' method has been overridden."); }
+				public override void OtherMethod()
+				{ }
 			}
 		}
 	}
