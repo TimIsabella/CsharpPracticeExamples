@@ -19,7 +19,7 @@ namespace Mosh
 			//var triangle = new Shapes.Circle(); triangle.Draw();
 			//var image = new Image(); image.Draw();
 
-			var shapes = new List<Shape>();
+			var shapes = new List<Shape>(); //List of 'Shape' as objects below all inherit from 'Shape'
 			shapes.Add(new Circle());
 			shapes.Add(new Square());
 			shapes.Add(new Triangle());
@@ -31,7 +31,15 @@ namespace Mosh
 		}
 	}
 
-	//All shape objects
+	//Base shape object
+	public class Shape
+	{
+		public int Width;
+		public int Height;
+		public virtual void Draw()  //'virtual' designation allows derived objects to replace this default method when inherited
+		{ Console.WriteLine("Shape: This is the default 'Draw' method."); }
+	}
+
 	public class Circle : Shape
 	{
 		public int Radius;
@@ -51,15 +59,6 @@ namespace Mosh
 		public int Tangent;
 		public override void Draw()  //Replacement of inherited method by using 'override'
 		{ Console.WriteLine("Triangle: This 'Draw' method has been overridden."); }
-	}
-
-	//Base shape object
-	public class Shape
-	{
-		public int Width;
-		public int Height;
-		public virtual void Draw()  //'virtual' designation allows derived objects to replace this default method when inherited
-		{ Console.WriteLine("Shape: This is the default 'Draw' method."); }
 	}
 
 	public class Image : Shape
