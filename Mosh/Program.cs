@@ -50,6 +50,7 @@ namespace Mosh
 			CompositionExamples.CompositionExamplesMain();
 			AccessModifiersExamplesAdvanced.AccessModifiersExamplesAdvancedMain();
 			ConstructorExampleAdvanced.ConstructorExampleAdvancedMain();
+			UpDownCasting.UpDownCastingMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
