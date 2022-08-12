@@ -12,7 +12,7 @@ namespace Mosh
 		{
 			Console.WriteLine("\n *********** ABSTRACT *********** \n");
 			
-			var shapes = new List<ShapeObjects.Shape>(); //List of 'Shape' as objects below all inherit from 'Shape'
+			var shapes = new List<ShapeObjects.BaseShape>(); //List of 'Shape' as objects below all inherit from 'Shape'
 			shapes.Add(new ShapeObjects.Circle());
 			shapes.Add(new ShapeObjects.Square());
 			shapes.Add(new ShapeObjects.Triangle());
@@ -26,9 +26,9 @@ namespace Mosh
 		//All Shapes
 		public class ShapeObjects
 		{
-			//Base shape object
-
-			public abstract class Shape //The class must be declared as 'abstract' if it impliments abstract members
+			//The class must be declared as 'abstract' if it impliments abstract members
+			//'abstract' classes CANNOT be instantiated
+			public abstract class BaseShape
 			{
 				public int Width;
 				public int Height;
@@ -40,7 +40,7 @@ namespace Mosh
 
 			}
 
-			public class Circle : Shape
+			public class Circle : BaseShape
 			{
 				public int Radius;
 				public override void Draw()  //Replacement of inherited method by using 'override'
@@ -49,7 +49,7 @@ namespace Mosh
 				{ }
 			}
 
-			public class Square : Shape
+			public class Square : BaseShape
 			{
 				public int Diameter;
 				public override void Draw()  //Replacement of inherited method by using 'override'
@@ -58,7 +58,7 @@ namespace Mosh
 				{ }
 			}
 
-			public class Triangle : Shape
+			public class Triangle : BaseShape
 			{
 				public int Tangent;
 				public override void Draw()  //Replacement of inherited method by using 'override'
