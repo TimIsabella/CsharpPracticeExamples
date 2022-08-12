@@ -17,7 +17,7 @@ namespace Mosh
 			shapeUp.Height = 222;
 
 			//Casting with 'as'
-			var shapeUp2 = circle as Shape;
+			var shapeUp2 = circle as Shape;     //Does not throw exception -- returns 'null' if unable to cast
 			if(shapeUp2 is Shape)               //Check with 'is'
 			{
 				Console.WriteLine("Can convert...");
