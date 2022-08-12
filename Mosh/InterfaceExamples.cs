@@ -18,8 +18,10 @@ namespace Mosh
 		//Interface is declared as 'interface' and no access modifier
 		interface IInterfaceExamples
 		{
-
+			
 		}
+
+		///////////////////////////////// Unit Test Code for Interface Below /////////////////////////////////
 
 		public class OrderProcessor
 		{
