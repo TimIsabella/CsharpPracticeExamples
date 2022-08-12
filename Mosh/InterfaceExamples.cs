@@ -10,6 +10,73 @@ namespace Mosh
 	{
 		public static void InterfaceExamplesMain()
 		{
+			Console.WriteLine("\n *********** INTERFACE EXAMPLES *********** \n");
+
+			//Regular implementation
+			Car car = new Car(); car.Weight(2000);
+			Helicopter helicopter = new Helicopter(); helicopter.MaxAltitude(20000);
+
+			//Explicit implementation
+			IAircraft rocketMaxAltitude = new Rocket(); rocketMaxAltitude.MaxAltitude(100000);
+			IAircraft.IColor rocketColor = new Rocket(); rocketColor.Color("White");
+		}
+
+		//Interface provides security by hiding details
+		//Declared as 'interface' and no access modifier
+		//Only contains decalarations
+		interface IVehicle
+		{
+			//Interface methods are public and MUST match those implimenting it
+			//Can only contain properties or methods
+			void Weight(int lbs);
+			string PassengerCapacity(int qty);
+		}
+
+		interface IAircraft
+		{
+			void MaxAltitude(int alt);
+
+			//Nested interface
+			interface IColor
+			{
+				int Color(string color);
+			}
+		}
+
+		public class Car : IVehicle //Implementing the 'IVehicle' interface
+		{
+			//Methods and return types must match the interface
+			public void Weight(int pounds)
+			{ Console.WriteLine("Car weight: {0} lbs", pounds); }
+			public string PassengerCapacity(int quantity)
+			{ Console.WriteLine("Car passenger capacity: {0}", quantity); return "Return string"; }
+		}
+
+		public class Helicopter : IVehicle, IAircraft //Multiple interface inheritance
+		{
+			public void Weight(int pounds)
+			{ Console.WriteLine("Helicopter weight: {0} lbs", pounds); }
+			public string PassengerCapacity(int quantity)
+			{ Console.WriteLine("Helicopter passenger capacity: {0}", quantity); return "Return string"; }
+			public void MaxAltitude(int altitude)
+			{ Console.WriteLine("Helicopter maximum altitude: {0} ft", altitude); }
+		}
+
+		public class Rocket : IAircraft, IAircraft.IColor //Nested interface usage
+		{
+			//Explicit interface implementation (cannot use access modifier)
+			void IAircraft.MaxAltitude(int altitude)
+			{ Console.WriteLine("Rocket maximum altitude: {0} ft", altitude); }
+			int IAircraft.IColor.Color(string color)
+			{ Console.WriteLine("Rocket color: {0}", color); return 123;  }
+		}
+
+		///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+		/*
+		public static void InterfaceExamplesMain()
+		{
 			var orderProcessor = new OrderProcessor();
 			var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
 			orderProcessor.Process(order);
@@ -18,7 +85,7 @@ namespace Mosh
 		//Interface is declared as 'interface' and no access modifier
 		interface IInterfaceExamples
 		{
-			
+
 		}
 
 		///////////////////////////////// Unit Test Code for Interface Below /////////////////////////////////
@@ -64,6 +131,6 @@ namespace Mosh
 				get { return Shipment != null; }
 			}
 		}
-
+		*/
 	}
 }

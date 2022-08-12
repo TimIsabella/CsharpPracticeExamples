@@ -54,6 +54,7 @@ namespace Mosh
 			MethodOverridingExamples.MethodOverridingExamplesMain();
 			AbstractExamples.AbstractExamplesMain();
 			SealedModifiersExample.SealedModifiersExampleMain();
+			InterfaceExamples.InterfaceExamplesMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
