@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Mosh
 {
-	public class AbstractExamples
+	public class SealedModifiersExample
 	{
-		public static void AbstractExamplesMain()
+		public static void SealedModifiersExampleMain()
 		{
-			Console.WriteLine("\n *********** ABSTRACT *********** \n");
-			
+			Console.WriteLine("\n *********** SEALED MODIFIER *********** \n");
+			//'sealed' members provide a slight performance optimization
+
 			var shapes = new List<ShapeObjects.BaseShape>(); //List of 'Shape' as objects below all inherit from 'Shape'
 			shapes.Add(new ShapeObjects.Circle());
 			shapes.Add(new ShapeObjects.Square());
@@ -42,10 +43,13 @@ namespace Mosh
 
 			}
 
-			public class Circle : BaseShape
+			//'sealed' classes cannot be inherited
+			public sealed class Circle : BaseShape
 			{
 				public int Radius;
-				public override void Draw()  //Replacement of inherited method by using 'override'
+
+				//'sealed' members can only apply to 'override' cases
+				public sealed override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Circle: This abstract 'Draw' method has been overridden."); }
 				public override void OtherMethod()
 				{ }

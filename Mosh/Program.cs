@@ -53,6 +53,7 @@ namespace Mosh
 			UpDownCasting.UpDownCastingMain();
 			MethodOverridingExamples.MethodOverridingExamplesMain();
 			AbstractExamples.AbstractExamplesMain();
+			SealedModifiersExample.SealedModifiersExampleMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
