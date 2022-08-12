@@ -51,6 +51,7 @@ namespace Mosh
 			AccessModifiersExamplesAdvanced.AccessModifiersExamplesAdvancedMain();
 			ConstructorExampleAdvanced.ConstructorExampleAdvancedMain();
 			UpDownCasting.UpDownCastingMain();
+			MethodOverridingExamples.MethodOverridingExamplesMain();
 
 			//ArraysExamples.ArraysMain();
 			//ListExamples.ListsMain();
