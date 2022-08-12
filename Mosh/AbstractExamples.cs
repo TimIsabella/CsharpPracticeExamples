@@ -6,19 +6,12 @@ using System.Threading.Tasks;
 
 namespace Mosh
 {
-	public class MethodOverridingExamples
+	public class AbstractExamples
 	{
 		public static void MethodOverridingExamplesMain()
 		{
-			//Method overriding - modifying an implementation of an inherited method
-			Console.WriteLine("\n *********** METHOD OVERRIDING *********** \n");
-
-			//var draw = new Shapes.Shape(); draw.Draw();
-			//var circle = new Shapes.Circle(); circle.Draw();
-			//var square = new Shapes.Circle(); square.Draw();
-			//var triangle = new Shapes.Circle(); triangle.Draw();
-			//var image = new Image(); image.Draw();
-
+			Console.WriteLine("\n *********** ABSTRACT *********** \n");
+			
 			var shapes = new List<ShapeObjects.Shape>(); //List of 'Shape' as objects below all inherit from 'Shape'
 			shapes.Add(new ShapeObjects.Circle());
 			shapes.Add(new ShapeObjects.Square());
@@ -34,12 +27,12 @@ namespace Mosh
 		public class ShapeObjects
 		{
 			//Base shape object
-			public class Shape
+
+			public abstract class Shape
 			{
 				public int Width;
 				public int Height;
-				public virtual void Draw()  //'virtual' designation allows derived objects to replace this default method when inherited
-				{ Console.WriteLine("Shape: This is the default 'Draw' method."); }
+				public abstract void Draw();  //'abstract' designation allows derived objects to replace this default method when inherited
 			}
 
 			public class Circle : Shape
@@ -61,16 +54,6 @@ namespace Mosh
 				public int Tangent;
 				public override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Triangle: This 'Draw' method has been overridden."); }
-			}
-
-			//No method override
-			public class Image : Shape
-			{
-				public int Resolution;
-
-				//No method override, so default method inherited from 'Shape' will be used
-				//public override void Draw()
-				//{ Console.WriteLine("Image: This 'Draw' method has been overridden"); }
 			}
 		}
 	}
