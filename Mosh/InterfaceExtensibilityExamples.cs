@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace Mosh
 {
@@ -26,7 +23,7 @@ namespace Mosh
 			{
 				_logger = logger;
 			}
-			
+
 			public void Migrate()
 			{
 				_logger.LogInfo($"Migration started at {DateTime.Now}");
@@ -37,6 +34,55 @@ namespace Mosh
 			}
 		}
 
+		public class FileLogger : ILogger
+		{
+			private readonly string _path;
+			public FileLogger(string path)
+			{
+				_path = path;
+			}
+
+			//Below is DRY
+			private void Log(string msgType, string msg)
+			{
+				//Stream write to file at '_path' and overwrite as 'true'
+				//'using' provides exception handling
+				using(var streamWriter = new StreamWriter(_path, true))
+				{
+					streamWriter.WriteLine($"{msgType}: {msg}");    //Write to file
+				}
+			}
+
+			public void LogError(string msg)
+			{ Log("ERROR", msg); }
+
+			public void LogInfo(string msg)
+			{ Log("INFO", msg); }
+
+			//Repeated code is not DRY
+			/*
+			public void LogError(string msg)
+			{
+				//Stream write to file at '_path' and overwrite as 'true'
+				var streamWriter = new StreamWriter(_path, true);
+				streamWriter.WriteLine($"Error {msg}");  //Write to file
+				streamWriter.Dispose();					 //Release 'WriteLine' resource
+			}
+
+			public void LogInfo(string msg)
+			{
+				//Stream write to file at '_path' and overwrite as 'true'
+				//'using' provides exception handling
+				using(var streamWriter = new StreamWriter(_path, true))
+				{
+					streamWriter.WriteLine(msg);    //Write to file
+				}
+			}
+			*/
+		}
+
+		//////////////////////////////////////////////////////////////////
+
 		public interface ILogger
 		{
 			void LogError(string message);
@@ -46,11 +92,11 @@ namespace Mosh
 		public class ConsoleLogger : ILogger
 		{
 			public void LogError(string msg)
-			{ 
+			{
 				Console.WriteLine(msg);
 			}
 			public void LogInfo(string msg)
-			{ 
+			{
 				Console.WriteLine(msg);
 			}
 		}
