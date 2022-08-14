@@ -17,11 +17,11 @@ namespace Mosh
 
 			Helicopter helicopter = new Helicopter(); helicopter.MaxAltitude(20000);
 			helicopter.FuelType = "JP8"; Console.WriteLine("Helicopter: {0}", helicopter.FuelType);
-			helicopter.FuelBurnRate = 234.56f; Console.WriteLine("Helicopter: Burn rate is {0}", helicopter.FuelBurnRate);
+			helicopter.FuelBurnRate = 234.56f; Console.WriteLine($"Helicopter: Burn rate is {helicopter.FuelBurnRate}");
 
 			Rocket rocket = new Rocket();
 			rocket.FuelType = "Solid"; Console.WriteLine("Rocket fuel type: {0}", rocket.FuelType);
-			rocket.FuelBurnRate = 1234.567f; Console.WriteLine("Rocket: Burn rate is {0}", rocket.FuelBurnRate);
+			rocket.FuelBurnRate = 1234.567f; Console.WriteLine($"Rocket: Burn rate is {rocket.FuelBurnRate}");
 
 			//Explicit implementation
 			IAircraft rocketMaxAltitude = new Rocket(); rocketMaxAltitude.MaxAltitude(100000);
@@ -29,8 +29,8 @@ namespace Mosh
 
 			//Mixed types
 			Bird bird = new Bird();
-			bird.FuelType = "Birdseed"; Console.WriteLine("The bird is fuled by {0}", bird.FuelType);
-			Console.WriteLine("The bird is traveling a {0}", bird.VectorDegrees(123.4f));
+			bird.FuelType = "Birdseed"; Console.WriteLine($"The bird is fuled by {bird.FuelType}");
+			Console.WriteLine("The bird is traveling a " + bird.VectorDegrees(123.4f));
 			IAircraft.IColor birdColor = new Bird(); birdColor.Color("Blue");
 		}
 
