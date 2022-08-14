@@ -108,7 +108,7 @@ namespace Mosh
 			{ Console.WriteLine("Rocket color: {0}", color); return 123;  }
 		}
 
-		public class Bird : Vector, IFuel, IAircraft.IColor //Mixed types (can only have one object base, and must come first)
+		public class Bird : Vector, IFuel, IAircraft.IColor //Mixed types (can only inherit one object base, and must come first)
 		{
 			public string FuelType { get; set; }
 			public float FuelBurnRate { get; set; }
