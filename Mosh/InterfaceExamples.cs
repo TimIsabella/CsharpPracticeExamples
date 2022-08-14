@@ -21,15 +21,24 @@ namespace Mosh
 			IAircraft.IColor rocketColor = new Rocket(); rocketColor.Color("White");
 		}
 
-		//Interface provides security by hiding details
-		//Declared as 'interface' and no access modifier
-		//Only contains decalarations
+		//An interface is a 'contract' to provide explicit functionality
+		//- provides security that explicit access
+		//- provides encapsulation by hiding details
+		//- Declared as 'interface' and no access modifier
+		//- Only contains decalarations
 		interface IVehicle
 		{
 			//Interface methods are public and MUST match those implimenting it
 			//Can only contain properties or methods
 			void Weight(int lbs);
 			string PassengerCapacity(int qty);
+		}
+
+		//Properties
+		interface IFuel
+		{
+			string FuelType { get; set; }
+			float FuelBurnRate { get; set; }
 		}
 
 		interface IAircraft
@@ -52,7 +61,7 @@ namespace Mosh
 			{ Console.WriteLine("Car passenger capacity: {0}", quantity); return "Return string"; }
 		}
 
-		public class Helicopter : IVehicle, IAircraft //Multiple interface inheritance
+		public class Helicopter : IAircraft, IFuel //Multiple interface inheritance
 		{
 			public void Weight(int pounds)
 			{ Console.WriteLine("Helicopter weight: {0} lbs", pounds); }
@@ -60,10 +69,15 @@ namespace Mosh
 			{ Console.WriteLine("Helicopter passenger capacity: {0}", quantity); return "Return string"; }
 			public void MaxAltitude(int altitude)
 			{ Console.WriteLine("Helicopter maximum altitude: {0} ft", altitude); }
+			public string FuelType { get; set; }
+			public float FuelBurnRate { get; set; }
 		}
 
-		public class Rocket : IAircraft, IAircraft.IColor //Nested interface usage
+		public class Rocket : IAircraft, IFuel, IAircraft.IColor //Nested interface usage
 		{
+			public string FuelType { get; set; }
+			public float FuelBurnRate { get; set; }
+
 			//Explicit interface implementation (cannot use access modifier)
 			void IAircraft.MaxAltitude(int altitude)
 			{ Console.WriteLine("Rocket maximum altitude: {0} ft", altitude); }
