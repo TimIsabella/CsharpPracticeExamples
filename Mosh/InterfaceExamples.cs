@@ -14,7 +14,14 @@ namespace Mosh
 
 			//Regular implementation
 			Car car = new Car(); car.Weight(2000);
+			
 			Helicopter helicopter = new Helicopter(); helicopter.MaxAltitude(20000);
+			helicopter.FuelType = "JP8"; Console.WriteLine("Helicopter: {0}", helicopter.FuelType);
+			helicopter.FuelBurnRate = 234.56f; Console.WriteLine("Helicopter: Burn rate is {0}", helicopter.FuelBurnRate);
+
+			Rocket rocket = new Rocket();
+			rocket.FuelType = "Solid";	Console.WriteLine("Rocket fuel type: {0}", rocket.FuelType);
+			rocket.FuelBurnRate = 1234.567f; Console.WriteLine("Rocket: Burn rate is {0}", rocket.FuelBurnRate);
 
 			//Explicit implementation
 			IAircraft rocketMaxAltitude = new Rocket(); rocketMaxAltitude.MaxAltitude(100000);
@@ -34,7 +41,7 @@ namespace Mosh
 			string PassengerCapacity(int qty);
 		}
 
-		//Properties
+		//Interface with properties
 		interface IFuel
 		{
 			string FuelType { get; set; }
@@ -63,14 +70,24 @@ namespace Mosh
 
 		public class Helicopter : IAircraft, IFuel //Multiple interface inheritance
 		{
+			private string _fuelType;
+			private float _fuelBurnRate;
 			public void Weight(int pounds)
 			{ Console.WriteLine("Helicopter weight: {0} lbs", pounds); }
 			public string PassengerCapacity(int quantity)
 			{ Console.WriteLine("Helicopter passenger capacity: {0}", quantity); return "Return string"; }
 			public void MaxAltitude(int altitude)
 			{ Console.WriteLine("Helicopter maximum altitude: {0} ft", altitude); }
-			public string FuelType { get; set; }
-			public float FuelBurnRate { get; set; }
+			public string FuelType
+				{ 
+					get { return "The fuel type is " + _fuelType; }
+					set { _fuelType = value; }
+				}
+			public float FuelBurnRate 
+				{ 
+					get { return _fuelBurnRate + 123.45f; }
+					set { _fuelBurnRate = value; }
+				}
 		}
 
 		public class Rocket : IAircraft, IFuel, IAircraft.IColor //Nested interface usage
