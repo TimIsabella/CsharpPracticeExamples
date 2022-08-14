@@ -14,18 +14,24 @@ namespace Mosh
 
 			//Regular implementation
 			Car car = new Car(); car.Weight(2000);
-			
+
 			Helicopter helicopter = new Helicopter(); helicopter.MaxAltitude(20000);
 			helicopter.FuelType = "JP8"; Console.WriteLine("Helicopter: {0}", helicopter.FuelType);
 			helicopter.FuelBurnRate = 234.56f; Console.WriteLine("Helicopter: Burn rate is {0}", helicopter.FuelBurnRate);
 
 			Rocket rocket = new Rocket();
-			rocket.FuelType = "Solid";	Console.WriteLine("Rocket fuel type: {0}", rocket.FuelType);
+			rocket.FuelType = "Solid"; Console.WriteLine("Rocket fuel type: {0}", rocket.FuelType);
 			rocket.FuelBurnRate = 1234.567f; Console.WriteLine("Rocket: Burn rate is {0}", rocket.FuelBurnRate);
 
 			//Explicit implementation
 			IAircraft rocketMaxAltitude = new Rocket(); rocketMaxAltitude.MaxAltitude(100000);
 			IAircraft.IColor rocketColor = new Rocket(); rocketColor.Color("White");
+
+			//Mixed types
+			Bird bird = new Bird();
+			bird.FuelType = "Birdseed"; Console.WriteLine("The bird is fuled by {0}", bird.FuelType);
+			Console.WriteLine("The bird is traveling a {0}", bird.VectorDegrees(123.4f));
+			IAircraft.IColor birdColor = new Bird(); birdColor.Color("Blue");
 		}
 
 		//An interface is a 'contract' to provide explicit functionality
@@ -79,15 +85,15 @@ namespace Mosh
 			public void MaxAltitude(int altitude)
 			{ Console.WriteLine("Helicopter maximum altitude: {0} ft", altitude); }
 			public string FuelType
-				{ 
-					get { return "The fuel type is " + _fuelType; }
-					set { _fuelType = value; }
-				}
-			public float FuelBurnRate 
-				{ 
-					get { return _fuelBurnRate + 123.45f; }
-					set { _fuelBurnRate = value; }
-				}
+			{
+				get { return "The fuel type is " + _fuelType; }
+				set { _fuelType = value; }
+			}
+			public float FuelBurnRate
+			{
+				get { return _fuelBurnRate + 123.45f; }
+				set { _fuelBurnRate = value; }
+			}
 		}
 
 		public class Rocket : IAircraft, IFuel, IAircraft.IColor //Nested interface usage
@@ -102,66 +108,20 @@ namespace Mosh
 			{ Console.WriteLine("Rocket color: {0}", color); return 123;  }
 		}
 
-		///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-		/*
-		public static void InterfaceExamplesMain()
+		public class Bird : Vector, IFuel, IAircraft.IColor //Mixed types (can only have one object base, and must come first)
 		{
-			var orderProcessor = new OrderProcessor();
-			var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
-			orderProcessor.Process(order);
+			public string FuelType { get; set; }
+			public float FuelBurnRate { get; set; }
+			int IAircraft.IColor.Color(string color)
+			{ Console.WriteLine("Bird color: {0}", color); return 123; }
 		}
 
-		//Interface is declared as 'interface' and no access modifier
-		interface IInterfaceExamples
+		public class Vector
 		{
-
-		}
-
-		///////////////////////////////// Unit Test Code for Interface Below /////////////////////////////////
-
-		public class OrderProcessor
-		{
-			private readonly ShippingCalculator _shippingCalculator;
-
-			public OrderProcessor()
-			{ _shippingCalculator = new ShippingCalculator(); }
-
-			public void Process(Order order)
+			public string VectorDegrees(float deg)
 			{
-				if(order.IsShipped) throw new InvalidOperationException("This order is already processed.");
-				order.Shipment = new Shipment { Cost = _shippingCalculator.CalculateShipping(order), ShippingDate = DateTime.Today.AddDays(1) };
+				return ($"vector of {deg} degrees").ToString();
 			}
 		}
-
-		public class ShippingCalculator
-		{
-			public float CalculateShipping(Order order)
-			{ 
-				if(order.TotalPrice < 30f) return order.TotalPrice * 0.1f; 
-				else return 0; 
-			}
-		}
-
-		public class Shipment
-		{
-			public float Cost { get; set; }
-			public DateTime ShippingDate { get; set; }
-		}
-
-		public class Order
-		{
-			public int Id { get; set; }
-			public DateTime DatePlaced { get; set; }
-			public Shipment Shipment { get; set; }
-			public float TotalPrice { get; set; }
-			
-			public bool IsShipped
-			{
-				get { return Shipment != null; }
-			}
-		}
-		*/
 	}
 }
