@@ -58,6 +58,30 @@ namespace Mosh
 			//String.IsNullOrEmpty(string)
 
 			//String.IsNullOrWhiteSpace(string)
+
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.WriteLine("This text is colored RED");
+
+			Console.ForegroundColor = ConsoleColor.Blue;
+			Console.WriteLine("This text is colored Blue");
+
+			Console.ForegroundColor = ConsoleColor.Green;
+			Console.WriteLine("This text is colored GREEN");
+
+			Console.ForegroundColor = ConsoleColor.White;
+			Console.WriteLine("This text is colored WHITE");
+
+			Console.BackgroundColor = ConsoleColor.Magenta;
+			Console.WriteLine("The background color is MAGENTA");
+
+			Console.BackgroundColor = ConsoleColor.Cyan;
+			Console.WriteLine("The background color is CYAN");
+
+			Console.BackgroundColor = ConsoleColor.Yellow;
+			Console.WriteLine("The background color is YELLOW");
+
+			Console.BackgroundColor = ConsoleColor.Black;
+			Console.WriteLine("The background color is BLACK");
 		}
 	}
 }

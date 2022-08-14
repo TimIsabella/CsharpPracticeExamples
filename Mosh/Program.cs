@@ -6,6 +6,7 @@ namespace Mosh
 	{
 		static void Main()
 		{
+			/*
 			PersonObject john = new PersonObject();
 			john.Introduce("John", "Smith");
 
@@ -41,7 +42,27 @@ namespace Mosh
 			};
 
 			Console.WriteLine("Fullname: {0} \n Nickname: {1}", personObjectInitilizer.FullName, personObjectInitilizer.NickName);
+			*/
 
+			/*
+			ArraysExamples.ArraysMain();
+			ListExamples.ListsMain();
+
+			DatesAndTimesExamples.DatesAndTimesMain();
+			TimeSpanExamples.TimeSpanMain();
+
+			int hourAdd = 10;
+			Console.WriteLine("TimeSpanHour method: " + TimeSpanExamples.TimeSpanHour(hourAdd));
+			Console.WriteLine("DatesAndTimesHourAdd: " + DatesAndTimesExamples.DatesAndTimesHourAdd(TimeSpanExamples.TimeSpanHour(hourAdd)));
+			*/
+
+			/*
+			StringBuilderExamples.StringBuilderMain();
+			FileIOexamples.FileIOexamplesMain();
+			DirectoryExamples.DirectoryExamplesMain();
+			PathExamples.PathExamplesMain();
+			ForLoopExample.ForLoopExampleMain();
+			StringExamples.StringExamplesMain();
 			MethodExamples.MethodExamplesMain();
 			AccessModifiersExamples.AccessModifiersExamplesMain();
 			PropertiesExamples.PropertiesExerciseMain();
@@ -55,23 +76,9 @@ namespace Mosh
 			AbstractExamples.AbstractExamplesMain();
 			SealedModifiersExample.SealedModifiersExampleMain();
 			InterfaceExamples.InterfaceExamplesMain();
+			*/
 
-			//ArraysExamples.ArraysMain();
-			//ListExamples.ListsMain();
-
-			//DatesAndTimesExamples.DatesAndTimesMain();
-			//TimeSpanExamples.TimeSpanMain();
-
-			//int hourAdd = 10;
-			//Console.WriteLine("TimeSpanHour method: " + TimeSpanExamples.TimeSpanHour(hourAdd));
-			//Console.WriteLine("DatesAndTimesHourAdd: " + DatesAndTimesExamples.DatesAndTimesHourAdd(TimeSpanExamples.TimeSpanHour(hourAdd)));
-
-			//StringExamples.StringExamplesMain();
-			//StringBuilderExamples.StringBuilderMain();
-			//FileIOexamples.FileIOexamplesMain();
-			//DirectoryExamples.DirectoryExamplesMain();
-			//PathExamples.PathExamplesMain();
-			//ForLoopExample.ForLoopExampleMain();
+			InterfaceExtensibilityExamples.InterfaceExtensibilityExamplesMain();
 		}
 	}
 }
