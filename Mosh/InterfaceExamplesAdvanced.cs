@@ -18,7 +18,7 @@ namespace Mosh
 		}
 
 		//Interface is declared as 'interface' and no access modifier
-		interface IInterfaceExamples
+		interface IInterfaceExamplesAdvanced
 		{
 
 		}
