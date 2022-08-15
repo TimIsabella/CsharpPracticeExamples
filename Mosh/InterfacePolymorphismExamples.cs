@@ -44,5 +44,27 @@ namespace Mosh
 
 		public class Mail
 		{}
+
+		public class Message
+		{}
+
+		/////////////////////////////////
+
+		public class MailNotificationChannel : INotificationChannel
+		{
+			public void Send(Message msg)
+			{ Console.WriteLine("Sending Mail..."); }
+		}
+
+		public class SmsNotificationChannel : INotificationChannel
+		{
+			public void Send(Message msg)
+			{ Console.WriteLine("Sending SMS..."); }
+		}
+
+		public interface INotificationChannel
+		{
+			void Send(Message message);
+		}
 	}
 }
