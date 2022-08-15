@@ -7,6 +7,8 @@ namespace Mosh
 	{
 		public static void InterfacePolymorphismExamplesMain()
 		{
+			Console.WriteLine("\n *********** INTERFACE POLYMORPHISM EXAMPLES *********** \n");
+
 			var encoder = new VideoEncoder();
 			encoder.RegisterNotificationChannel(new MailNotificationChannel());
 			encoder.RegisterNotificationChannel(new SmsNotificationChannel());
@@ -41,24 +43,15 @@ namespace Mosh
 			}
 		}
 
-		/*
-		public class MailService
-		{
-			public void Send(Mail mail)
-			{
-				Console.WriteLine("Sending mail...");
-			}
-		}
-		*/
-
 		public class Video
 		{}
 
-		public class Mail
-		{}
-
 		public class Message
-		{}
+		{
+			public void Msg()
+			{ Console.WriteLine("...message complete!"); }
+
+		}
 
 		///////////////////////////////// Interfaces /////////////////////////////////
 
@@ -70,19 +63,19 @@ namespace Mosh
 		public class MailNotificationChannel : INotificationChannel
 		{
 			public void Send(Message msg)
-			{ Console.WriteLine("Sending Mail..."); }
+			{ Console.WriteLine("Sending by Mail: "); msg.Msg(); }
 		}
 
 		public class SmsNotificationChannel : INotificationChannel
 		{
 			public void Send(Message msg)
-			{ Console.WriteLine("Sending SMS..."); }
+			{ Console.WriteLine("Sending by SMS: "); msg.Msg(); }
 		}
 
 		public class PidgeonNotificationChannel : INotificationChannel
 		{
 			public void Send(Message msg)
-			{ Console.WriteLine("Sending by pidgeon..."); }
+			{ Console.WriteLine("Sending by pidgeon: "); msg.Msg(); }
 		}
 	}
 }
