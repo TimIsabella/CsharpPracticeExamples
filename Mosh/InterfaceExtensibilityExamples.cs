@@ -9,23 +9,48 @@ namespace Mosh
 		{
 			Console.WriteLine("\n *********** INTERFACE EXTENSIBILITIES EXAMPLES *********** \n");
 
-			var databaseMigratorConsole = new DatabaseMigrator(new ConsoleLogger());
-			databaseMigratorConsole.Migrate();
+			//'ConsoleLogger' class with 'ILogger' interface passed into 'DatabaseMigrator' method
+			var DatabaseMigratorSimpleConsole = new DatabaseMigratorByMethod();
+			DatabaseMigratorSimpleConsole.Migrate(new ConsoleLogger());
 
+			//'ConsoleLogger' class with 'ILogger' interface passed into 'DatabaseMigrator' constructor
+			var databaseMigratorConsole = new DatabaseMigratorByConstructor(new ConsoleLogger());
+			databaseMigratorConsole.Migrate();
+			/*
+			//'FileLogger' class with 'ILogger' interface passed into 'DatabaseMigrator' constructor
 			var databaseMigratorFile = new DatabaseMigrator(new FileLogger("D:\\testlog.txt"));
 			databaseMigratorFile.Migrate();
+
+			//'FileLogger' class with 'ILogger' interface passed into 'DatabaseMigrator' constructor
+			var DatabaseMigratorSimpleFile = new DatabaseMigratorSimple();
+			DatabaseMigratorSimpleFile.Migrate(new FileLogger("D:\\testlog.txt"));
+			*/
 		}
 
-		public class DatabaseMigrator
+		//Injection through method
+		public class DatabaseMigratorByMethod
+		{
+			//'Dependancy Injection' - specifying a dependancy for the class
+			//'ILogger' interface passed into method
+			public void Migrate(ILogger logger)
+			{
+				logger.LogInfo($"Migration started at {DateTime.Now}");
+
+				//Code here
+
+				logger.LogInfo($"Migration completed at {DateTime.Now}");
+			}
+		}
+
+		//Injection through constructor
+		public class DatabaseMigratorByConstructor
 		{
 			private readonly ILogger _logger;
 
 			//'Dependancy Injection' - specifying a dependancy for the class
 			//'ILogger' interface passed into constructor
-			public DatabaseMigrator(ILogger logger)
-			{
-				_logger = logger;
-			}
+			public DatabaseMigratorByConstructor(ILogger logger)
+			{ _logger = logger; }
 
 			public void Migrate()
 			{
@@ -37,13 +62,29 @@ namespace Mosh
 			}
 		}
 
+		//////////////////////////////////////////////////////////////////
+
+		public interface ILogger
+		{
+			void LogError(string message);
+			void LogInfo(string message);
+		}
+
+		public class ConsoleLogger : ILogger
+		{
+			public void LogError(string msg)
+			{ Console.WriteLine(msg); }
+			public void LogInfo(string msg)
+			{ Console.WriteLine(msg);}
+		}
+
+		///////////////////////////////// 
+		/*
 		public class FileLogger : ILogger
 		{
 			private readonly string _path;
 			public FileLogger(string path)
-			{
-				_path = path;
-			}
+			{ _path = path; }
 
 			//Below code is DRY
 			private void Log(string msgType, string msg)
@@ -63,7 +104,7 @@ namespace Mosh
 			{ Log("INFO", msg); }
 
 			//Repeated code is not DRY
-			/*
+			
 			public void LogError(string msg)
 			{
 				//Stream write to file at '_path' and overwrite as 'true'
@@ -81,27 +122,7 @@ namespace Mosh
 					streamWriter.WriteLine(msg);    //Write to file
 				}
 			}
-			*/
 		}
-
-		//////////////////////////////////////////////////////////////////
-
-		public interface ILogger
-		{
-			void LogError(string message);
-			void LogInfo(string message);
-		}
-
-		public class ConsoleLogger : ILogger
-		{
-			public void LogError(string msg)
-			{
-				Console.WriteLine(msg);
-			}
-			public void LogInfo(string msg)
-			{
-				Console.WriteLine(msg);
-			}
-		}
+		*/
 	}
 }
