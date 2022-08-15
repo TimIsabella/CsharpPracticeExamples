@@ -34,11 +34,11 @@ namespace Mosh
 			//'ILogger' interface passed into method
 			public void Migrate(ILogger logger)
 			{
-				logger.LogInfo($"Migration started at {DateTime.Now}");
+				logger.LogInfo($"Migration by 'Method' started at {DateTime.Now}");
 
 				//Code here
 
-				logger.LogInfo($"Migration completed at {DateTime.Now}");
+				logger.LogInfo($"Migration by 'Method' completed at {DateTime.Now}");
 			}
 		}
 
@@ -54,11 +54,11 @@ namespace Mosh
 
 			public void Migrate()
 			{
-				_logger.LogInfo($"Migration started at {DateTime.Now}");
+				_logger.LogInfo($"Migration by 'Constructor' started at {DateTime.Now}");
 
 				//Code here
 
-				_logger.LogInfo($"Migration completed at {DateTime.Now}");
+				_logger.LogInfo($"Migration by 'Constructor' completed at {DateTime.Now}");
 			}
 		}
 
