@@ -79,6 +79,7 @@ namespace Mosh
 			*/
 
 			InterfaceExtensibilityExamples.InterfaceExtensibilityExamplesMain();
+			InterfacePolymorphismExamples.InterfacePolymorphismExamplesMain();
 		}
 	}
 }
