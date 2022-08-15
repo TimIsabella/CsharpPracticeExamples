@@ -13,7 +13,7 @@ namespace Mosh
 			encoder.RegisterNotificationChannel(new MailNotificationChannel());
 			encoder.RegisterNotificationChannel(new SmsNotificationChannel());
 			encoder.RegisterNotificationChannel(new PidgeonNotificationChannel());
-			encoder.Encode(new Video());
+			encoder.Encode(new Video("Funny Video.mp4"));
 		}
 
 		public class VideoEncoder
@@ -34,7 +34,7 @@ namespace Mosh
 
 				//Loop through all List of 'INotificationChannel' and call each 'Send' method
 				foreach(var channel in _notificationChannels)
-				{ channel.Send(new Message()); }
+				{ channel.Send(new Message(video.VideoName())); }
 			}
 
 			public void RegisterNotificationChannel(INotificationChannel channel)
@@ -44,13 +44,24 @@ namespace Mosh
 		}
 
 		public class Video
-		{}
+		{
+			private string _videoName;
+			public Video(string videoName)
+			{ _videoName = videoName; }
+			public string VideoName()
+			{ return _videoName; }
+		}
 
 		public class Message
 		{
-			public void Msg()
-			{ Console.WriteLine("...message complete!"); }
+			private string _videoName;
+			public Message(string videoName)
+			{ _videoName = videoName; }
+			public string VideoName()
+			{ return _videoName; }
 
+			public void MsgComplete()
+			{ Console.WriteLine("...message complete!"); }
 		}
 
 		///////////////////////////////// Interfaces /////////////////////////////////
@@ -63,19 +74,19 @@ namespace Mosh
 		public class MailNotificationChannel : INotificationChannel
 		{
 			public void Send(Message msg)
-			{ Console.WriteLine("Sending by Mail: "); msg.Msg(); }
+			{ Console.WriteLine($"Sending by Mail: {msg.VideoName()}"); msg.MsgComplete(); }
 		}
 
 		public class SmsNotificationChannel : INotificationChannel
 		{
 			public void Send(Message msg)
-			{ Console.WriteLine("Sending by SMS: "); msg.Msg(); }
+			{ Console.WriteLine($"Sending by SMS: {msg.VideoName()}"); msg.MsgComplete(); }
 		}
 
 		public class PidgeonNotificationChannel : INotificationChannel
 		{
 			public void Send(Message msg)
-			{ Console.WriteLine("Sending by pidgeon: "); msg.Msg(); }
+			{ Console.WriteLine($"Sending by pidgeon: {msg.VideoName()}"); msg.MsgComplete(); }
 		}
 	}
 }
