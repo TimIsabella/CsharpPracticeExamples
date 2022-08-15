@@ -9,8 +9,11 @@ namespace Mosh
 		{
 			Console.WriteLine("\n *********** INTERFACE EXTENSIBILITIES EXAMPLES *********** \n");
 
-			var databaseMigrator = new DatabaseMigrator(new ConsoleLogger());
-			databaseMigrator.Migrate();
+			var databaseMigratorConsole = new DatabaseMigrator(new ConsoleLogger());
+			databaseMigratorConsole.Migrate();
+
+			var databaseMigratorFile = new DatabaseMigrator(new FileLogger("D:\\testlog.txt"));
+			databaseMigratorFile.Migrate();
 		}
 
 		public class DatabaseMigrator
@@ -42,7 +45,7 @@ namespace Mosh
 				_path = path;
 			}
 
-			//Below is DRY
+			//Below code is DRY
 			private void Log(string msgType, string msg)
 			{
 				//Stream write to file at '_path' and overwrite as 'true'
