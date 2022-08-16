@@ -17,17 +17,17 @@ namespace Mosh
 			///////////
 
 			//Generic list class -- instantiated to take bools
-			var boolGenericList = new GenericClassList<bool>();
+			var boolGenericList = new GenericListClass<bool>();
 			boolGenericList.AddToList(true); boolGenericList.AddToList(false); boolGenericList.AddToList(true);
 			Console.WriteLine($"boolGenericList -- [0]={boolGenericList[0]}, [1]={boolGenericList[1]}, [2]={boolGenericList[2]}");
 
 			//Generic list class -- instantiated to take ints
-			var numGenericList = new GenericClassList<int>();
+			var numGenericList = new GenericListClass<int>();
 			numGenericList.AddToList(33); numGenericList.AddToList(66); numGenericList.AddToList(99);
 			Console.WriteLine($"numGenericList -- [0]={numGenericList[0]}, [1]={numGenericList[1]}, [2]={numGenericList[2]}");
 
 			//Generic list class -- instantiated to take strings
-			var stringGenericList = new GenericClassList<string>();
+			var stringGenericList = new GenericListClass<string>();
 			stringGenericList.AddToList("This"); stringGenericList.AddToList("That"); stringGenericList.AddToList("Those");
 			Console.WriteLine($"stringGenericList -- [0]={stringGenericList[0]}, [1]={stringGenericList[1]}, [2]={stringGenericList[2]}");
 
@@ -38,17 +38,21 @@ namespace Mosh
 			Console.WriteLine($"Book -- ISBN: {book.Isbn}, Book Title: {book.Title}");
 
 			//Generic list class -- instantiated to take Book classes
-			var booksGenericsList = new GenericClassList<Book>();
+			var booksGenericsList = new GenericListClass<Book>();
 			booksGenericsList.AddToList(new Book(new string[] { "222", "Generic book" }));
 			Console.WriteLine($"booksGenericsList -- ISBN: {booksGenericsList[0].Isbn}, Book Title: {booksGenericsList[0].Title}");
 
 			//Generic dictionary class -- instantiated to take Book classes with key value as string
 			//- Dictionaries are indexed by key value
-			var genericBookDictionary = new GenericDictionary<string, Book>();
+			var genericBookDictionary = new GenericDictionaryClass<string, Book>();
 			genericBookDictionary.AddToDictionary("11", new Book(new string[] { "333", "Dictionary book" }));
 			Console.WriteLine($"genericBookDictionary -- Entry '11' book ISBN: '{genericBookDictionary["11"].Isbn}'");
 			Console.WriteLine($"genericBookDictionary -- Entry '11' book title: '{genericBookDictionary["11"].Title}'");
+
+
 		}
+
+		///////////////////////////////// Generics /////////////////////////////////
 
 		//Book
 		public class Book
@@ -64,8 +68,8 @@ namespace Mosh
 			public string Isbn { get { return _isbn; } }
 		}
 
-		//List
-		public class GenericClassList<T> //'T' stands for type
+		//Generic List class -- specified by <> brackets
+		public class GenericListClass<T> //'T' stands for generic type (T is not a reserved word)
 		{
 			private T _genericValue;
 			
@@ -76,8 +80,8 @@ namespace Mosh
 			public T this[int index] { get { return _genericValue; } }
 		}
 
-		//Dictionary
-		public class GenericDictionary<TKey, TValue>
+		//Dictionary generic list class (two generic values)
+		public class GenericDictionaryClass<TKey, TValue>
 		{
 			//Dictionaries take two inputs:
 			// - Key: the position name within the dictionary
@@ -91,17 +95,52 @@ namespace Mosh
 			public TValue this[TKey key] { get { return _dictionary[key]; } }
 		}
 
-		//////////////////////////////////////////////////////////////////
+		///////////////////////////////// Applying constraints to generics /////////////////////////////////
 
-												
-		public class GenericNumberProcessing<T> where T : IComparable	//Adds IComparable 'constraint' to T
+		public class GenericConstraintsExamples
 		{
-			public T ReturnMaxNumber(T num1, T num2)
+			//Applying constraints to generics
+			//"where T generic is a ..."
+			//where T : IComparable
+			//where T : Product
+			//where T : struct
+			//where T : class
+			//where T : new()
+			public class GenericConstraints<T> where T : IComparable //Adds IComparable 'constraint' to T
 			{
-			    //If 'T num1' is greater than 'T num2', result will be 0
-				if(num1.CompareTo(num2) > 0) return num1;
-				else return num2;
+				public T ReturnMaxNumber(T num1, T num2)
+				{
+					//If 'T num1' is greater than 'T num2', result will be 0
+					if(num1.CompareTo(num2) > 0) return num1;
+					else return num2;
+				}
+			}
+
+			///////////
+
+			public class Product
+			{
+				public string Title { get; set; }
+				public float Price { get; set; }
+			}
+
+			public class Book : Product
+			{
+				public string Isbn { get; set; }
+			}
+
+			public class Nullable<T> where T : struct
+			{ }
+
+			public class DicountCalculator<TProduct> where TProduct : Product
+			{
+				public float CalculateDiscount(TProduct product)
+				{
+					product.Price;
+				}
 			}
 		}
+
+
 	}
 }
