@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mosh
 {
@@ -11,10 +7,10 @@ namespace Mosh
 		public static void EnumExamplesMain()
 		{
 			var enumNumber = RandomEnums.Number3;
-			Console.WriteLine("The enum is enumNumber");
+			Console.WriteLine($"The enum is {enumNumber}");
 		}
 
-		//enum - short for enumeration
+		//enum - short for 'enumeration'
 		//an array of constants accessed by dot notation
 		//Can only be integers
 		public enum RandomEnums
