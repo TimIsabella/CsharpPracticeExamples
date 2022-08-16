@@ -62,6 +62,7 @@ namespace Mosh
 				_dictionary.Add(key, value);
 			}
 
+			//Return 'TValue' by 'TKey'
 			public TValue this[TKey key]
 			{ get { return _dictionary[key]; } }
 		}
