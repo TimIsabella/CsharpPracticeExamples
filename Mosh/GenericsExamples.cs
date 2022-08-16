@@ -67,7 +67,7 @@ namespace Mosh
 			{ get { return _dictionary[key]; } }
 		}
 
-												//Adds IComparable method to T
+												//Adds IComparable 'constraint' to T
 		public class GenericsNumberProcessing<T> where T : IComparable
 		{
 			public T ReturnMaxNumber(T num1, T num2)
