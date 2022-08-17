@@ -110,7 +110,7 @@ namespace Mosh
 			//where T : struct
 			//where T : class
 			//where T : new()
-			public class GenericConstraints<T> where T : IComparable //Adds IComparable 'constraint' to T
+			public class GenericConstraints<T> where T : IComparable, new() //Adds 'constraints' IComparable and new() to T
 			{
 				public T ReturnMaxNumber(T num1, T num2)
 				{
@@ -118,18 +118,23 @@ namespace Mosh
 					if(num1.CompareTo(num2) > 0) return num1;
 					else return num2;
 				}
+
+				public void DoSomething(T value)
+				{
+					var ob = new T();
+				}
 			}
 
 			///////////
 
-			//Provides value types to be nullable
+			//Provides ability to pass nulls to value types (value types cannot be nullable)
 			public class Nullable<T> where T : struct //'T' is cast as a struct
 			{
 				private object _value;
 				public Nullable()
 				{ }
 
-				public Nullable(T value)
+				public Nullable(object value)
 				{ _value = value; }
 				
 				public bool HasValue
