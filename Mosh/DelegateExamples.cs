@@ -45,12 +45,9 @@ namespace Mosh
 
 			public void Process(string path, PhotoFilterHandler filterHandler)
 			{
-				//System.Action<>
-				//System.Func<>
-				
 				var photo = Photo.Load(path);
 
-				//Delegate
+				//Delegate dumps methods here
 				filterHandler(photo);
 
 				photo.Save();
