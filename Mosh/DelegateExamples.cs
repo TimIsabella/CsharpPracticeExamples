@@ -38,13 +38,16 @@ namespace Mosh
 
 		public class PhotoProcessor
 		{
-			//'delegate' -- holds a pointer to a method or a group of methods
+			//'delegate' -- holds a pointer to a method or a group of pointers to methods
 			//Inherits the resulting methods for this class to utilize
 			//Establishes the delegate signature as 'methodName(Photo photo)'
 			public delegate void PhotoFilterHandler(Photo photo);
 
 			public void Process(string path, PhotoFilterHandler filterHandler)
 			{
+				//System.Action<>
+				//System.Func<>
+				
 				var photo = Photo.Load(path);
 
 				//Delegate
