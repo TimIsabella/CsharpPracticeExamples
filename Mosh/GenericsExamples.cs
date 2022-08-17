@@ -49,6 +49,10 @@ namespace Mosh
 			Console.WriteLine($"genericBookDictionary -- Entry '11' book ISBN: '{genericBookDictionary["11"].Isbn}'");
 			Console.WriteLine($"genericBookDictionary -- Entry '11' book title: '{genericBookDictionary["11"].Title}'");
 
+			/////////// Generics Constraints ///////////
+			var nullableNumber = new Nullable<int>(333);
+			Console.WriteLine($"nullableNumber -- Has Value?: {nullableNumber.HasValue}");
+			Console.WriteLine($"nullableNumber -- Value: {nullableNumber.GetValueOrDefault()}");
 
 		}
 
@@ -118,6 +122,28 @@ namespace Mosh
 
 			///////////
 
+			//Provides value types to be nullable
+			public class Nullable<T> where T : struct //'T' is cast as a struct
+			{
+				private object _value;
+				public Nullable()
+				{ }
+
+				public Nullable(T value)
+				{ _value = value; }
+				
+				public bool HasValue
+				{ get { return _value != null; } } //Returns true if value, otherwise returns false
+
+				public T GetValueOrDefault()
+				{
+					if(HasValue) return (T) _value;	//If 'HasValue' is true, return 'T' value
+							else return default(T); //If 'HasValue' is false, return 'default' of 'T' value	
+				}									//-- 'default' returns 'null' for reference types and '0' for value types when generic object is not initialized.
+			}										//-- 'T' is cast as a struct (value type), therefore the return is '0'
+
+			///////////
+
 			public class Product
 			{
 				public string Title { get; set; }
@@ -125,19 +151,12 @@ namespace Mosh
 			}
 
 			public class Book : Product
-			{
-				public string Isbn { get; set; }
-			}
-
-			public class Nullable<T> where T : struct
-			{ }
+			{ public string Isbn { get; set; } }
 
 			public class DicountCalculator<TProduct> where TProduct : Product
 			{
 				public float CalculateDiscount(TProduct product)
-				{
-					product.Price;
-				}
+				{ return product.Price; }
 			}
 		}
 
