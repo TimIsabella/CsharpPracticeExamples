@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Mosh
 {
@@ -23,6 +24,27 @@ namespace Mosh
 		public static int Multiply(int num1, int num2, int num3)
 		{
 			return num1 * num2 * num3;
+		}
+
+		//////////////////////////////////////////////////////////////////
+
+		public class BookRepository
+		{
+			public class Book
+			{
+				public string Title { get; set; }
+				public int Price { get; set; }
+			}
+
+			public List<Book> GetBooks()
+			{
+				return new List<Book>
+				{
+					new Book() {Title = "Title 1", Price = 3},
+					new Book() {Title = "Title 2", Price = 5},
+					new Book() {Title = "Title 3", Price = 7}
+				};
+			}
 		}
 	}
 }
