@@ -82,6 +82,7 @@ namespace Mosh
 			InterfacePolymorphismExamples.InterfacePolymorphismExamplesMain();
 			GenericsExamples.GenericsExamplesMain();
 			DelegateExamples.DelegateExamplesMain();
+			LambdaExamples.LambdaExamplesMain();
 		}
 	}
 }
