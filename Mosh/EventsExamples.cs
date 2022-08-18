@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Mosh
 {
@@ -22,9 +17,8 @@ namespace Mosh
 
 		//DELEGATE
 		//Declare delegate for event
-		//Takes two parameters: event source object, object derived from 'EventArgs'
 		//Specifies the signature for the event in 'HandlerForEvent':
-		//- Must have a void and two parameters
+		//In this case, it is a method with no parameters
 		public delegate void HandlerForEvent();
 
 		//Event 'publisher class'
@@ -37,7 +31,7 @@ namespace Mosh
 			}
 
 			//EVENT
-			//Declare event 'Event' of 'EventHandler'
+			//Declare event 'Event' of 'HandlerForEvent'
 			public event HandlerForEvent Event;
 
 			//Method for event
