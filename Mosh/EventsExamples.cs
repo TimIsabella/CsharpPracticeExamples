@@ -23,9 +23,9 @@ namespace Mosh
 		//DELEGATE
 		//Declare delegate for event
 		//Takes two parameters: event source object, object derived from 'EventArgs'
-		//Specifies the signature for the event in 'EventHandler':
+		//Specifies the signature for the event in 'HandlerForEvent':
 		//- Must have a void and two parameters
-		public delegate void EventHandler();
+		public delegate void HandlerForEvent();
 
 		//Event 'publisher class'
 		public class ClassForEvent
@@ -38,7 +38,7 @@ namespace Mosh
 
 			//EVENT
 			//Declare event 'Event' of 'EventHandler'
-			public event EventHandler Event;
+			public event HandlerForEvent Event;
 
 			//Method for event
 			//Event methods must be 'protected' and 'virtual'
