@@ -10,8 +10,10 @@ namespace Mosh
 	{
 		public static void ExtensionMethodsExamplesMain()
 		{
+			Console.WriteLine("\n *********** EXTENSIONS *********** \n");
+
 			string words = "These are words";
-			var convertWords = words.ConvertTheseWordsMethod(123);
+			var convertWords = words.ConvertTheseWordsMethod(123456);
 
 			Console.WriteLine($"Converted words: {convertWords}");
 		}
@@ -24,7 +26,7 @@ namespace Mosh
 	{
 		public static string ConvertTheseWordsMethod(this string words, int nums)
 		{
-			return words + nums.ToString();
+			return $"{words} {nums.ToString()}";
 		}
 	}
 }
