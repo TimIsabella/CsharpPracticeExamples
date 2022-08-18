@@ -40,10 +40,22 @@ namespace Mosh
 			//Chaining Queries: .Where().OrderBy().Select()
 			IEnumerable<BookRepository.Book> allBooksIEnumerable3 = new BookRepository().GetBooks();
 			//Below is cast as a 'var' since the resulting IEnumerable<> queries changes it from a List of 'Book' object to a List of strings
-			var chainedBooksIEnumerable = allBooksIEnumerable3.Where((bookElement) => bookElement.Price < 10)  //.Where()
+			var chainedBooksIEnumerable = allBooksIEnumerable3.Where((bookElement) => bookElement.Price < 9)   //.Where()
 															  .OrderBy((bookElement) => bookElement.Title)     //.OrderBy()
 															  .Select((bookElement) => bookElement.Title);	   //.Select()
+			
 			foreach(var book in chainedBooksIEnumerable) Console.WriteLine($"Chained queries: {book}");
+
+			/////////// LINQ Query Operators ///////////
+			//- Just like T-SQL operators
+			//- Below code is the same as above
+			IEnumerable<BookRepository.Book> allBooksIEnumerable4 = new BookRepository().GetBooks();
+			var cheaperBooks = from bookElement in allBooksIEnumerable4
+							   where bookElement.Price < 9
+							   orderby bookElement.Title
+							   select bookElement.Title;
+
+			foreach(var book in cheaperBooks) Console.WriteLine($"Chained queries by query operators: {book}");
 		}
 
 		public class BookRepository
