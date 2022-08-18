@@ -3,11 +3,11 @@ using System.IO;
 
 namespace Mosh
 {
-	public class PathExamples
+	public class FilePathExamples
 	{
-		public static void PathExamplesMain()
+		public static void FilePathExamplesMain()
 		{
-			Console.WriteLine("\n *********** Path *********** \n");
+			Console.WriteLine("\n *********** FILE PATH *********** \n");
 
 			var testPath = @"D:\test-original.txt";
 			Console.WriteLine("Current path: '{0}'", testPath);

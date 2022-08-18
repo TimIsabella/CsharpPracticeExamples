@@ -21,6 +21,14 @@ namespace Mosh
 			compObj3.CompositionMethod3("Method 3 message...");
 		}
 
+		public class MessageHandler
+		{
+			public void Log(string message)
+			{
+				Console.WriteLine(message);
+			}
+		}
+
 		public class CompositionObject1
 		{
 			public void CompositionMethod(MessageHandler handler)
@@ -66,14 +74,6 @@ namespace Mosh
 			public void CompositionMethod3(string msg)
 			{
 				Handler.Log(compMsg + msg);
-			}
-		}
-
-		public class MessageHandler
-		{
-			public void Log(string message)
-			{
-				Console.WriteLine(message);
 			}
 		}
 	}

@@ -27,5 +27,10 @@ namespace Mosh
 			//Initialize an empty list of 'OrderObject'
 			NotInitializedOrders = new List<OrderObject>();
 		}
+		public class OrderObject
+		{
+			int X { get; set; }
+			int Y { get; set; }
+		}
 	}
 }

@@ -29,5 +29,11 @@ namespace Mosh
 			this.FieldName = constructorParamName;
 			this.Id = id;
 		}
+
+		public class OrderObject
+		{
+			int X { get; set; }
+			int Y { get; set; }
+		}
 	}
 }
