@@ -83,7 +83,7 @@ namespace Mosh
 			GenericsExamples.GenericsExamplesMain();
 			LambdaExamples.LambdaExamplesMain();
 			DelegateExamples.DelegateExamplesMain();
-			EventsOLDExamples.EventsExamplesMain();
+			EventsExamples.EventsExamplesMain();
 		}
 	}
 }
