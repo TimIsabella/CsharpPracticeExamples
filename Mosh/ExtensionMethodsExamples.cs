@@ -17,7 +17,7 @@ namespace Mosh
 		}
 	}
 
-	//Extends methods to instance members
+	//Extends custom methods to instance members
 	//- Class and method must be 'public' and 'static'
 	//- First argument must be 'this' represending the instance for which it is applied
 	public static class Extension
