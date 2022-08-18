@@ -35,6 +35,7 @@ namespace Mosh
 
 			//EVENT
 			//Declare event 'Event' of 'HandlerForEvent'
+			//Events are a wrapper for delegates
 			public event HandlerForEvent Event;
 
 			//Method for event
