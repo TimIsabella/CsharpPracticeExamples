@@ -9,9 +9,12 @@ namespace Mosh
 			Console.WriteLine("\n *********** EVENT *********** \n");
 
 			var classForEvent = new ClassForEvent();
+
+			//Events are triggered in sequence of registration
 			classForEvent.Event += OnEventTriggered1;   //Register 'OnEventTriggered1' with 'Event'
 			classForEvent.Event += OnEventTriggered2;   //Register 'OnEventTriggered2' with 'Event'
 			classForEvent.Event += OnEventTriggered3;   //Register 'OnEventTriggered3' with 'Event'
+
 			classForEvent.InitiateEventSequence();
 		}
 
