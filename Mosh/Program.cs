@@ -84,6 +84,7 @@ namespace Mosh
 			LambdaExamples.LambdaExamplesMain();
 			DelegateExamples.DelegateExamplesMain();
 			EventsExamples.EventsExamplesMain();
+			ExtensionMethodsExamples.ExtensionMethodsExamplesMain();
 		}
 	}
 }
