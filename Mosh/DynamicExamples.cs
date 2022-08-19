@@ -25,21 +25,24 @@ namespace Mosh
 			Console.WriteLine($"name: {name}");
 			name = 1.618;
 			Console.WriteLine($"name: {name}");
-
-			dynamic number = 123;
-			Console.WriteLine($"number: {number}");
-			number = "One Two Three";
-			Console.WriteLine($"number: {number}");
-			number = true;
-			Console.WriteLine($"number: {number}");
-
+			name = true;
+			Console.WriteLine($"name: {name}");
 
 			dynamic boolVar = false;
 			Console.WriteLine($"boolVar: {boolVar}");
 			boolVar = 123 + "123";
 			Console.WriteLine($"boolVar: {boolVar}");
-			boolVar = "this is not a bool";
-			Console.WriteLine($"boolVar: {boolVar}");
+
+			int num1 = 123;
+			var num2 = 345;
+			dynamic result1;		//dynamic can be initialized without a value
+			result1 = num1 + num2;
+			Console.WriteLine($"Result1: {result1}");
+
+			dynamic num3 = 111;
+			int num4 = 222;
+			var result2 = num3 + num4;		//By using by including a 'dynamic' variable, 'var' becomes 'dynamic'
+			Console.WriteLine($"Result2: {result2}");
 		}
 	}
 }
