@@ -56,6 +56,24 @@ namespace Mosh
 							   select bookElement.Title;
 
 			foreach(var book in cheaperBooks) Console.WriteLine($"Chained queries by query operators: {book}");
+
+			//Single element returned by query operators
+			IEnumerable<BookRepository.Book> allBooksIEnumerable5 = new BookRepository().GetBooks();
+			var singleBook1 = from bookElement in allBooksIEnumerable5
+							  where bookElement.Title == "Book D"
+							  select bookElement.Title;
+			
+			foreach(var book in singleBook1) Console.WriteLine($"The single book selected by operators was: {book}");
+
+			//Single element return by .Single()
+			IEnumerable<BookRepository.Book> allBooksIEnumerable6 = new BookRepository().GetBooks();
+			var singleBook2 = allBooksIEnumerable6.Single((bookElement) => bookElement.Title == "Book D");
+			Console.WriteLine($"The single book selected by Single() method was: {singleBook2.Title}");
+
+			//Single element return by .SingleOrDefault() -- 'OrDefault' method provides null checks without crashing
+			IEnumerable<BookRepository.Book> allBooksIEnumerable7 = new BookRepository().GetBooks();
+			var singleBook3 = allBooksIEnumerable7.SingleOrDefault((bookElement) => bookElement.Title == "Book Null");
+			Console.WriteLine("The single book selected by SingleOrDefault() method was: {0}", singleBook3 != null ? singleBook3.Title : "Null"); //Check object for null
 		}
 
 		public class BookRepository
