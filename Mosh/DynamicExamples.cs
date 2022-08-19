@@ -20,23 +20,26 @@ namespace Mosh
 			//Allows usage of variables to change cast like dynamic languages (JavaScript, Python)
 
 			dynamic name = "This is a name";
-			Console.WriteLine($"Name: {name}");
+			Console.WriteLine($"name: {name}");
 			name = 10;
-			Console.WriteLine($"Name: {name}");
+			Console.WriteLine($"name: {name}");
 			name = 1.618;
-			Console.WriteLine($"Name: {name}");
+			Console.WriteLine($"name: {name}");
 
 			dynamic number = 123;
-			Console.WriteLine($"Number: {number}");
-
+			Console.WriteLine($"number: {number}");
 			number = "One Two Three";
-			Console.WriteLine($"Number: {number}");
-
+			Console.WriteLine($"number: {number}");
 			number = true;
-			Console.WriteLine($"Number: {number}");
+			Console.WriteLine($"number: {number}");
 
-			number = null;
-			Console.WriteLine($"Number: {number}");
+
+			dynamic boolVar = false;
+			Console.WriteLine($"boolVar: {boolVar}");
+			boolVar = 123 + "123";
+			Console.WriteLine($"boolVar: {boolVar}");
+			boolVar = "this is not a bool";
+			Console.WriteLine($"boolVar: {boolVar}");
 		}
 	}
 }
