@@ -13,7 +13,7 @@ namespace Mosh
 		{
 			Console.WriteLine("\n *********** EXCEPTION HANDLING *********** \n");
 
-			/////////// EXCEPTION MESSAGE ///////////
+			/////////// Exception Message Breakdown ///////////
 			///Message: "Unhandled Exception: System.DivideByZeroException: Attempted to divide by zero."
 			// - The error message
 			// - Exceptions are classes
@@ -56,7 +56,8 @@ namespace Mosh
 			// - Called after all catches for additional processing
 
 			Console.WriteLine("\n *** Stream Read *** \n");
-			StreamReader streamReader = null;
+
+			StreamReader streamReader = null;  //Cannot define within 'try' block as it is out of scope from 'catch' and 'finally'
 
 			try
 			{
@@ -68,7 +69,9 @@ namespace Mosh
 			}
 
 			catch(Exception exceptionString)
-			{ Console.WriteLine($"Stream Read: An error has occured... \n '{exceptionString}'"); }
+			{
+				Console.WriteLine($"Stream Read: An error has occured... \n '{exceptionString}'");
+			}
 			
 			finally
 			{
@@ -78,6 +81,26 @@ namespace Mosh
 				if(streamReader != null) streamReader.Dispose();
 			}
 
+			/////////// 'using' ///////////
+			// - Provides 'finally' and 'dispose' automatically
+
+			Console.WriteLine("\n *** Stream Read *** \n");
+
+			try
+			{
+				Console.WriteLine("Stream Read: Preparing to read stream...");
+				
+				using(var streamReaderUsing = new StreamReader(@"D:\thisFileDoesntExist.txt"))
+				{
+					var content = streamReaderUsing.ReadToEnd();
+					Console.WriteLine($"Stream Read: '{content}'");
+				}
+			}
+
+			catch(Exception exceptionString)
+			{
+				Console.WriteLine($"Stream Read: An error has occured... \n '{exceptionString}'");
+			}
 		}
 
 		public class Calculator
