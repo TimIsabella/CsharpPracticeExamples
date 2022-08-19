@@ -31,6 +31,9 @@ namespace Mosh
 			// - Stack trace illustrates the sequence of the error in reverse order
 
 			//Exception handling with try-catch
+			// - Catch of more specific exception type takes priority
+			// - Catches must be ordered from most specific to least specific
+			// - Only one catch will be fired
 			try
 			{
 				//Divide by zero exception
@@ -38,10 +41,18 @@ namespace Mosh
 				var result = calc.Divide(5, 0);
 				Console.WriteLine($"calc = {result}");
 			}
+
+			//Specific exception handling -- Most specific
+			catch(DivideByZeroException divideByZeroEx)
+			{ Console.WriteLine($"A divide by zero exception error has occured... \n '{divideByZeroEx}'"); }
+
+			//Generic exception handling
+			catch(ArithmeticException arithmeticEx)
+			{ Console.WriteLine($"An arithmetic exception error has occured... \n '{arithmeticEx}'"); }
+
+			//General exception handling -- Least specific
 			catch(Exception exceptionString)
-			{
-				Console.WriteLine($"An error has occured... \n '{exceptionString}'");
-			}
+			{ Console.WriteLine($"An exception error has occured... \n '{exceptionString}'"); }
 		}
 
 		public class Calculator
