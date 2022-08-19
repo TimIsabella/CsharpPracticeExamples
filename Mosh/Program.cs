@@ -50,6 +50,7 @@ namespace Mosh
 			LINQexamples.LINQexamplesMain();
 			NullableExamples.NullableExamplesMain();
 			DynamicExamples.DynamicExamplesMain();
+			ExceptionHandlingExamples.ExceptionHandlingMain();
 		}
 	}
 }
