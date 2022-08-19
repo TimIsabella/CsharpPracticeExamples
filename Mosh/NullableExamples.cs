@@ -40,6 +40,9 @@ namespace Mosh
 			//This works to reference from nullable types
 			bool boolNull2 = boolNull.GetValueOrDefault();
 
+			//'Coalescing' -- double ?? is check for null
+			//if numberNull is not null, use numberNull, otherwise use 123
+			int numberNull2 = numberNull ?? 123;
 
 			//////////////////////////////////////////////////////////////////
 
@@ -53,6 +56,8 @@ namespace Mosh
 
 			Console.WriteLine("boolNull.GetValueOrDefault(): {0}", boolNull.GetValueOrDefault());
 			Console.WriteLine("boolNull.HasValue: {0}", boolNull.HasValue);
+
+			Console.WriteLine("Coalescing -- floatNull ?? 1.618: {0}", floatNull ?? 1.618);
 		}
 	}
 }
