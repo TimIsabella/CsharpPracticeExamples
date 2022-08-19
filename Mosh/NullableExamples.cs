@@ -14,7 +14,7 @@ namespace Mosh
 
 			///Value types cannot be null///
 			/*
-			//Error: cannot be null
+			//ERROR: cannot be null
 			bool boolNum = null;
 			int numberNull = null;
 			float floatNull = null;
@@ -32,6 +32,17 @@ namespace Mosh
 			//String is a refrence type and is nullable
 			string stringNull = null;
 
+			/*
+			//ERROR: cannot create reference to nullable type for non-nullable type
+			bool boolNull2 = boolNull;
+			*/
+			
+			//This works to reference from nullable types
+			bool boolNull2 = boolNull.GetValueOrDefault();
+
+
+			//////////////////////////////////////////////////////////////////
+
 			Console.WriteLine("boolNull: {0}", boolNull == null ? "Null" : "Not Null");
 			Console.WriteLine("numberNull: {0}", numberNull == null ? "Null" : "Not Null");
 			Console.WriteLine("floatNull: {0}", floatNull == null ? "Null" : "Not Null");
@@ -39,6 +50,9 @@ namespace Mosh
 			Console.WriteLine("dateTimeNull: {0}", dateTimeNull == null ? "Null" : "Not Null");
 			Console.WriteLine("dateTimeNull: {0}", dateTimeNull == null ? "Null" : "Not Null");
 			Console.WriteLine("stringNull: {0}", stringNull == null ? "Null" : "Not Null");
+
+			Console.WriteLine("boolNull.GetValueOrDefault(): {0}", boolNull.GetValueOrDefault());
+			Console.WriteLine("boolNull.HasValue: {0}", boolNull.HasValue);
 		}
 	}
 }
