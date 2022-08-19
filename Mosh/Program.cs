@@ -48,6 +48,7 @@ namespace Mosh
 			EventsExamples.EventsExamplesMain();
 			ExtensionMethodsExamples.ExtensionMethodsExamplesMain();
 			LINQexamples.LINQexamplesMain();
+			NullableExamples.NullableExamplesMain();
 		}
 	}
 }
