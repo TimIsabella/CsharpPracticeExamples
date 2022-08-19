@@ -74,6 +74,11 @@ namespace Mosh
 			IEnumerable<BookRepository.Book> allBooksIEnumerable7 = new BookRepository().GetBooks();
 			var singleBook3 = allBooksIEnumerable7.SingleOrDefault((bookElement) => bookElement.Title == "Book Null");
 			Console.WriteLine("The single book selected by SingleOrDefault() method was: {0}", singleBook3 != null ? singleBook3.Title : "Null"); //Check object for null
+
+			//.Count() books
+			IEnumerable<BookRepository.Book> allBooksIEnumerable8 = new BookRepository().GetBooks();
+			var countBooks = allBooksIEnumerable8.Count();
+			Console.WriteLine($"Total books: {countBooks}");
 		}
 
 		public class BookRepository
