@@ -19,10 +19,16 @@ namespace Mosh
 			*/
 
 			/////////// EXCEPTION MESSAGE ///////////
-			//Exception Message: 'Unhandled Exception: System.DivideByZeroException: Attempted to divide by zero.'
-			//- Exceptions are classes
-			//Stack Trace: 'at Mosh.ExceptionHandlingExamples.Calculator.Divide(Int32 numerator, Int32 denomenator) in C:\Programming\Rando\C#\Mosh\Mosh\ExceptionHandlingExamples.cs:line 27'
-			//- Stack trace illustrates the sequence of the error
+			///Message: "Unhandled Exception: System.DivideByZeroException: Attempted to divide by zero."
+			// - The error message
+			// - Exceptions are classes
+			///Source: "Mosh"
+			// - The application from where the error originated
+			///Target Site: "{Int32 Divide(Int32, Int32)}"
+			// - The method where the error occured
+			///Stack Trace: "at Mosh.ExceptionHandlingExamples.Calculator.Divide(Int32 numerator, Int32 denomenator)
+			///				 in C:\Programming\Rando\C#\Mosh\Mosh\ExceptionHandlingExamples.cs:line 27"
+			// - Stack trace illustrates the sequence of the error in reverse order
 
 			//Exception handling with try-catch
 			try
