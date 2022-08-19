@@ -49,6 +49,7 @@ namespace Mosh
 			ExtensionMethodsExamples.ExtensionMethodsExamplesMain();
 			LINQexamples.LINQexamplesMain();
 			NullableExamples.NullableExamplesMain();
+			DynamicExamples.DynamicExamplesMain();
 		}
 	}
 }
