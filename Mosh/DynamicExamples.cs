@@ -33,8 +33,8 @@ namespace Mosh
 			boolVar = 123 + "123";
 			Console.WriteLine($"boolVar: {boolVar}");
 
-			int num1 = 123;
-			var num2 = 345;
+			int num1 = 11;
+			var num2 = 22;
 			dynamic result1;		//dynamic can be initialized without a value
 			result1 = num1 + num2;
 			Console.WriteLine($"Result1: {result1}");
