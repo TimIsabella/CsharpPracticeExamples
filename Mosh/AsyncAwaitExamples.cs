@@ -9,6 +9,8 @@ namespace Mosh
     {
         public static void AsyncAwaitExamplesMain()
         {
+            Console.WriteLine("\n *********** ASYNC / AWAIT *********** \n");
+
             InitiateAsyncMethod();
             InitiateCooking();
 

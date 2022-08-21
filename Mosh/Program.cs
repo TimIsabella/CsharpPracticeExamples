@@ -49,9 +49,12 @@ namespace Mosh
 			NullableExamples.NullableExamplesMain();
 			DynamicExamples.DynamicExamplesMain();
 			ExceptionHandlingExamples.ExceptionHandlingMain();
+			AsyncAwaitExamples.AsyncAwaitExamplesMain();
+			DelegateExamples.DelegateExamplesMain();
 			*/
 
-			AsyncAwaitExamples.AsyncAwaitExamplesMain();
+			DelegateExamplesPractice.DelegateExamplesPracticeMain();
+			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
 		}
 	}
 }
