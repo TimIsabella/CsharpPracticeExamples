@@ -38,8 +38,6 @@ namespace Mosh
 			AbstractExamples.AbstractExamplesMain();
 			SealedModifiersExample.SealedModifiersExampleMain();
 			InterfaceExamples.InterfaceExamplesMain();
-			*/
-
 			InterfaceExtensibilityExamples.InterfaceExtensibilityExamplesMain();
 			InterfacePolymorphismExamples.InterfacePolymorphismExamplesMain();
 			GenericsExamples.GenericsExamplesMain();
@@ -51,6 +49,9 @@ namespace Mosh
 			NullableExamples.NullableExamplesMain();
 			DynamicExamples.DynamicExamplesMain();
 			ExceptionHandlingExamples.ExceptionHandlingMain();
+			*/
+
+			AsyncAwaitExamples.AsyncAwaitExamplesMain();
 		}
 	}
 }
