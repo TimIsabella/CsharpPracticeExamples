@@ -10,9 +10,11 @@ namespace Mosh
 
 			var class1 = new ClassForInterface1();
 			var class2 = new ClassForInterface2();
+			var class3 = new ClassForInterface3();
 
-			TestInterface1(class1);
-			TestInterface2(class1, class2);
+			TestInterface1(class1);				//Passing in class1 containing interface2
+			TestInterface2(class1, class2);     //Passing in class1 and class2 containing interface1 and interface2 respectivally
+			TestInterface3(class3);
 		}
 
 		/////////// Interface ///////////
@@ -51,20 +53,31 @@ namespace Mosh
 		}
 
 		/////////// Implement multiple interfaces ///////////
-		public class ClassForInterface2 : Iinterface1, Iinterface2
+		public class ClassForInterface2 : Iinterface2
 		{
-			public void Method1()
-			{ Console.WriteLine("Class2-Method1: firing..."); }
-			public void Method2(int num1)
-			{ Console.WriteLine("Class2-Method2: firing..."); }
-			public void Method3(string string1)
-			{ Console.WriteLine("Class2-Method3: firing..."); }
 			public Square Method4()
 			{ Console.WriteLine("Class2-Method4: firing..."); return new Square(); }
 			public Circle Method5(int num2)
 			{ Console.WriteLine("Class2-Method5: firing..."); return new Circle(); }
 			public Triangle Method6(string string2)
 			{ Console.WriteLine("Class2-Method6: firing..."); return new Triangle(); }
+		}
+
+		/////////// Implement multiple interfaces ///////////
+		public class ClassForInterface3 : Iinterface1, Iinterface2
+		{
+			public void Method1()
+			{ Console.WriteLine("Class3-Method1: firing..."); }
+			public void Method2(int num1)
+			{ Console.WriteLine("Class3-Method2: firing..."); }
+			public void Method3(string string1)
+			{ Console.WriteLine("Class3-Method3: firing..."); }
+			public Square Method4()
+			{ Console.WriteLine("Class3-Method4: firing..."); return new Square(); }
+			public Circle Method5(int num2)
+			{ Console.WriteLine("Class3-Method5: firing..."); return new Circle(); }
+			public Triangle Method6(string string2)
+			{ Console.WriteLine("Class3-Method6: firing..."); return new Triangle(); }
 		}
 
 		/////////// Methods passed in from class which impliments the interface ///////////
@@ -80,6 +93,14 @@ namespace Mosh
 			interface2.Method5(456);
 			interface2.Method4();
 			interface1.Method1();
+			interface1.Method3("This is a string");
+		}
+		private static void TestInterface3(ClassForInterface3 class3) //Call the class directly
+		{
+			class3.Method2(123);
+			class3.Method5(456);
+			class3.Method4();
+			class3.Method1();
 		}
 	}
 }
