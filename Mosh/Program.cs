@@ -51,10 +51,11 @@ namespace Mosh
 			ExceptionHandlingExamples.ExceptionHandlingMain();
 			AsyncAwaitExamples.AsyncAwaitExamplesMain();
 			DelegateExamples.DelegateExamplesMain();
+
+			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
 			*/
 
 			DelegateExamplesPractice.DelegateExamplesPracticeMain();
-			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
 		}
 	}
 }
