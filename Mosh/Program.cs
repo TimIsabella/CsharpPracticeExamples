@@ -54,9 +54,10 @@ namespace Mosh
 
 			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
 			DelegateExamplesPractice.DelegateExamplesPracticeMain();
-			*/
-
 			AbstractExamplesPractice.AbstractExamplesPracticeMain();
+			*/
+			EventsExamplesPractice.EventsExamplesPracticeMain();
+
 		}
 	}
 }
