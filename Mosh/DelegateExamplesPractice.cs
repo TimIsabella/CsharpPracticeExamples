@@ -19,22 +19,21 @@ namespace Mosh
 
 			///By constructor
 			var delegateTwo = new DelegateTwo();
-			delegateTwo.DelegateContainer("this is a string", 222); //Call methods in delegate container with argument '222'
+			delegateTwo.DelegateContainer("this is a string", 222); //Call methods in delegate container with argument "this is a string", 222
 
 			///By method ('null' in place of 'Delegate')
 			var delegateThree = new DelegateThree();
-			delegateThree.DelegateMethod(null); //Call method importing with container and hard-coded '333'
+			delegateThree.DelegateMethod(null); //Call method importing with container and hard-coded 1.618f, "this is a string", 333
 		}
 
 		/////////// Delegate -- a variable which holds methods ///////////
 
 		// - Declared with 'delegate'
 		// - Akin to declaring a class
-		// - Below is the 'signature' or 'definition' of a method which it will take (return type of 'void' and takes one int)
+		// - Below is the 'signature' or 'definition' of a method which it will take (methods must match the return type and parameters)
 		public delegate void Delegate1(int num);
 		public delegate void Delegate2(string str, int num);
 		public delegate void Delegate3(float flo, string str, int num);
-
 
 		public class DelegateOne
 		{
