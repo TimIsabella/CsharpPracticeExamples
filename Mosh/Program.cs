@@ -59,7 +59,7 @@ namespace Mosh
 			GenericsExamplesPractice.GenericsExamplesPracticeMain();
 			*/
 
-			
+			CompositionExamplesPractice.CompositionExamplesPracticeMain();
 
 		}
 	}
