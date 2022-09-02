@@ -23,6 +23,7 @@ namespace Mosh
 		//All Shapes
 		public class ShapeObjects
 		{
+			//Base shape object
 			//The class must be declared as 'abstract' if it impliments abstract members
 			//'abstract' classes CANNOT be instantiated
 			public abstract class BaseShape

@@ -20,7 +20,7 @@ namespace Mosh
 		//Interface is declared as 'interface' and no access modifier
 		interface IInterfaceExamplesAdvanced
 		{
-
+			
 		}
 
 		///////////////////////////////// Unit Test Code for Interface Below /////////////////////////////////

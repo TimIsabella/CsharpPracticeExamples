@@ -1,0 +1,14 @@
+﻿MVC - "Model View Controller" Architectural Pattern
+
+MODEL - Application data and behavior in terms of its problem domain, and independant of the UI
+-- Models represent the application state and rules, also known as 'POCOs' or "Plain Old CLR Objects"
+--- In a video rental environment, model class examples would be: 'Movies', 'Customers', "Rentals', 'Transactions'
+
+VIEW - HTML that is displayed to the client
+
+CONTROLLER - Handles HTTP requests
+-- A controller is selected which gets the models and provides the view for the client
+
+ROUTER - Not part of MVC, but is always used to handle requests
+-- Initiates request to the proper controller
+-- Example: when '/movies' endpoint of 'videos.com' is called, the 'MoviesController' class or method is initiated
