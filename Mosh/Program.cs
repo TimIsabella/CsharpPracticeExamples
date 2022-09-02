@@ -53,16 +53,17 @@ namespace PracticeExamples
 			ExceptionHandlingExamples.ExceptionHandlingMain();
 			AsyncAwaitExamples.AsyncAwaitExamplesMain(); 
 			DelegateExamples.DelegateExamplesMain();
-
 			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
 			DelegateExamplesPractice.DelegateExamplesPracticeMain();
 			AbstractExamplesPractice.AbstractExamplesPracticeMain();
 			EventsExamplesPractice.EventsExamplesPracticeMain();
 			GenericsExamplesPractice.GenericsExamplesPracticeMain();
 			CompositionExamplesPractice.CompositionExamplesPracticeMain();
-			*/
 
 			SingleResponsibility.SingleResponsibilityMain();
+			*/
+
+			OpenClose.OpenCloseMain();
 		}
 	}
 }
