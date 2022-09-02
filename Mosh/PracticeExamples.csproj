@@ -5,4 +5,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="DesignPatterns\Behavioral\" />
+    <Folder Include="DesignPatterns\Creational\" />
+    <Folder Include="DesignPatterns\Structural\" />
+  </ItemGroup>
+
 </Project>

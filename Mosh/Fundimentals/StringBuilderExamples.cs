@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Mosh
+namespace PracticeExamples
 {
 	public class StringBuilderExamples
 	{

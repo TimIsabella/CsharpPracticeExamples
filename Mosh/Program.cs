@@ -1,6 +1,8 @@
 ﻿using System;
+using PracticeExamples.DesignPatterns;
+using PracticeExamples.DesignPatterns.SOLIDdesign;
 
-namespace Mosh
+namespace PracticeExamples
 {
 	public class Program
 	{
@@ -49,7 +51,7 @@ namespace Mosh
 			NullableExamples.NullableExamplesMain();
 			DynamicExamples.DynamicExamplesMain();
 			ExceptionHandlingExamples.ExceptionHandlingMain();
-			AsyncAwaitExamples.AsyncAwaitExamplesMain();
+			AsyncAwaitExamples.AsyncAwaitExamplesMain(); 
 			DelegateExamples.DelegateExamplesMain();
 
 			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
@@ -60,6 +62,7 @@ namespace Mosh
 			CompositionExamplesPractice.CompositionExamplesPracticeMain();
 			*/
 
+			SingleResponsibility.SingleResponsibilityMain();
 		}
 	}
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Mosh
+namespace PracticeExamples
 {
 	public class AbstractExamplesPractice
 	{

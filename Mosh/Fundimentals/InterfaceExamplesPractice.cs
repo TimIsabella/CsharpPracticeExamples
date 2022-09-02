@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mosh
+namespace PracticeExamples
 {
 	public class InterfaceExamplesPractice
 	{

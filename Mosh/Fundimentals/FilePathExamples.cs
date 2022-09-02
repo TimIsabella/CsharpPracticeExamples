@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Mosh
+namespace PracticeExamples
 {
 	public class FilePathExamples
 	{

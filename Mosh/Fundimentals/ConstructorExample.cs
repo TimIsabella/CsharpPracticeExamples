@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mosh
+namespace PracticeExamples
 {
 	public class ConstructorExample
 	{

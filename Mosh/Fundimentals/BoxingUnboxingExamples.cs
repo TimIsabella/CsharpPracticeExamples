@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Mosh
+namespace PracticeExamples
 {
 	public class BoxingUnboxingExamples
 	{

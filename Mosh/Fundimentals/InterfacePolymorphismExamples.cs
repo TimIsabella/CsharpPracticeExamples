@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mosh
+namespace PracticeExamples
 {
 	public class InterfacePolymorphismExamples
 	{
