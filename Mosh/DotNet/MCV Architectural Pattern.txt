@@ -4,7 +4,8 @@ MODEL - Application data and behavior in terms of its problem domain, and indepe
 -- Models represent the application state and rules, also known as 'POCOs' or "Plain Old CLR Objects"
 --- In a video rental environment, model class examples would be: 'Movies', 'Customers', "Rentals', 'Transactions'
 
-VIEW - HTML that is displayed to the client
+VIEW - The 'presentation layer'
+-- HTML that is displayed to the client
 
 CONTROLLER - Handles HTTP requests
 -- A controller is selected which gets the models and provides the view for the client

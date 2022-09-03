@@ -24,7 +24,8 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 			persist.SaveToFile(journal, filename, true);
 		}
 
-		/////////// Single Responsibility - The necessary object should handle the necessary function and not be mixed together ///////////
+		/// ///////////////////////////////// Single Responsibility  /////////////////////////////////
+		//- The necessary object should handle the necessary function and not be mixed together
 		//- A 'separation of concerns'
 
 		public class Journal
@@ -49,7 +50,7 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 			}
 		}
 
-		/////////// Persistence ///////////
+		///////////////////////////////// Persistence /////////////////////////////////
 		//- An object which handles generic functionality to be used by other objects
 		//- The below can be used for file saving by the 'Journal' object or any other object with similar makeup
 

@@ -63,7 +63,7 @@ namespace PracticeExamples
 			SingleResponsibility.SingleResponsibilityMain();
 			*/
 
-			OpenClose.OpenCloseMain();
+			OpenClosed.OpenClosedMain();
 		}
 	}
 }
