@@ -25,7 +25,7 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 		/// ///////////////////////////////// Liskov Substitution principal /////////////////////////////////
 		//- Substituting a base type for a subtype
 		//- "If S is a subtype of T then objects of type T may be replaced by objects of type S"
-		//- Don't make sub-classes which don't have the same functionality of the super-class i they are expected to be used interchangeably
+		//- Don't make sub-classes which don't have the same functionality of the super-class if they are expected to be used interchangeably
 		//
 		//- Example
 		//-- 1. We have a parent class
