@@ -10,16 +10,16 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 			Console.WriteLine("\n *********** LISKOV SUBSTITUTION PRINCIPAL *********** \n");
 
 			//Square
-			var square = new Square(3, 3);
-			Console.WriteLine($"{nameof(square)} -- Length: {square.Length}, Width: {square.Width}, Area: {square.Area()}");
+			var square = new Square(3, 3, "Red");
+			Console.WriteLine($"{nameof(square)} -- Length: {square.Length}, Width: {square.Width}, Area: {square.AreaMethod()}, Color: {square.ColorMethod()}");
 
 			//Retangle
-			var rectangle = new Rectangle(3, 6);
-			Console.WriteLine($"{nameof(rectangle)} -- Length: {rectangle.Length}, Width: {rectangle.Width}, Area: {rectangle.Area()}");
+			var rectangle = new Rectangle(3, 6, "Blue");
+			Console.WriteLine($"{nameof(rectangle)} -- Length: {rectangle.Length}, Width: {rectangle.Width}, Area: {rectangle.AreaMethod()}, Color: {rectangle.ColorMethod()}");
 
 			//Rhombus
-			var rhombus = new Rhombus(6, 9);
-			Console.WriteLine($"{nameof(rhombus)} -- Length: {rhombus.Length}, Width: {rhombus.Width}, Area: {rhombus.Area()}");
+			var rhombus = new Rhombus(6, 9, "Green");
+			Console.WriteLine($"{nameof(rhombus)} -- Length: {rhombus.Length}, Width: {rhombus.Width}, Area: {rhombus.AreaMethod()}, Color: {rhombus.ColorMethod()}");
 		}
 
 		/// ///////////////////////////////// Liskov Substitution principal /////////////////////////////////
@@ -37,41 +37,48 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 		{
 			public int Length { get; set; }
 			public int Width { get; set; }
+			public string Color { get; set; }
 
 			public Shape() 
 			{ }
 
-			public int Area()
+			public int AreaMethod()
 			{ return Length * Width; }
+
+			public string ColorMethod()
+			{ return $"The color is {Color}"; }
 		}
 
 		//Derived class -- inherits 'Shape'
 		public class Square : Shape
 		{
-			public Square(int length, int width)
+			public Square(int length, int width, string color)
 			{
 				Length = length;
 				Width = width;
+				Color = color;
 			}
 		}
 
 		//Derived class -- inherits 'Shape'
 		public class Rectangle : Shape
 		{
-			public Rectangle(int length, int width)
+			public Rectangle(int length, int width, string color)
 			{
 				Length = length;
 				Width = width;
+				Color = color;
 			}
 		}
 
 		//Derived class -- inherits 'Shape'
 		public class Rhombus : Shape
 		{
-			public Rhombus(int length, int width)
+			public Rhombus(int length, int width, string color)
 			{
 				Length = length;
 				Width = width;
+				Color = color;
 			}
 		}
 	}
