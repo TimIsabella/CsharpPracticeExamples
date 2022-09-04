@@ -62,9 +62,10 @@ namespace PracticeExamples
 
 			SingleResponsibility.SingleResponsibilityMain();
 			OpenClosed.OpenClosedMain();
+			LiskovSubstitution.LiskovSubstitutionMain();
 			*/
 
-			LiskovSubstitution.LiskovSubstitutionMain();
+			DependencyInversion.DependencyInversionMain();
 		}
 	}
 }
