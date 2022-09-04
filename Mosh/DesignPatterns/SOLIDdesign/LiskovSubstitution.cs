@@ -10,50 +10,69 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 			Console.WriteLine("\n *********** LISKOV SUBSTITUTION PRINCIPAL *********** \n");
 
 			//Square
-			var square = new Square(6, 6);
-			float squareArea = square.Width * square.Height;
-			Console.WriteLine($"{nameof(square)} -- Width: {square.Width}, Height: {square.Height}, Area: {squareArea}");
+			var square = new Square(3, 3);
+			Console.WriteLine($"{nameof(square)} -- Length: {square.Length}, Width: {square.Width}, Area: {square.Area()}");
 
 			//Retangle
-			var rectangle = new Rectangle(2, 3);
-			float rectangleArea = rectangle.Width * rectangle.Height;
-			Console.WriteLine($"{nameof(rectangle)} -- Width: {rectangle.Width}, Height: {rectangle.Height}, Area: {rectangleArea}");
+			var rectangle = new Rectangle(3, 6);
+			Console.WriteLine($"{nameof(rectangle)} -- Length: {rectangle.Length}, Width: {rectangle.Width}, Area: {rectangle.Area()}");
+
+			//Rhombus
+			var rhombus = new Rhombus(6, 9);
+			Console.WriteLine($"{nameof(rhombus)} -- Length: {rhombus.Length}, Width: {rhombus.Width}, Area: {rhombus.Area()}");
 		}
 
 		/// ///////////////////////////////// Liskov Substitution principal /////////////////////////////////
 		//- Substituting a base type for a subtype
-		//- "If S is a subtype of T then objects of type T may be replaced by object of type S"
+		//- "If S is a subtype of T then objects of type T may be replaced by objects of type S"
+		//- Don't make sub-classes which don't have the same functionality of the super-class i they are expected to be used interchangeably
+		//
+		//- Example
+		//-- 1. We have a parent class
+		//-- 2. We then have a class named "world" which calls a child
+		//-- 3. Class "world" should be able to swap the child class for the parent class without having the code modified
 
 		//Base class
-		public class Square
+		public class Shape
 		{
+			public int Length { get; set; }
 			public int Width { get; set; }
-			public int Height { get; set; }
 
-			public Square() 
+			public Shape() 
 			{ }
 
-			public Square(int width, int height)
-			{
-				Width = width;
-				Height = height;
-			}
-
-			public override string ToString()
-			{ return $"{nameof(Width)}: {Width}, {nameof(Height)}: {Height}"; }
+			public int Area()
+			{ return Length * Width; }
 		}
 
-		//Derived class -- inherits 'Square'
-		public class Rectangle : Square
+		//Derived class -- inherits 'Shape'
+		public class Square : Shape
 		{
-			public Rectangle(int width, int height)
+			public Square(int length, int width)
 			{
+				Length = length;
 				Width = width;
-				Height = height;
 			}
+		}
 
-			public override string ToString()
-			{ return $"{nameof(Width)}: {Width}, {nameof(Height)}: {Height}"; }
+		//Derived class -- inherits 'Shape'
+		public class Rectangle : Shape
+		{
+			public Rectangle(int length, int width)
+			{
+				Length = length;
+				Width = width;
+			}
+		}
+
+		//Derived class -- inherits 'Shape'
+		public class Rhombus : Shape
+		{
+			public Rhombus(int length, int width)
+			{
+				Length = length;
+				Width = width;
+			}
 		}
 	}
 }
