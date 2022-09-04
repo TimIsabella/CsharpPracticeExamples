@@ -61,9 +61,10 @@ namespace PracticeExamples
 			CompositionExamplesPractice.CompositionExamplesPracticeMain();
 
 			SingleResponsibility.SingleResponsibilityMain();
+			OpenClosed.OpenClosedMain();
 			*/
 
-			OpenClosed.OpenClosedMain();
+			LiskovSubstitution.LiskovSubstitutionMain();
 		}
 	}
 }
