@@ -1,6 +1,7 @@
 ﻿using System;
 using PracticeExamples.DesignPatterns;
 using PracticeExamples.DesignPatterns.SOLIDdesign;
+using PracticeExamples.DesignPatterns.Creational;
 
 namespace PracticeExamples
 {
@@ -63,9 +64,11 @@ namespace PracticeExamples
 			SingleResponsibility.SingleResponsibilityMain();
 			OpenClosed.OpenClosedMain();
 			LiskovSubstitution.LiskovSubstitutionMain();
+			DependencyInversion.DependencyInversionMain();
+			Builder.BuilderMain();
 			*/
 
-			DependencyInversion.DependencyInversionMain();
+			Factory.FactoryMain();
 		}
 	}
 }

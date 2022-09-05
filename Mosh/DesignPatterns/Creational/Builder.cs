@@ -6,115 +6,112 @@ using System.Threading.Tasks;
 
 namespace PracticeExamples.DesignPatterns.Creational
 {
-	public class Builder
-	{
-		public static void BuilderMain()
-		{
-			Console.WriteLine("\n *********** BUILDER PATTERN *********** \n");
+    public class Builder
+    {
+        public static void BuilderMain()
+        {
+            Console.WriteLine("\n *********** BUILDER PATTERN *********** \n");
             /// 
 
-            // if you want to build a simple HTML paragraph using StringBuilder
-            var hello = "hello";
-            var stringBuilder = new StringBuilder();
-            stringBuilder.Append("<p>");
-            stringBuilder.Append(hello);
-            stringBuilder.Append("</p>");
-            Console.WriteLine(stringBuilder);
+            var toyACreator = new ToyCreator(new ToyABuilder());
+            toyACreator.CreateToy();
+            Toy toyA = toyACreator.GetToy();
+            Console.WriteLine($"Model: {toyA.Model}, Material: {toyA.Body}, Head: {toyA.Head}, Limbs: {toyA.Limbs}, Legs: {toyA.Legs}");
 
-            // now I want an HTML list with 2 words in it
-            var words = new[] { "hello", "world" };
-            stringBuilder.Clear();
-            stringBuilder.Append("<ul>");
-
-            foreach(var word in words)
-            { stringBuilder.AppendFormat("<li>{0}</li>", word); }
-
-            stringBuilder.Append("</ul>");
-            Console.WriteLine(stringBuilder);
-
-            // ordinary non-fluent builder
-            var builder = new HtmlBuilder("ul");
-            builder.AddChild("li", "hello");
-            builder.AddChild("li", "world");
-            Console.WriteLine(builder.ToString());
-
-            // fluent builder
-            stringBuilder.Clear();
-            builder.Clear(); // disengage builder from the object it's building, then...
-            builder.AddChildFluent("li", "hello").AddChildFluent("li", "world");
-            Console.WriteLine(builder);
+            var toyBCreator = new ToyCreator(new ToyBBuilder());
+            toyBCreator.CreateToy();
+            Toy toyB = toyBCreator.GetToy();
+            Console.WriteLine($"Model: {toyB.Model}, Material: {toyB.Body}, Head: {toyB.Head}, Limbs: {toyB.Limbs}, Legs: {toyB.Legs}");
         }
 
-        class HtmlElement
+        /////////// Director ///////////
+        public class ToyCreator
         {
-            public string Name, Text;
-            public List<HtmlElement> Elements = new List<HtmlElement>();
-            private const int _indentSize = 2;
+            private IToyBuilder _toyBuilder;
+            
+            public ToyCreator(IToyBuilder toyBuilder)
+            {  _toyBuilder = toyBuilder; }
 
-            public HtmlElement()
-            { }
-
-            public HtmlElement(string name, string text)
+            public void CreateToy()
             {
-                Name = name;
-                Text = text;
+                _toyBuilder.SetModel();
+                _toyBuilder.SetHead();
+                _toyBuilder.SetLimbs();
+                _toyBuilder.SetBody();
+                _toyBuilder.SetLegs();
             }
 
-            private string ToStringImpl(int indent)
-            {
-                var stringBuilder = new StringBuilder();
-                var i = new string(' ', _indentSize * indent);
-                stringBuilder.Append($"{i}<{Name}>\n");
-                if(!string.IsNullOrWhiteSpace(Text))
-                {
-                    stringBuilder.Append(new string(' ', _indentSize * (indent + 1)));
-                    stringBuilder.Append(Text);
-                    stringBuilder.Append("\n");
-                }
-
-                foreach(var e in Elements)
-                { stringBuilder.Append(e.ToStringImpl(indent + 1)); }
-
-                stringBuilder.Append($"{i}</{Name}>\n");
-
-                return stringBuilder.ToString();
-            }
-
-            public override string ToString()
-            { return ToStringImpl(0); }
+            public Toy GetToy()
+            { return _toyBuilder.GetToy(); }
         }
 
-        class HtmlBuilder
+        /////////// Product ///////////
+        public class Toy
         {
-            private readonly string _rootName;
+            public string Model { get; set; }
+            public string Head { get; set; }
+            public string Limbs { get; set; }
+            public string Body { get; set; }
+            public string Legs { get; set; }
+        }
 
-            public HtmlBuilder(string rootName)
-            {
-                _rootName = rootName;
-                root.Name = rootName;
-            }
+        /////////// Concrete Builder ///////////
+        public interface IToyBuilder
+        {
+            void SetModel();
+            void SetHead();
+            void SetLimbs();
+            void SetBody();
+            void SetLegs();
+            Toy GetToy();
+        }
 
-            // not fluent
-            public void AddChild(string childName, string childText)
-            {
-                var e = new HtmlElement(childName, childText);
-                root.Elements.Add(e);
-            }
+        /////////// Concrete Class A ///////////
+        public class ToyABuilder : IToyBuilder
+        {
+            Toy toy = new Toy();
+            
+            public void SetModel()
+            { toy.Model = "TOY A"; }
+            
+            public void SetHead()
+            { toy.Head = "1"; }
+            
+            public void SetLimbs()
+            { toy.Limbs = "4"; }
+            
+            public void SetBody()
+            { toy.Body = "Plastic"; }
+            
+            public void SetLegs()
+            { toy.Legs = "2"; }
+            
+            public Toy GetToy()
+            { return toy; }
+        }
 
-            public HtmlBuilder AddChildFluent(string childName, string childText)
-            {
-                var e = new HtmlElement(childName, childText);
-                root.Elements.Add(e);
-                return this;
-            }
+        /////////// Concrete Class B ///////////
+        public class ToyBBuilder : IToyBuilder
+        {
+            Toy toy = new Toy();
+            
+            public void SetModel()
+            { toy.Model = "TOY B"; }
 
-            public override string ToString()
-            { return root.ToString(); }
+            public void SetHead()
+            { toy.Head = "2"; }
+            
+            public void SetLimbs()
+            { toy.Limbs = "6"; }
 
-            public void Clear()
-            { root = new HtmlElement { Name = _rootName }; }
+            public void SetBody()
+            { toy.Body = "Steel"; }
 
-            HtmlElement root = new HtmlElement();
+            public void SetLegs()
+            { toy.Legs = "4"; }
+
+            public Toy GetToy()
+            { return toy; }
         }
     }
 }
