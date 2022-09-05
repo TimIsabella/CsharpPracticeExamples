@@ -13,30 +13,31 @@ namespace PracticeExamples.DesignPatterns.Creational
             Console.WriteLine("\n *********** FACTORY PATTERN *********** \n");
             /// 
 
-            String vehicleInput = "Rickshaw";
-            IVehicle Type = VehicleFactory.GetVehicle(vehicleInput);
-            Console.WriteLine($"Selected vehicle '{Type.VehicleType()}' has {Type.NumberOfWheels()} wheels.");
+            string vehicleInput = "Rickshaw";
+            IVehicle type = VehicleFactory.GetVehicle(vehicleInput);
+            Console.WriteLine($"Selected vehicle '{type.VehicleType()}' has {type.NumberOfWheels()} wheels.");
         }
 
+        /////////// Factory /////////// 
         public interface IVehicle
         {
-            String VehicleType();
+            string VehicleType();
             int NumberOfWheels();
         }
 
         public class VehicleFactory
         {
-            public static IVehicle GetVehicle(String Type)
+            public static IVehicle GetVehicle(string type)
             {
                 IVehicle objectType = null;
 
-                if(Type.ToLower().Equals("bike"))
+                if(type.ToLower().Equals("bike"))
                 { objectType = new Bike(); }
 
-                if(Type.ToLower().Equals("car"))
+                if(type.ToLower().Equals("car"))
                 { objectType = new Car(); }
 
-                if(Type.ToLower().Equals("rickshaw"))
+                if(type.ToLower().Equals("rickshaw"))
                 { objectType = new Rickshaw(); }
 
                 return objectType;
