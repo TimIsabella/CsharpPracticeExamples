@@ -65,10 +65,10 @@ namespace PracticeExamples
 			OpenClosed.OpenClosedMain();
 			LiskovSubstitution.LiskovSubstitutionMain();
 			DependencyInversion.DependencyInversionMain();
-			Builder.BuilderMain();
 			*/
 
 			Factory.FactoryMain();
+			Builder.BuilderMain();
 		}
 	}
 }

@@ -18,12 +18,13 @@ namespace PracticeExamples.DesignPatterns.Creational
             Console.WriteLine($"Selected vehicle '{type.VehicleType()}' has {type.NumberOfWheels()} wheels.");
         }
 
-        /////////// Factory /////////// 
+        /////////// Product /////////// 
         public interface IVehicle
         {
             string VehicleType();
             int NumberOfWheels();
         }
+
 
         public class VehicleFactory
         {
@@ -44,7 +45,7 @@ namespace PracticeExamples.DesignPatterns.Creational
             }
         }
 
-        /////////// Concrete Bike Class ///////////
+        /////////// Concrete Product ///////////
         public class Bike : IVehicle
         {
             private readonly int _wheels;
