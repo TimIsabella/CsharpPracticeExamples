@@ -68,6 +68,10 @@ namespace PracticeExamples
 			*/
 			Builder.BuilderMain();
 			SimpleFactory.SimpleFactoryMain();
+			AbstractFactory.AbstractFactoryMain();
+			InterfaceExamplesPractice2.InterfaceExamplesPractice2Main();
+			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
+			InterfaceExamplesPractice3.InterfaceExamplesPractice3Main();
 		}
 	}
 }

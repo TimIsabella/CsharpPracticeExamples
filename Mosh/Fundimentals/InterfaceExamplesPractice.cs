@@ -17,8 +17,30 @@ namespace PracticeExamples
 			TestInterface3(class3);
 		}
 
+		/////////// Methods passed in from class which impliments the interface ///////////
+		public static void TestInterface1(Iinterface1 interface1)
+		{
+			interface1.Method1();
+			interface1.Method3("This is a string");
+		}
+		public static void TestInterface2(Iinterface1 interface1, Iinterface2 interface2)
+		{
+			interface1.Method2(123);
+			interface2.Method5(456);
+			interface2.Method4();
+			interface1.Method1();
+			interface1.Method3("This is a string");
+		}
+		public static void TestInterface3(ClassForInterface3 class3) //Call the class directly
+		{
+			class3.Method2(123);
+			class3.Method5(456);
+			class3.Method4();
+			class3.Method1();
+		}
+
 		/////////// Interface ///////////
-		interface Iinterface1
+		public interface Iinterface1
 		{
 			//Contract of methods for interface to expose for public use
 			void Method1();
@@ -26,20 +48,13 @@ namespace PracticeExamples
 			void Method3(string str);
 		}
 
-		interface Iinterface2
+		public interface Iinterface2
 		{
 			//Contract of methods for interface to expose for public use
 			Square Method4();
 			Circle Method5(int num);
 			Triangle Method6(string str);
 		}
-
-		public class Square
-		{ }
-		public class Circle
-		{ }
-		public class Triangle
-		{ }
 
 		/////////// Implement interface ///////////
 		public class ClassForInterface1 : Iinterface1
@@ -80,27 +95,11 @@ namespace PracticeExamples
 			{ Console.WriteLine("Class3-Method6: firing..."); return new Triangle(); }
 		}
 
-		/////////// Methods passed in from class which impliments the interface ///////////
-		// - Below private methods encapsulate functionality
-		private static void TestInterface1(Iinterface1 interface1)
-		{
-			interface1.Method1();
-			interface1.Method3("This is a string");
-		}
-		private static void TestInterface2(Iinterface1 interface1, Iinterface2 interface2)
-		{
-			interface1.Method2(123);
-			interface2.Method5(456);
-			interface2.Method4();
-			interface1.Method1();
-			interface1.Method3("This is a string");
-		}
-		private static void TestInterface3(ClassForInterface3 class3) //Call the class directly
-		{
-			class3.Method2(123);
-			class3.Method5(456);
-			class3.Method4();
-			class3.Method1();
-		}
+		public class Square
+		{ }
+		public class Circle
+		{ }
+		public class Triangle
+		{ }
 	}
 }

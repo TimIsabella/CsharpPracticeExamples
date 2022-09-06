@@ -11,7 +11,6 @@ namespace PracticeExamples.DesignPatterns.Creational
         public static void SimpleFactoryMain()
         {
             Console.WriteLine("\n *********** SIMPLE FACTORY PATTERN *********** \n");
-            /// 
 
             /////////// Client of 'Bike' ///////////
             string vehicleInput1 = "Bike";
@@ -25,7 +24,7 @@ namespace PracticeExamples.DesignPatterns.Creational
         }
 
         /////////// Factory ///////////
-        //- Returns 'product' of selected 'type'
+        //- Returns 'product' of selected 'type' extended with interface members
         public class VehicleFactory
         {
             public static IVehicle GetVehicle(string type)
