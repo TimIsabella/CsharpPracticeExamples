@@ -66,9 +66,8 @@ namespace PracticeExamples
 			LiskovSubstitution.LiskovSubstitutionMain();
 			DependencyInversion.DependencyInversionMain();
 			*/
-
-			Factory.FactoryMain();
 			Builder.BuilderMain();
+			Factory.FactoryMain();
 		}
 	}
 }

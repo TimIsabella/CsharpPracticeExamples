@@ -14,11 +14,11 @@ namespace PracticeExamples.DesignPatterns.Creational
             /// 
 
             /////////// Client for product 1 ///////////
-            var toy1Creator = new ToyCreator(new Toy1Builder()); //Instantiate 'Director' and pass in 'Concrete Builder' as interface
+            var toy1Creator = new ToyCreator(new Toy1Builder()); //Instantiate 'Director' and pass in 'Concrete Builder' of matching 'Builder' interface
             toy1Creator.CreateToy();                             //Call 'Director' to construct 'Concrete Builder'
-            Toy toy1 = toy1Creator.GetToy();                     //Call 'Director' to return completed 'Product'
+            Toy toy1 = toy1Creator.GetToy();                     //Call 'Director' to hydrate 'Product' with completed results
 
-            Console.WriteLine($"Model: {toy1.Model}, Material: {toy1.Body}, Head: {toy1.Head}, Limbs: {toy1.Limbs}, Legs: {toy1.Legs}");
+            Console.WriteLine($"Model: '{toy1.Model}', Material: {toy1.Body}, Head: {toy1.Head}, Limbs: {toy1.Limbs}, Legs: {toy1.Legs}");
 
 
             /////////// Client for product 2 ///////////
@@ -26,7 +26,7 @@ namespace PracticeExamples.DesignPatterns.Creational
             toy2Creator.CreateToy();
             Toy toy2 = toy2Creator.GetToy();
 
-            Console.WriteLine($"Model: {toy2.Model}, Material: {toy2.Body}, Head: {toy2.Head}, Limbs: {toy2.Limbs}, Legs: {toy2.Legs}");
+            Console.WriteLine($"Model: '{toy2.Model}', Material: {toy2.Body}, Head: {toy2.Head}, Limbs: {toy2.Limbs}, Legs: {toy2.Legs}");
         }
 
         /////////// Director ///////////
@@ -36,7 +36,8 @@ namespace PracticeExamples.DesignPatterns.Creational
             private IToyBuilder _toyBuilder;
             
             //Extend members from 'Builder' interface for use
-            //- Using an interface allows any 'Concrete Builder' class of the same signature to be used
+            //- Interface allows any 'Concrete builder' of the same signature to be used
+            //- The 'Concrete builder' is interchangeable so long as it matches the signature
             public ToyCreator(IToyBuilder toyBuilder) //
             {  _toyBuilder = toyBuilder; }
 
@@ -57,6 +58,7 @@ namespace PracticeExamples.DesignPatterns.Creational
 
         /////////// Builder ///////////
         //- Declare 'product' construction steps for all 'builders'
+        //- Makes members available for the 'director'
         public interface IToyBuilder
         {
             void SetModel();
@@ -65,16 +67,16 @@ namespace PracticeExamples.DesignPatterns.Creational
             void SetBody();
             void SetLegs();
             Toy GetToy();
+
         }
 
         /////////// Concrete Builder 1 ///////////
-        
         public class Toy1Builder : IToyBuilder
         {
             private Toy _toy = new Toy();
             
             public void SetModel()
-            { _toy.Model = "TOY 1"; }
+            { _toy.Model = "Toy #1"; }
             
             public void SetHead()
             { _toy.Head = "1"; }
@@ -98,7 +100,7 @@ namespace PracticeExamples.DesignPatterns.Creational
             private Toy _toy = new Toy();
             
             public void SetModel()
-            { _toy.Model = "TOY 2"; }
+            { _toy.Model = "Toy #2"; }
 
             public void SetHead()
             { _toy.Head = "2"; }
@@ -117,8 +119,8 @@ namespace PracticeExamples.DesignPatterns.Creational
         }
 
         /////////// Product ///////////
-        //- Resulting object to hydrate
-        //- Returned as the completed 'product' of the builder
+        //- Resulting completed 'product' of the pattern
+        //- Each member is hydrated by the returns from the 'builder'
         public class Toy
         {
             public string Model { get; set; }

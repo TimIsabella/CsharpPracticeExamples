@@ -10,84 +10,71 @@ namespace PracticeExamples.DesignPatterns.Creational
     {
         public static void FactoryMain()
         {
-            Console.WriteLine("\n *********** FACTORY PATTERN *********** \n");
+            Console.WriteLine("\n *********** SIMPLE FACTORY PATTERN *********** \n");
             /// 
 
-            string vehicleInput = "Rickshaw";
-            IVehicle type = VehicleFactory.GetVehicle(vehicleInput);
-            Console.WriteLine($"Selected vehicle '{type.VehicleType()}' has {type.NumberOfWheels()} wheels.");
+            /////////// Client of 'Bike' ///////////
+            string vehicleInput1 = "Bike";
+
+            //
+            IVehicle type1 = VehicleFactory.GetVehicle(vehicleInput1);
+
+
+            Console.WriteLine($"Selected vehicle '{type1.VehicleType()}' has {type1.NumberOfWheels()} wheels.");
+
+            /////////// Client of 'Car' ///////////
+            string vehicleInput2 = "Car";
+            IVehicle type2 = VehicleFactory.GetVehicle(vehicleInput2);
+            Console.WriteLine($"Selected vehicle '{type2.VehicleType()}' has {type2.NumberOfWheels()} wheels.");
         }
 
-        /////////// Product /////////// 
+        /////////// Factory ///////////
+        //- Returns 'product' of selected 'type'
+        public class VehicleFactory
+        {
+            public static IVehicle GetVehicle(string type)
+            {
+                //Instantiate 'objectType' with methods of interface
+                IVehicle objectType = null;
+
+                //'objectType' interface members are extended to the selected 'product' class
+                if(type.ToLower().Equals("bike"))
+                { objectType = new Bike(); }
+
+                //'objectType' interface members are extended to the selected 'product' class
+                if(type.ToLower().Equals("car"))
+                { objectType = new Car(); }
+
+                //'objectType' interface extended to 'product' class is returned
+                return objectType;
+            }
+        }
+
+        /////////// Abstract Interface /////////// 
         public interface IVehicle
         {
             string VehicleType();
             int NumberOfWheels();
         }
 
-
-        public class VehicleFactory
-        {
-            public static IVehicle GetVehicle(string type)
-            {
-                IVehicle objectType = null;
-
-                if(type.ToLower().Equals("bike"))
-                { objectType = new Bike(); }
-
-                if(type.ToLower().Equals("car"))
-                { objectType = new Car(); }
-
-                if(type.ToLower().Equals("rickshaw"))
-                { objectType = new Rickshaw(); }
-
-                return objectType;
-            }
-        }
-
-        /////////// Concrete Product ///////////
+        /////////// Product of Bike ///////////
         public class Bike : IVehicle
         {
-            private readonly int _wheels;
-
-            public Bike()
-            { _wheels = 2; }
-
             public int NumberOfWheels()
-            { return _wheels; }
+            { return 2; }
 
             public string VehicleType()
-            { return "Bike"; }
+            { return "bicycle"; }
         }
 
-        /////////// Concrete Car Class ///////////
+        /////////// Product of Car ///////////
         public class Car : IVehicle
         {
-            private readonly int _wheels;
-
-            public Car()
-            { _wheels = 4; }
-
             public int NumberOfWheels()
-            { return _wheels; }
+            { return 4; }
 
             public string VehicleType()
-            { return "Car"; }
-        }
-
-        /////////// Concrete Rickshaw Class ///////////
-        public class Rickshaw : IVehicle
-        {
-            private readonly int _wheels;
-
-            public Rickshaw()
-            { _wheels = 3; }
-
-            public int NumberOfWheels()
-            { return _wheels; }
-
-            public string VehicleType()
-            { return "Rickshaw"; }
+            { return "automobile"; }
         }
     }
 }
