@@ -67,7 +67,7 @@ namespace PracticeExamples
 			DependencyInversion.DependencyInversionMain();
 			*/
 			Builder.BuilderMain();
-			Factory.FactoryMain();
+			SimpleFactory.SimpleFactoryMain();
 		}
 	}
 }

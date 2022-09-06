@@ -6,21 +6,17 @@ using System.Threading.Tasks;
 
 namespace PracticeExamples.DesignPatterns.Creational
 {
-    public class Factory
+    public class SimpleFactory
     {
-        public static void FactoryMain()
+        public static void SimpleFactoryMain()
         {
             Console.WriteLine("\n *********** SIMPLE FACTORY PATTERN *********** \n");
             /// 
 
             /////////// Client of 'Bike' ///////////
             string vehicleInput1 = "Bike";
-
-            //
-            IVehicle type1 = VehicleFactory.GetVehicle(vehicleInput1);
-
-
-            Console.WriteLine($"Selected vehicle '{type1.VehicleType()}' has {type1.NumberOfWheels()} wheels.");
+            IVehicle type1 = VehicleFactory.GetVehicle(vehicleInput1);                                           //'type1' interface members extended to 'product' of that type passed in
+            Console.WriteLine($"Selected vehicle '{type1.VehicleType()}' has {type1.NumberOfWheels()} wheels."); //'Product' members are accessed through the interface
 
             /////////// Client of 'Car' ///////////
             string vehicleInput2 = "Car";
