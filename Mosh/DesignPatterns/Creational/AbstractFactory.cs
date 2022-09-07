@@ -13,16 +13,17 @@ namespace PracticeExamples.DesignPatterns.Creational
             Console.WriteLine("\n *********** ABSTRACT FACTORY PATTERN *********** \n");
 
             Console.WriteLine("\n--Factory 1:");
-
-            Client.ClientMethod(new ConcreteFactory1()); //Call methdod of 'Client' and pass in 'ConcreteFactory1' with interface extentions of 'IAbstractFactory'
+            var client1 = new Client();
+            client1.ClientMethod(new ConcreteFactory1()); //Call methdod of 'Client' and pass in 'ConcreteFactory1' with interface extentions of 'IAbstractFactory'
 
             Console.WriteLine("\n--Factory 2:");
-            Client.ClientMethod(new ConcreteFactory2());
+            var client2 = new Client();
+            client2.ClientMethod(new ConcreteFactory2());
         }
 
         public class Client
         {
-            public static void ClientMethod(IAbstractFactory factory)
+            public void ClientMethod(IAbstractFactory factory)
             {
                 //'factory' contains interface members of 'IAbstractFactory'
                 IAbstractProductA productA = factory.CreateProductA();
@@ -33,12 +34,23 @@ namespace PracticeExamples.DesignPatterns.Creational
             }
         }
 
+        /////////// Interface ///////////
         public interface IAbstractFactory
         {
             IAbstractProductA CreateProductA();
             IAbstractProductB CreateProductB();
         }
 
+        public interface IAbstractProductA
+        { string UsefulFunctionA(); }
+
+        public interface IAbstractProductB
+        {
+            string UsefulFunctionB();
+            string AnotherUsefulFunctionB(IAbstractProductA collaborator);
+        }
+
+        /////////// Concrete Factory ///////////
         class ConcreteFactory1 : IAbstractFactory
         {
             public IAbstractProductA CreateProductA()
@@ -58,9 +70,6 @@ namespace PracticeExamples.DesignPatterns.Creational
         }
 
         /////////// Product A ///////////
-        public interface IAbstractProductA
-        { string UsefulFunctionA(); }
-
         class ConcreteProductA1 : IAbstractProductA
         {
             public string UsefulFunctionA()
@@ -74,12 +83,6 @@ namespace PracticeExamples.DesignPatterns.Creational
         }
 
         /////////// Product B ///////////
-        public interface IAbstractProductB
-        {
-            string UsefulFunctionB();
-            string AnotherUsefulFunctionB(IAbstractProductA collaborator);
-        }
-
         class ConcreteProductB1 : IAbstractProductB
         {
             public string UsefulFunctionB()

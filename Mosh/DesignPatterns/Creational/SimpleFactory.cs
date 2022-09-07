@@ -45,14 +45,14 @@ namespace PracticeExamples.DesignPatterns.Creational
             }
         }
 
-        /////////// Abstract Interface /////////// 
+        /////////// Product Interface /////////// 
         public interface IVehicle
         {
             string VehicleType();
             int NumberOfWheels();
         }
 
-        /////////// Product of Bike ///////////
+        /////////// Concrete Product of Bike ///////////
         public class Bike : IVehicle
         {
             public int NumberOfWheels()
@@ -62,7 +62,7 @@ namespace PracticeExamples.DesignPatterns.Creational
             { return "bicycle"; }
         }
 
-        /////////// Product of Car ///////////
+        /////////// Concrete Product of Car ///////////
         public class Car : IVehicle
         {
             public int NumberOfWheels()

@@ -72,6 +72,7 @@ namespace PracticeExamples
 			InterfaceExamplesPractice2.InterfaceExamplesPractice2Main();
 			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
 			InterfaceExamplesPractice3.InterfaceExamplesPractice3Main();
+			InterfaceExamplesPractice4.InterfaceExamplesPractice4Main();
 		}
 	}
 }
