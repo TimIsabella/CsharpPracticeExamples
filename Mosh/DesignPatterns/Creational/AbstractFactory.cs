@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PracticeExamples.DesignPatterns.Creational
 {
@@ -21,24 +17,11 @@ namespace PracticeExamples.DesignPatterns.Creational
             client2.ClientMethod(new ConcreteFactory2());
         }
 
-        public class Client
-        {
-            public void ClientMethod(IAbstractFactory factory)
-            {
-                //'factory' contains interface members of 'IAbstractFactory'
-                IAbstractProductA productA = factory.CreateProductA();
-                IAbstractProductB productB = factory.CreateProductB();
-
-                Console.WriteLine(productB.UsefulFunctionB());
-                Console.WriteLine(productB.AnotherUsefulFunctionB(productA));
-            }
-        }
-
-        /////////// Interface ///////////
+        /////////// Interfaces ///////////
         public interface IAbstractFactory
         {
-            IAbstractProductA CreateProductA();
-            IAbstractProductB CreateProductB();
+            IAbstractProductA CreateProductPartA();
+            IAbstractProductB CreateProductPartB();
         }
 
         public interface IAbstractProductA
@@ -50,60 +33,81 @@ namespace PracticeExamples.DesignPatterns.Creational
             string AnotherUsefulFunctionB(IAbstractProductA collaborator);
         }
 
-        /////////// Concrete Factory ///////////
-        class ConcreteFactory1 : IAbstractFactory
+        /////////// Client ///////////
+        public class Client
         {
-            public IAbstractProductA CreateProductA()
-            { return new ConcreteProductA1(); }
-
-            public IAbstractProductB CreateProductB()
-            { return new ConcreteProductB1(); }
-        }
-
-        class ConcreteFactory2 : IAbstractFactory
-        {
-            public IAbstractProductA CreateProductA()
-            { return new ConcreteProductA2(); }
-
-            public IAbstractProductB CreateProductB()
-            { return new ConcreteProductB2(); }
-        }
-
-        /////////// Product A ///////////
-        class ConcreteProductA1 : IAbstractProductA
-        {
-            public string UsefulFunctionA()
-            { return "The result of the product A1."; }
-        }
-
-        class ConcreteProductA2 : IAbstractProductA
-        {
-            public string UsefulFunctionA()
-            { return "The result of the product A2."; }
-        }
-
-        /////////// Product B ///////////
-        class ConcreteProductB1 : IAbstractProductB
-        {
-            public string UsefulFunctionB()
-            { return "The result of the product B1."; }
-
-            public string AnotherUsefulFunctionB(IAbstractProductA collaborator)
+            public void ClientMethod(IAbstractFactory factory)
             {
-                var result = collaborator.UsefulFunctionA();
-                return $"The result of the B1 collaborating with the ({result})";
+                //'factory' contains interface members of 'IAbstractFactory'
+                IAbstractProductA productA = factory.CreateProductPartA();
+                IAbstractProductB productB = factory.CreateProductPartB();
+
+                Console.WriteLine(productA.UsefulFunctionA());
+                Console.WriteLine(productB.UsefulFunctionB());
+                Console.WriteLine(productB.AnotherUsefulFunctionB(productA));
             }
         }
 
-        class ConcreteProductB2 : IAbstractProductB
+        /////////// Concrete Factories ///////////
+        //Factory #1
+        class ConcreteFactory1 : IAbstractFactory
+        {
+            public IAbstractProductA CreateProductPartA()
+            { return new ConcreteProduct1A(); }
+
+            public IAbstractProductB CreateProductPartB()
+            { return new ConcreteProduct1B(); }
+        }
+
+        //Factory #2
+        class ConcreteFactory2 : IAbstractFactory
+        {
+            public IAbstractProductA CreateProductPartA()
+            { return new ConcreteProduct2A(); }
+
+            public IAbstractProductB CreateProductPartB()
+            { return new ConcreteProduct2B(); }
+        }
+
+        /////////// Product #1 ///////////
+        //Product A
+        class ConcreteProduct1A : IAbstractProductA
+        {
+            public string UsefulFunctionA()
+            { return "Product 1: Part A"; }
+        }
+
+        //Product B
+        class ConcreteProduct1B : IAbstractProductB
         {
             public string UsefulFunctionB()
-            { return "The result of the product B2."; }
+            { return "Product 1: Part B"; }
 
             public string AnotherUsefulFunctionB(IAbstractProductA collaborator)
             {
                 var result = collaborator.UsefulFunctionA();
-                return $"The result of the B2 collaborating with the ({result})";
+                return $"Product 1: Part B -- combined with '{result}'";
+            }
+        }
+
+        /////////// Product #2 ///////////
+        //Product A
+        class ConcreteProduct2A : IAbstractProductA
+        {
+            public string UsefulFunctionA()
+            { return "Product 2: Part A"; }
+        }
+
+        //Product B
+        class ConcreteProduct2B : IAbstractProductB
+        {
+            public string UsefulFunctionB()
+            { return "Product 2: Part B"; }
+
+            public string AnotherUsefulFunctionB(IAbstractProductA collaborator)
+            {
+                var result = collaborator.UsefulFunctionA();
+                return $"Product 2: Part B -- combined with '{result}'";
             }
         }
     }

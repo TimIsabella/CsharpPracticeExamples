@@ -65,14 +65,15 @@ namespace PracticeExamples
 			OpenClosed.OpenClosedMain();
 			LiskovSubstitution.LiskovSubstitutionMain();
 			DependencyInversion.DependencyInversionMain();
+
+			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
+			InterfaceExamplesPractice2.InterfaceExamplesPractice2Main();
+			InterfaceExamplesPractice3.InterfaceExamplesPractice3Main();
+			InterfaceExamplesPractice4.InterfaceExamplesPractice4Main();
 			*/
 			Builder.BuilderMain();
 			FactoryMethod.FactoryMethodMain();
 			AbstractFactory.AbstractFactoryMain();
-			InterfaceExamplesPractice2.InterfaceExamplesPractice2Main();
-			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
-			InterfaceExamplesPractice3.InterfaceExamplesPractice3Main();
-			InterfaceExamplesPractice4.InterfaceExamplesPractice4Main();
 		}
 	}
 }

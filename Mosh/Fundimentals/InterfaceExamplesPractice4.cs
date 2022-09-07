@@ -2,7 +2,7 @@
 
 namespace PracticeExamples
 {
-	public class InterfaceExamplesPractice4
+	public class Composite
 	{
 		public static void InterfaceExamplesPractice4Main()
 		{
@@ -48,14 +48,14 @@ namespace PracticeExamples
 		public class ClassExtendedByInterface1 : Iinterface
 		{
 			public void Method(int num)
-			{ Console.WriteLine($"Message from Method with parameter: {num}"); }
+			{ Console.WriteLine($"ClassExtendedByInterface1: 'Method' called with parameter: {num}"); }
 		}
 
 		//Class Extended by Interface
 		public class ClassExtendedByInterface2 : Iinterface
 		{
 			public void Method(int num)
-			{ Console.WriteLine($"Message from Method with parameter: {num}"); }
+			{ Console.WriteLine($"ClassExtendedByInterface2: 'Method' called with parameter: {num}"); }
 		}
 	}
 }
