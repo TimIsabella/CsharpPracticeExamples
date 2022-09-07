@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PracticeExamples.DesignPatterns.Creational
 {
-    public class SimpleFactory
+    public class FactoryMethod
     {
-        public static void SimpleFactoryMain()
+        public static void FactoryMethodMain()
         {
-            Console.WriteLine("\n *********** SIMPLE FACTORY PATTERN *********** \n");
+            Console.WriteLine("\n *********** FACTORY METHOD PATTERN *********** \n");
 
             /////////// Client of 'Bike' ///////////
             string vehicleInput1 = "Bike";
@@ -27,6 +27,7 @@ namespace PracticeExamples.DesignPatterns.Creational
         //- Returns 'product' of selected 'type' extended with interface members
         public class VehicleFactory
         {
+            /////////// Creator ///////////
             public static IVehicle GetVehicle(string type)
             {
                 //Instantiate 'objectType' with methods of interface

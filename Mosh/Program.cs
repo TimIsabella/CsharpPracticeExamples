@@ -67,7 +67,7 @@ namespace PracticeExamples
 			DependencyInversion.DependencyInversionMain();
 			*/
 			Builder.BuilderMain();
-			SimpleFactory.SimpleFactoryMain();
+			FactoryMethod.FactoryMethodMain();
 			AbstractFactory.AbstractFactoryMain();
 			InterfaceExamplesPractice2.InterfaceExamplesPractice2Main();
 			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
