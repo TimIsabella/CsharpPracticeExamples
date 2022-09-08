@@ -24,28 +24,31 @@ namespace PracticeExamples.DesignPatterns.Structural
             CompositeElement node1 = new CompositeElement("Node 1");
             node1.Add(new PrimitiveElement("Branch 1"));
             node1.Add(new PrimitiveElement("Branch 2"));
+            node1.Add(new PrimitiveElement("Branch 3"));
             root.Add(node1);
 
             //Create a node onto the root
             CompositeElement node2 = new CompositeElement("Node 2");
             node2.Add(new PrimitiveElement("Branch 1"));
             node2.Add(new PrimitiveElement("Branch 2"));
+            node2.Add(new PrimitiveElement("Branch 3"));
             node1.Add(node2);
 
             //Create a node onto the root
             CompositeElement node3 = new CompositeElement("Node 3");
             node3.Add(new PrimitiveElement("Branch 1"));
             node3.Add(new PrimitiveElement("Branch 2"));
+            node3.Add(new PrimitiveElement("Branch 3"));
             root.Add(node3);
 
             //Add and remove a branch
             PrimitiveElement newBranch = new PrimitiveElement("Branch NEW");
-            node1.Add(newBranch);
+            node3.Add(newBranch);
 
-            root.Remove(new PrimitiveElement("Branch 3"));
+            //node3.Remove(newBranch);
 
             //Recursively display nodes
-            root.Display(0);
+            root.Display(2);
         }
 
         /////////// 'Component' Treenode ///////////
@@ -93,11 +96,11 @@ namespace PracticeExamples.DesignPatterns.Structural
 
             public override void Display(int indent)
             {
-                Console.WriteLine($"{new String('-', indent)}+ {name}");
+                Console.WriteLine($"{new String('-', indent)} *{name}*");
 
                 // Display each child element on this node
                 foreach(Element element in elements)
-                { element.Display(indent + 2); }
+                { element.Display(indent * 2); }
             }
         }
 
