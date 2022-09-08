@@ -2,11 +2,13 @@
 
 namespace PracticeExamples.DesignPatterns.Creational
 {
-    public class AbstractFactory
+    public class AbstractFactoryPattern
     {
         public static void AbstractFactoryMain()
         {
             Console.WriteLine("\n *********** ABSTRACT FACTORY PATTERN *********** \n");
+
+            /// Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
             Console.WriteLine("\n--Factory 1:");
             var client1 = new Client();

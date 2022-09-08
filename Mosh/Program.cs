@@ -2,6 +2,7 @@
 using PracticeExamples.DesignPatterns;
 using PracticeExamples.DesignPatterns.SOLIDdesign;
 using PracticeExamples.DesignPatterns.Creational;
+using PracticeExamples.DesignPatterns.Structural;
 
 namespace PracticeExamples
 {
@@ -60,20 +61,20 @@ namespace PracticeExamples
 			EventsExamplesPractice.EventsExamplesPracticeMain();
 			GenericsExamplesPractice.GenericsExamplesPracticeMain();
 			CompositionExamplesPractice.CompositionExamplesPracticeMain();
-
 			SingleResponsibility.SingleResponsibilityMain();
 			OpenClosed.OpenClosedMain();
 			LiskovSubstitution.LiskovSubstitutionMain();
 			DependencyInversion.DependencyInversionMain();
-
 			InterfaceExamplesPractice.InterfaceExamplesPracticeMain();
 			InterfaceExamplesPractice2.InterfaceExamplesPractice2Main();
 			InterfaceExamplesPractice3.InterfaceExamplesPractice3Main();
 			InterfaceExamplesPractice4.InterfaceExamplesPractice4Main();
-			*/
 			Builder.BuilderMain();
 			FactoryMethod.FactoryMethodMain();
 			AbstractFactory.AbstractFactoryMain();
+			*/
+
+			CompositePattern.CompositeMain();
 		}
 	}
 }

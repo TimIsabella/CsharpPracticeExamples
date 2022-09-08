@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PracticeExamples.DesignPatterns.Creational
 {
-    public class FactoryMethod
+    public class FactoryMethodPattern
     {
         public static void FactoryMethodMain()
         {
             Console.WriteLine("\n *********** FACTORY METHOD PATTERN *********** \n");
+
+            /// Defines an interface for creating an object, but let subclasses decide which class to instantiate.
+            ///- This pattern lets a class defer instantiation to subclasses.
 
             /////////// Client of 'Bike' ///////////
             string vehicleInput1 = "Bike";

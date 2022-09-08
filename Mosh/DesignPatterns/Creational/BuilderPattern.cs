@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace PracticeExamples.DesignPatterns.Creational
 {
-    public class Builder
+    public class BuilderPattern
     {
         public static void BuilderMain()
         {
             Console.WriteLine("\n *********** BUILDER PATTERN *********** \n");
-            /// 
+
+            /// Separates the construction of a complex object from its representation so that the same construction process can create different representations.
 
             /////////// Client for product 1 ///////////
             var toy1Creator = new ToyCreator(new Toy1Builder()); //Instantiate 'Director' and pass in 'Concrete Builder' of matching 'Builder' interface
