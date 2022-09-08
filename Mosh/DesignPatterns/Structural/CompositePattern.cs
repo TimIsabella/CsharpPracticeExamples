@@ -9,239 +9,97 @@ namespace PracticeExamples.DesignPatterns.Structural
         {
             Console.WriteLine("\n *********** COMPOSITE PATTERN *********** \n");
 
-            /// Composes objects into tree structures to represent part-whole hierarchies.
-            ///- This pattern lets clients treat individual objects and compositions of objects uniformly.
+            /// Composes objects into tree structures to represent part-whole hierarchies
+            ///- This pattern lets clients treat individual objects and compositions of objects uniformly
 
             /////////// Client ///////////
+            
+            Composite root = new Composite("Root"); //Initial root
+            root.Add(new Leaf("Leaf 1"));           //Add leaf onto root
+            root.Add(new Leaf("Leaf 2"));           //Add leaf onto root
+            root.Add(new Leaf("Leaf 3"));           //Add leaf onto root
 
-            //Initial root node
-            CompositeElement root = new CompositeElement("Root");
-            root.Add(new PrimitiveElement("Branch 1"));
-            root.Add(new PrimitiveElement("Branch 2"));
-            root.Add(new PrimitiveElement("Branch 3"));
+            Composite node1 = new Composite("Branch 1");  //Create a branch 'node' onto the root
+            node1.Add(new Leaf("Leaf 1"));                //Add leaf onto node1
+            node1.Add(new Leaf("Leaf 2"));                //Add leaf onto node1
+            node1.Add(new Leaf("Leaf 3"));                //Add leaf onto node1
+            root.Add(node1);                              //Add node1 branch onto root
 
-            //Create a node onto the root
-            CompositeElement node1 = new CompositeElement("Node 1");
-            node1.Add(new PrimitiveElement("Branch 1"));
-            node1.Add(new PrimitiveElement("Branch 2"));
-            node1.Add(new PrimitiveElement("Branch 3"));
-            root.Add(node1);
+            Composite node2 = new Composite("Branch 2");  //Create a branch 'node' onto the node1
+            node2.Add(new Leaf("Leaf 1"));                //Add leaf onto node2
+            node2.Add(new Leaf("Leaf 2"));                //Add leaf onto node2
+            node2.Add(new Leaf("Leaf 3"));                //Add leaf onto node2
+            node1.Add(node2);                             //Add node2 branch onto node1
 
-            //Create a node onto the root
-            CompositeElement node2 = new CompositeElement("Node 2");
-            node2.Add(new PrimitiveElement("Branch 1"));
-            node2.Add(new PrimitiveElement("Branch 2"));
-            node2.Add(new PrimitiveElement("Branch 3"));
-            node1.Add(node2);
+            Composite node3 = new Composite("Branch 3");  //Create a branch 'node' onto the the root
+            node3.Add(new Leaf("Leaf 1"));                //Add leaf onto node3
+            node3.Add(new Leaf("Leaf 2"));                //Add leaf onto node3
+            node3.Add(new Leaf("Leaf 3"));                //Add leaf onto node3
+            root.Add(node3);                              //Add node3 branch onto root
 
-            //Create a node onto the root
-            CompositeElement node3 = new CompositeElement("Node 3");
-            node3.Add(new PrimitiveElement("Branch 1"));
-            node3.Add(new PrimitiveElement("Branch 2"));
-            node3.Add(new PrimitiveElement("Branch 3"));
-            root.Add(node3);
+            ///////////
 
-            //Add and remove a branch
-            PrimitiveElement newBranch = new PrimitiveElement("Branch NEW");
-            node3.Add(newBranch);
+            Leaf newLeaf = new Leaf("Leaf NEW");  //Instantiate leaf
+            node3.Add(newLeaf);                   //Add leaf onto node3 branch
 
-            //node3.Remove(newBranch);
-
-            //Recursively display nodes
-            root.Display(2);
+            root.Display(2);   //Output tree from 'root'
         }
 
-        /////////// 'Component' Treenode ///////////
-        public abstract class Element
+        /////////// Component (abstract container) ///////////
+        // - Declares common operations for both simple and complex objects of a composition
+        public abstract class Component
         {
             protected string name;
 
-            public Element(string name)
+            public Component(string name)
             { this.name = name; }
 
-            public abstract void Add(Element element);
-            public abstract void Remove(Element element);
+            public abstract void Add(Component component);
+            public abstract void Remove(Component component);
             public abstract void Display(int indent);
         }
 
-        /////////// 'Leaf' class ///////////
-        public class PrimitiveElement : Element
+        /////////// Composite (parent) ///////////
+        // - Rrepresents the complex components that may have children
+        public class Composite : Component
         {
-            public PrimitiveElement(string name) : base(name)
+            List<Component> components = new List<Component>();
+
+            public Composite(string name) : base(name)
             { }
 
-            public override void Add(Element element)
-            { Console.WriteLine("Cannot add to a PrimitiveElement"); }
-            
-            public override void Remove(Element element)
-            { Console.WriteLine("Cannot remove from a PrimitiveElement"); }
-            
-            public override void Display(int indent)
-            { Console.WriteLine($"{new String('-', indent)} {name}"); }
-        }
+            public override void Add(Component component)
+            { components.Add(component); }
 
-        /////////// 'Composite' class ///////////
-        public class CompositeElement : Element
-        {
-            List<Element> elements = new List<Element>();
-
-            public CompositeElement(string name) : base(name)
-            { }
-
-            public override void Add(Element element)
-            { elements.Add(element); }
-
-            public override void Remove(Element element)
-            { elements.Remove(element); }
+            public override void Remove(Component component)
+            { components.Remove(component); }
 
             public override void Display(int indent)
             {
                 Console.WriteLine($"{new String('-', indent)} *{name}*");
 
-                // Display each child element on this node
-                foreach(Element element in elements)
-                { element.Display(indent * 2); }
+                // Display each child component on this node
+                foreach(Component component in components)
+                { component.Display(indent * 2); }
             }
         }
 
+        /////////// Leaf (child) ///////////
+        // - Represents the end objects of a composition
+        // - A leaf can't have any children
+        public class Leaf : Component
+        {
+            public Leaf(string name) : base(name)
+            { }
 
-
-
-
-
-
-
-
-
-            /*
-            public static void CompositeMain()
-            {
-                Console.WriteLine("\n *********** COMPOSITE PATTERN *********** \n");
-
-                Client client = new Client();
-
-                // This way the client code can support the simple leaf
-                // components...
-                Leaf leaf = new Leaf();
-                Console.WriteLine("Client: I get a simple component:");
-                client.ClientCode(leaf);
-
-                // ...as well as the complex composites.
-                Composite tree = new Composite();
-                Composite branch1 = new Composite();
-                Composite branch2 = new Composite();
-
-                branch1.Add(new Leaf());
-                branch1.Add(new Leaf());
-
-                branch2.Add(new Leaf());
-
-                tree.Add(branch1);
-                tree.Add(branch2);
-
-                Console.WriteLine("Client: Now I've got a composite tree:");
-                client.ClientCode(tree);
-
-                Console.Write("Client: I don't need to check the components classes even when managing the tree:\n");
-                client.ClientCode2(tree, leaf);
-            }
-
-            // The base Component class declares common operations for both simple and
-            // complex objects of a composition.
-            abstract class Component
-            {
-                // The base Component may implement some default behavior or leave it to
-                // concrete classes (by declaring the method containing the behavior as
-                // "abstract").
-                public abstract string Operation();
-
-                // In some cases, it would be beneficial to define the child-management
-                // operations right in the base Component class. This way, you won't
-                // need to expose any concrete component classes to the client code,
-                // even during the object tree assembly. The downside is that these
-                // methods will be empty for the leaf-level components.
-                public virtual void Add(Component component)
-                { throw new NotImplementedException(); }
-
-                public virtual void Remove(Component component)
-                { throw new NotImplementedException(); }
-
-                // You can provide a method that lets the client code figure out whether
-                // a component can bear children.
-                public virtual bool IsComposite()
-                { return true; }
-            }
-
-            // The Leaf class represents the end objects of a composition. A leaf can't
-            // have any children.
-            //
-            // Usually, it's the Leaf objects that do the actual work, whereas Composite
-            // objects only delegate to their sub-components.
-            class Leaf : Component
-            {
-                public override string Operation()
-                {  return "Leaf"; }
-
-                public override bool IsComposite()
-                { return false; }
-            }
-
-            // The Composite class represents the complex components that may have
-            // children. Usually, the Composite objects delegate the actual work to
-            // their children and then "sum-up" the result.
-            class Composite : Component
-            {
-                protected List<Component> _children = new List<Component>();
-
-                public override void Add(Component component)
-                { _children.Add(component); }
-
-                public override void Remove(Component component)
-                { _children.Remove(component); }
-
-                // The Composite executes its primary logic in a particular way. It
-                // traverses recursively through all its children, collecting and
-                // summing their results. Since the composite's children pass these
-                // calls to their children and so forth, the whole object tree is
-                // traversed as a result.
-                public override string Operation()
-                {
-                    int i = 0;
-                    string result = "Branch(";
-
-                    foreach(Component component in this._children)
-                    {
-                        result += component.Operation();
-
-                        if(i != this._children.Count - 1)
-                        { result += "+"; }
-
-                        i++;
-                    }
-
-                    return result + ")";
-                }
-            }
-
-            class Client
-            {
-                // The client code works with all of the components via the base
-                // interface.
-                public void ClientCode(Component leaf)
-                { Console.WriteLine($"RESULT: {leaf.Operation()}\n"); }
-
-                // Thanks to the fact that the child-management operations are declared
-                // in the base Component class, the client code can work with any
-                // component, simple or complex, without depending on their concrete
-                // classes.
-                public void ClientCode2(Component component1, Component component2)
-                {
-                    if(component1.IsComposite())
-                    { component1.Add(component2); }
-
-                    Console.WriteLine($"RESULT: {component1.Operation()}");
-                }
-            }
-            */
+            public override void Add(Component component)
+            { Console.WriteLine("Cannot add to a Leaf"); }
+            
+            public override void Remove(Component component)
+            { Console.WriteLine("Cannot remove from a Leaf"); }
+            
+            public override void Display(int indent)
+            { Console.WriteLine($"{new String('-', indent)} {name}"); }
         }
+    }
 }
