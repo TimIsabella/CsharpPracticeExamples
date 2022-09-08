@@ -72,9 +72,10 @@ namespace PracticeExamples
 			Builder.BuilderMain();
 			FactoryMethod.FactoryMethodMain();
 			AbstractFactory.AbstractFactoryMain();
+			CompositePattern.CompositeMain();
 			*/
 
-			CompositePattern.CompositeMain();
+			PrototypePattern.PrototypeMain();
 		}
 	}
 }

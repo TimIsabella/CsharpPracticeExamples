@@ -7,7 +7,7 @@ namespace PracticeExamples.DesignPatterns.Structural
 	{
         public static void CompositeMain()
         {
-            Console.WriteLine("\n *********** COMPOSITE PATTERN *********** \n");
+            Console.WriteLine("\n *********** COMPOSITE PATTERN USING ABSTRACT *********** \n");
 
             /// Composes objects into tree structures to represent part-whole hierarchies
             ///- This pattern lets clients treat individual objects and compositions of objects uniformly
