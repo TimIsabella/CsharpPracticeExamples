@@ -73,9 +73,10 @@ namespace PracticeExamples
 			FactoryMethod.FactoryMethodMain();
 			AbstractFactory.AbstractFactoryMain();
 			CompositePattern.CompositeMain();
+			PrototypePattern.PrototypeMain();
 			*/
 
-			PrototypePattern.PrototypeMain();
+			ObserverPattern.ObserverMain();
 		}
 	}
 }
