@@ -116,7 +116,7 @@ namespace PracticeExamples.DesignPatterns.Creational
             }
         }
 
-        /////////// Concrete Observer B///////////
+        /////////// Concrete Observer B ///////////
         public class ConcreteObserverB : IObserver
         {
             private string name;

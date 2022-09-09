@@ -74,9 +74,10 @@ namespace PracticeExamples
 			AbstractFactory.AbstractFactoryMain();
 			CompositePattern.CompositeMain();
 			PrototypePattern.PrototypeMain();
+			ObserverPattern.ObserverMain();
 			*/
 
-			ObserverPattern.ObserverMain();
+			SingletonPattern.SingletonMain();
 		}
 	}
 }
