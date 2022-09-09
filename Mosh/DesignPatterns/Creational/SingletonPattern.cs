@@ -18,8 +18,10 @@ namespace PracticeExamples.DesignPatterns.Creational
             //Constructor is 'protected' -- cannot use new
             //- Calls the '.Instance()' method directly which returns a new instance of 'Singleton'
             var singleton1 = Singleton.Instance(123);
-            var singleton2 = Singleton.Instance(456);
 
+            //Subsequent calls to '.Instance()' returns the original instantiation
+            var singleton2 = Singleton.Instance(456);
+            
             //Test for same instance
             if(singleton1 == singleton2)
             { Console.WriteLine("Objects are the same instance"); }
@@ -31,7 +33,9 @@ namespace PracticeExamples.DesignPatterns.Creational
         public class Singleton
         {
             //A singleton's instance is stored in a static field
-            static Singleton instance;
+            //- Marked as 'static' ensures that the Singleton can only be instantiated one time
+            //- Subsequent calles to '.Instance()' returns the SAME original instantiation
+            private static Singleton _instance;
             private int _num;
 
             //A singleton's constructor is 'private' to prevent directly creating 'new' instances
@@ -40,18 +44,15 @@ namespace PracticeExamples.DesignPatterns.Creational
 
             public static Singleton Instance(int num)
             {
-                if(instance == null)
-                { instance = new Singleton(num); }
-                
-                return instance;
+                if(_instance == null)
+                { _instance = new Singleton(num); }
+
+                return _instance;
             }
 
             //A singleton should define some business logic, which can be executed on its instance
-            public void SomeBusinessLogic()
-            {
-                //
-            }
+            private void SomeBusinessLogic()
+            { }
         }
-
     }
 }
