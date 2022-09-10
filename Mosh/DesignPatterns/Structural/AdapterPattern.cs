@@ -14,14 +14,14 @@ namespace PracticeExamples.DesignPatterns.Structural
             ///- The goal of the pattern is loosely coupling between 'client' and 'adaptee'
             
             /////////// Client by Interface ///////////
-            Adaptee1 adaptee1 = new Adaptee1();         //Instantiate 'adaptee'
-            ITarget target1 = new Adapter1(adaptee1);   //Instantiate interface 'target' 
-            Console.WriteLine(target1.GetRequest());
+            Adaptee1 adaptee1 = new Adaptee1();         //Instantiate 'adaptee' class
+            ITarget target1 = new Adapter1(adaptee1);   //Instantiate interface 'target' as 'Adapter' class with 'Adaptee' class passed in
+            Console.WriteLine(target1.GetRequest());    //Call method of 'target' interface
 
             /////////// Client by Override ///////////
-            Adaptee2 adaptee2 = new Adaptee2();
-            Target2 target2 = new Adapter2(adaptee2);
-            Console.WriteLine(target2.GetRequest());
+            Adaptee2 adaptee2 = new Adaptee2();         //Instantiate 'adaptee' class
+            Target2 target2 = new Adapter2(adaptee2);   //Instantiate 'target' virtual class as 'Adapter' class
+            Console.WriteLine(target2.GetRequest());    //Call method of 'target' overridden class
         }
 
         ///////////////////////////////// By Interface /////////////////////////////////
