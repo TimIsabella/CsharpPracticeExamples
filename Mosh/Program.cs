@@ -75,9 +75,10 @@ namespace PracticeExamples
 			CompositePattern.CompositeMain();
 			PrototypePattern.PrototypeMain();
 			ObserverPattern.ObserverMain();
+			SingletonPattern.SingletonMain();
 			*/
 
-			SingletonPattern.SingletonMain();
+			AdapterPattern.AdapterMain();
 		}
 	}
 }
