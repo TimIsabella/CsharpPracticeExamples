@@ -13,7 +13,7 @@ namespace PracticeExamples.DesignPatterns.Structural
             ///- This pattern lets clients treat individual objects and compositions of objects uniformly
 
             /////////// Client ///////////
-            
+
             Composite root = new Composite("Root"); //Initial root
             root.Add(new Leaf("Leaf 1"));           //Add leaf onto root
             root.Add(new Leaf("Leaf 2"));           //Add leaf onto root

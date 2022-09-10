@@ -12,11 +12,12 @@ namespace PracticeExamples.DesignPatterns.Creational
         {
             Console.WriteLine("\n *********** SINGLETON PATTERN *********** \n");
             /// A singleton is a class which only allows a single instance of itself to be created, while providing a global access point to that instance
+            ///- Ensures that only one object of a particular class is ever created
 
             /////////// Client ///////////
 
-            //Constructor is 'protected' -- cannot use new
-            //- Calls the '.Instance()' method directly which returns a new instance of 'Singleton'
+            //Calls the '.Instance()' method directly which returns a 'new' instance of 'Singleton'
+            //- Constructor is 'private' therefore cannot use 'new'
             var singleton1 = Singleton.Instance(123);
 
             //Subsequent calls to '.Instance()' returns the original instantiation
@@ -25,8 +26,6 @@ namespace PracticeExamples.DesignPatterns.Creational
             //Test for same instance
             if(singleton1 == singleton2)
             { Console.WriteLine("Objects are the same instance"); }
-            else
-            { Console.WriteLine("Objects are NOT the same instance"); }
         }
 
         /////////// Singleton ///////////
@@ -44,6 +43,7 @@ namespace PracticeExamples.DesignPatterns.Creational
 
             public static Singleton Instance(int num)
             {
+                //If null, then set to instance of 'Singleton'
                 if(_instance == null)
                 { _instance = new Singleton(num); }
 

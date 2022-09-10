@@ -12,7 +12,9 @@ namespace PracticeExamples.DesignPatterns.Creational
         {
             Console.WriteLine("\n *********** BUILDER PATTERN *********** \n");
 
-            /// Separates the construction of a complex object from its representation so that the same construction process can create different representations.
+            /// Separates the construction of a complex object from its representation so that the same construction process can create different representations
+            ///- Allows creation of different flavor objects while avoiding constructor pollution
+            ///- Useful when there could be several flavors of an object, or when there are a lot of steps involved in creation of an object
 
             /////////// Client for product 1 ///////////
             var toy1Creator = new ToyCreator(new Toy1Builder()); //Instantiate 'Director' and pass in 'Concrete Builder' of matching 'Builder' interface

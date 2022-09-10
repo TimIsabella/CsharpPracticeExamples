@@ -28,16 +28,13 @@ namespace PracticeExamples
 
 		/////////// Overloading methods ///////////
 		public void OverloadedMethod(int x, int y) //Two parameters of ints
-		{
-		}
+		{ }
 
 		public void OverloadedMethod(Point newLocation) //One parameter of 'Point' object
-		{
-		}
+		{ }
 
 		public void OverloadedMethod(Point newLocation, int speed) //Two parameters: one of 'Point' object and one of int
-		{
-		}
+		{ }
 
 		/////////// Params modifier -- Allows varying number of parameters ///////////
 		public static int[] ParamsModifer(params int[] numbers)

@@ -8,7 +8,8 @@ namespace PracticeExamples.DesignPatterns.Creational
         {
             Console.WriteLine("\n *********** ABSTRACT FACTORY PATTERN *********** \n");
 
-            /// Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+            /// Provides an interface for creating families of related or dependent objects without specifying their concrete classes
+            ///- A factory of factories or a factory that groups the individual but related/dependent factories together without specifying their concrete classes
 
             Console.WriteLine("\n--Factory 1:");
             var client1 = new Client();

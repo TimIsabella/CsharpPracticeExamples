@@ -8,8 +8,9 @@ namespace PracticeExamples.DesignPatterns.Creational
         {
             Console.WriteLine("\n *********** FACTORY METHOD PATTERN *********** \n");
 
-            /// Defines an interface for creating an object, but let subclasses decide which class to instantiate.
-            ///- This pattern lets a class defer instantiation to subclasses.
+            /// Defines an interface for creating an object, but let subclasses decide which class to instantiate
+            ///- This pattern lets a class defer instantiation to subclasses
+            ///- It provides a way to delegate the instantiation logic to child classes
 
             /////////// Client of 'Bike' ///////////
             string vehicleInput1 = "Bike";

@@ -12,7 +12,7 @@ namespace PracticeExamples.DesignPatterns.Creational
 		{
 			Console.WriteLine("\n *********** OBSERVER PATTERN *********** \n");
 			/// Defines a one-to-many dependency between objects
-			/// - When one object changes state, all its dependents are notified and updated automatically
+			///- Defines a dependency between objects so that whenever an object changes its state, all its dependents are notified
 
 			// Configure Observer pattern
 			ConcreteSubject concreteSubject = new ConcreteSubject();

@@ -10,9 +10,9 @@ namespace PracticeExamples
 			Console.WriteLine("\n *********** ABSTRACT *********** \n");
 			
 			var shapes = new List<ShapeObjects.BaseShape>(); //List of 'Shape' as objects below all inherit from 'Shape'
-			shapes.Add(new ShapeObjects.Circle());
-			shapes.Add(new ShapeObjects.Square());
-			shapes.Add(new ShapeObjects.Triangle());
+			shapes.Add(new ShapeObjects.Circle(123.456));
+			shapes.Add(new ShapeObjects.Square(234.567));
+			shapes.Add(new ShapeObjects.Triangle(345.678));
 
 			foreach(var shape in shapes)
 			{
@@ -29,8 +29,11 @@ namespace PracticeExamples
 			public abstract class BaseShape
 			{
 				//Fields do not have to be marked abstract
-				public int Width;
-				public int Height;
+				private int _width;
+				private int _height;
+
+				public BaseShape(double num)
+				{ }
 
 				//'abstract' designation allows derived objects to replace this default method when inherited
 				//Derived objects MUST impliment members marked as 'abstract'
@@ -42,27 +45,45 @@ namespace PracticeExamples
 
 			public class Circle : BaseShape
 			{
-				public int Radius;
+				private double _radius;
+
+				//'base()' inherits the the base constructor
+				public Circle(double radius) : base(radius)
+				{ _radius = radius; }
+
 				public override void Draw()  //Replacement of inherited method by using 'override'
-				{ Console.WriteLine("Circle: This abstract 'Draw' method has been overridden."); }
+				{ Console.WriteLine($"Circle: This abstract 'Draw' method has been overridden. \nThe {nameof(_radius).ToUpperInvariant()} is '{_radius}'"); }
+
 				public override void OtherMethod()
 				{ }
 			}
 
 			public class Square : BaseShape
 			{
-				public int Diameter;
+				private double _diameter;
+
+				//'base()' inherits the the base constructor
+				public Square(double diameter) : base(diameter)
+				{ _diameter = diameter; }
+
 				public override void Draw()  //Replacement of inherited method by using 'override'
-				{ Console.WriteLine("Square: This abstract 'Draw' method has been overridden."); }
+				{ Console.WriteLine($"Circle: This abstract 'Draw' method has been overridden. \nThe {nameof(_diameter).ToUpperInvariant()} is '{_diameter}'"); }
+
 				public override void OtherMethod()
 				{ }
 			}
 
 			public class Triangle : BaseShape
 			{
-				public int Tangent;
+				private double _tangent;
+
+				//'base()' inherits the the base constructor
+				public Triangle(double tangent) : base(tangent)
+				{ _tangent = tangent; }
+
 				public override void Draw()  //Replacement of inherited method by using 'override'
-				{ Console.WriteLine("Triangle: This abstract 'Draw' method has been overridden."); }
+				{ Console.WriteLine($"Circle: This abstract 'Draw' method has been overridden. \nThe {nameof(_tangent).ToUpperInvariant()} is '{_tangent}'"); }
+
 				public override void OtherMethod()
 				{ }
 			}

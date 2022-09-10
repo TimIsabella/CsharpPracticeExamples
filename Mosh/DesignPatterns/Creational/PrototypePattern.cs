@@ -12,7 +12,7 @@ namespace PracticeExamples.DesignPatterns.Creational
 		{
 			Console.WriteLine("\n *********** PROTOTYPE PATTERN *********** \n");
 			/// Specifies the kind of objects to create using a prototypical instance, and create new objects by copying this prototype
-			/// - Creates clones of the output
+			///- Creates clones of the output
 
 			// Create two instances and clone each
 			ConcretePrototype1 prototype1 = new ConcretePrototype1("Prototype Number 1");
