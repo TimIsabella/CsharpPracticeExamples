@@ -26,21 +26,22 @@ namespace PracticeExamples.DesignPatterns.Structural
 
         /// ////////////////////////////// Bridge /////////////////////////////////
 
-        /////////// Abstraction (part of the 'bridge') ///////////
+        /////////// Abstraction (part of the bridge) ///////////
         //- High-level control logic
         public class Abstraction
         {
             protected Implementor _implementor;
 
             public Implementor Implementor
-            { set { _implementor = value; } } //Set '_implementor' 
+            { set { _implementor = value; } } //Set '_implementor' with 'concrete class'
 
             public virtual void Operation() //'Implementor' contains abstract '.Operatrion()' method
             { _implementor.Operation(); }
         }
 
-        /////////// Implementation (part of the 'bridge') ///////////
+        /////////// Implementation (part of the bridge) ///////////
         //- Declares the interface that's common for all concerete implementations
+        //- Could also be an interface
         public abstract class Implementor
         { public abstract void Operation(); }
 
