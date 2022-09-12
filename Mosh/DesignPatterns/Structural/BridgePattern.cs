@@ -16,11 +16,11 @@ namespace PracticeExamples.DesignPatterns.Structural
             Abstraction abstraction = new RefinedAbstraction(); //Instantiate 'abstraction' as 'RefinedAbstraction()' class which inherits 'Abstraction' class
 
             //'Set implementation' and call
-            abstraction.Implementor = new ConcreteImplementorA();
+            abstraction.Implementor = new ConcreteImplementorA(); //Concrete class passed into property
             abstraction.Operation();
 
             //'Change implemention' and call
-            abstraction.Implementor = new ConcreteImplementorB();
+            abstraction.Implementor = new ConcreteImplementorB(); //Concrete class passed into property
             abstraction.Operation();
         }
 
@@ -33,7 +33,7 @@ namespace PracticeExamples.DesignPatterns.Structural
             protected Implementor _implementor;
 
             public Implementor Implementor
-            { set { _implementor = value; } }
+            { set { _implementor = value; } } //Set '_implementor' 
 
             public virtual void Operation() //'Implementor' contains abstract '.Operatrion()' method
             { _implementor.Operation(); }
