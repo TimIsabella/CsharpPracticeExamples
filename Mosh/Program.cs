@@ -77,9 +77,10 @@ namespace PracticeExamples
 			ObserverPattern.ObserverMain();
 			SingletonPattern.SingletonMain();
 			AdapterPattern.AdapterMain();
+			BrdigePattern.BridgeMain();
 			*/
 
-			BrdigePattern.BridgeMain();
+			DecoratorPattern.DecoratorMain();
 		}
 	}
 }

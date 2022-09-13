@@ -42,7 +42,7 @@ namespace PracticeExamples.DesignPatterns.Structural
         /////////// Implementation (part of the bridge) ///////////
         //- Declares the interface that's common for all concerete implementations
         //- Could also be an interface
-        public abstract class Implementor
+        public interface Implementor
         { public abstract void Operation(); }
 
         /// //////////////////////////////////////////////////////////////////////////
@@ -60,13 +60,13 @@ namespace PracticeExamples.DesignPatterns.Structural
 
         public class ConcreteImplementorA : Implementor //Inherits 'Implementor' abstract class containing '.Operation()' abstract method
         {
-            public override void Operation()
+            public void Operation()
             { Console.WriteLine("ConcreteImplementorA Operation"); }
         }
 
         public class ConcreteImplementorB : Implementor
         {
-            public override void Operation()
+            public void Operation()
             { Console.WriteLine("ConcreteImplementorB Operation"); }
         }
 
