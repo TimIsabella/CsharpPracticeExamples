@@ -79,9 +79,10 @@ namespace PracticeExamples
 			AdapterPattern.AdapterMain();
 			BrdigePattern.BridgeMain();
 			DecoratorPattern.DecoratorMain();
+			FacadePattern.FacadeMain();
 			*/
 
-			FacadePattern.FacadeMain();
+			FlyweightPattern.FlyweightMain();
 		}
 	}
 }
