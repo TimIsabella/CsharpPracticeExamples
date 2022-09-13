@@ -78,9 +78,10 @@ namespace PracticeExamples
 			SingletonPattern.SingletonMain();
 			AdapterPattern.AdapterMain();
 			BrdigePattern.BridgeMain();
+			DecoratorPattern.DecoratorMain();
 			*/
 
-			DecoratorPattern.DecoratorMain();
+			FacadePattern.FacadeMain();
 		}
 	}
 }
