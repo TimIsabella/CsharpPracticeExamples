@@ -25,9 +25,9 @@ namespace PracticeExamples
 			var extender2 = new ExtensionClass(new ClassExtendedByInterface2());
 			extender2.ExtensionClassMethod(456);
 
-			var extender3 = new ExtensionClass(new ClassExtendedByInterface3());
-			extender3.ExtensionClassMethod(789);
+			///////////
 
+			ExtensionMethod(new ClassExtendedByInterface3(), 789);	//By static method
 		}
 
 		/////////// Extender Classes ///////////
@@ -44,6 +44,11 @@ namespace PracticeExamples
 			///The above connection to the matching method signature of the extended class to the interface is called "Late Binding" or "Dynamic Dispatch"
 			///- This dynamic connection is established at runtime and is a type of polymorphism
 		}
+
+		/////////// Extender Method ///////////
+		//- Same as above but separated into a static method
+		public static void ExtensionMethod(Iinterface iExtend, int num)
+		{ iExtend.InterfaceMethod(num); }
 
 		/////////// Interface ///////////
 		public interface Iinterface
