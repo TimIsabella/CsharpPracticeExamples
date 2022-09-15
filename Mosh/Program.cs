@@ -80,9 +80,10 @@ namespace PracticeExamples
 			BrdigePattern.BridgeMain();
 			DecoratorPattern.DecoratorMain();
 			FacadePattern.FacadeMain();
+			FlyweightPattern.FlyweightMain();
 			*/
 
-			FlyweightPattern.FlyweightMain();
+			InterfaceExamplesPractice5.InterfaceExamplesPractice5Main();
 		}
 	}
 }

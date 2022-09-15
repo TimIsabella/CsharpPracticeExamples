@@ -2,29 +2,31 @@
 
 namespace PracticeExamples
 {
-	public class Composite
+	public class InterfaceExamplesPractice4
 	{
 		public static void InterfaceExamplesPractice4Main()
 		{
 			Console.WriteLine("\n *********** INTERFACE EXAMPLES PRACTICE4 *********** \n");
 
-			var extendedClass1 = new ClassExtendedByInterface1();
-			var extender1 = new ExtensionClass1();
-			extender1.ExtensionClassMethod(123, extendedClass1);
+			var extendedClass1 = new ClassExtendedByInterface1(); //Instantiate 'ClassExtendedByInterface1' which is extended by 'Iinterface'
+			var extender1 = new ExtensionClass1();                //Instantiate 'ExtensionClass1' which provides the link to the interface
+			extender1.ExtensionClassMethod(123, extendedClass1);  //Extend functionality 
 
 			var extendedClass2 = new ClassExtendedByInterface2();
 			var extender2 = new ExtensionClass2(456, extendedClass2);
 			extender2.ExtensionClassMethod(extendedClass2);
 		}
 
-		//Simple
+		/////////// Extender Classes ///////////
+
+		//Directly through method
 		public class ExtensionClass1
 		{
 			public void ExtensionClassMethod(int num, Iinterface extend)
 			{ extend.Method(num); }
 		}
 
-		//Single constructor
+		//Through single constructor
 		public class ExtensionClass2
 		{
 			private int _num;
@@ -40,18 +42,18 @@ namespace PracticeExamples
 			{ _extend.Method(_num); }
 		}
 
-		//Interface
+		/////////// Interface ///////////
 		public interface Iinterface
 		{ void Method(int num); }
 
-		//Class Extended by Interface
+		/////////// Classes Extended by Interface ///////////
+		
 		public class ClassExtendedByInterface1 : Iinterface
 		{
 			public void Method(int num)
 			{ Console.WriteLine($"ClassExtendedByInterface1: 'Method' called with parameter: {num}"); }
 		}
 
-		//Class Extended by Interface
 		public class ClassExtendedByInterface2 : Iinterface
 		{
 			public void Method(int num)
