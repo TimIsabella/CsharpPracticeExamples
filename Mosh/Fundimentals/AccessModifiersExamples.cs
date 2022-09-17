@@ -41,7 +41,7 @@ namespace PracticeExamples
 			internal string InternalName;						//Internal - Only accessable 'internally' from within its own assembly ('internal' field in assembly1.cs cannot be accessed by assembly2.cs)
 			protected string ProtectedName;						//Protected - Only accessable from within its own scope or by inheritance of its class
 			protected internal string ProtectedInternalName;    //Protected Internal - Only accessable 'internally' from within its own assembly, and within its own scope or by inheritance of its class
-			string UnsetAccessName;								//No access modifier - defaults to internal
+			string UnsetAccessName;                             //No access modifier - defaults to 'the most restricted access you could declare for that member'
 
 			public void SetPrivateAccessName(string privateName)
 			{ _privateName = privateName; }
@@ -56,7 +56,7 @@ namespace PracticeExamples
 			}
 		}
 
-		//Inherited members are copies and only modified locally, so protected fields within 'Person' cannot be directly modified. 
+		//Inherited members are copies and only modified locally, so protected fields within 'Person' cannot be directly modified
 		public class InheritedClass : Person
 		{
 			public void SetProtectedAccessName(string protectedName)
