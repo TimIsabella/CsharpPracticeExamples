@@ -10,14 +10,13 @@ namespace PracticeExamples
 			Console.WriteLine("\n *********** ABSTRACT EXAMPLES *********** \n");
 			
 			var shapes = new List<ShapeObjects.BaseShape>(); //List of 'Shape' as objects below all inherit from 'Shape'
+
 			shapes.Add(new ShapeObjects.Circle(123.456));
 			shapes.Add(new ShapeObjects.Square(234.567));
 			shapes.Add(new ShapeObjects.Triangle(345.678));
 
 			foreach(var shape in shapes)
-			{
-				shape.Draw();
-			}
+			{ shape.Draw(); }
 		}
 
 		//All Shapes

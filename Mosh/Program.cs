@@ -11,9 +11,7 @@ namespace PracticeExamples
 		static void Main()
 		{
 			/*
-			ArraysExamples.ArraysMain();
-			ListExamples.ListsMain();
-
+			//Dates Times and Time span
 			DatesAndTimesExamples.DatesAndTimesMain();
 			TimeSpanExamples.TimeSpanMain();
 
@@ -23,13 +21,14 @@ namespace PracticeExamples
 			*/
 
 			/*
+			ArraysExamples.ArraysMain();
+			ListExamples.ListsMain();
 			StringBuilderExamples.StringBuilderMain();
-			FileIOexamples.FileIOexamplesMain();
 			DirectoryExamples.DirectoryExamplesMain();
 			FilePathExamples.FilePathExamplesMain();
 			ForLoopExample.ForLoopExampleMain();
 			StringExamples.StringExamplesMain();
-			MethodExamples.MethodExamplesMain();
+			MethodModifierExamples.MethodExamplesMain();
 			AccessModifiersExamples.AccessModifiersExamplesMain();
 			PropertiesExamples.PropertiesExerciseMain();
 			IndexerExamples.IndexerExamplesMain();
@@ -69,9 +68,9 @@ namespace PracticeExamples
 			InterfaceExamplesPractice2.InterfaceExamplesPractice2Main();
 			InterfaceExamplesPractice3.InterfaceExamplesPractice3Main();
 			InterfaceExamplesPractice4.InterfaceExamplesPractice4Main();
-			Builder.BuilderMain();
-			FactoryMethod.FactoryMethodMain();
-			AbstractFactory.AbstractFactoryMain();
+			BuilderPattern.BuilderMain();
+			FactoryMethodPattern.FactoryMethodMain();
+			AbstractFactoryPattern.AbstractFactoryMain();
 			CompositePattern.CompositeMain();
 			PrototypePattern.PrototypeMain();
 			ObserverPattern.ObserverMain();
@@ -84,6 +83,7 @@ namespace PracticeExamples
 			*/
 
 			InterfaceExamplesPractice5.InterfaceExamplesPractice5Main();
+			AccessModifiersExamples.AccessModifiersExamplesMain();
 		}
 	}
 }

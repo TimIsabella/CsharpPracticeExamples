@@ -11,6 +11,7 @@ namespace PracticeExamples
 			Console.WriteLine("\n *********** ABSTRACT EXAMPLES PRACTICE *********** \n");
 			
 			var buttons = new List<BaseButton>();
+
 			buttons.Add(new Up());
 			buttons.Add(new Down());
 			buttons.Add(new Left());
@@ -18,9 +19,7 @@ namespace PracticeExamples
 
 			//Loop through each
 			foreach(var button in buttons)
-			{
-				button.Direction();
-			}
+			{ button.Direction(); }
 
 			//Access by index
 			buttons[0].Direction();
