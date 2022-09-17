@@ -51,8 +51,7 @@ namespace PracticeExamples
 
 			public string[] GetNames()
 			{
-				var returnString = new string[] { PublicName, _privateName, InternalName, ProtectedName, ProtectedInternalName, UnsetAccessName };
-				return returnString;
+				return new string[] { PublicName, _privateName, InternalName, ProtectedName, ProtectedInternalName, UnsetAccessName };
 			}
 		}
 
@@ -67,8 +66,7 @@ namespace PracticeExamples
 
 			public string[] GetNames()
 			{
-				var returnString = new string[] { ProtectedName, ProtectedInternalName };
-				return returnString;
+				return new string[] { ProtectedName, ProtectedInternalName };
 			}
 		}
 	}
