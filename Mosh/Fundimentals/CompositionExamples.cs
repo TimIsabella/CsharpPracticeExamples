@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void CompositionExamplesMain()
 		{
-			Console.WriteLine("\n *********** COMPOSITION *********** \n");
+			Console.WriteLine("\n *********** COMPOSITION EXAMPLES *********** \n");
 
 			var compObj1 = new CompositionObject1();
 			compObj1.CompositionMethod(new MessageHandler());

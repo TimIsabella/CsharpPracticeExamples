@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void DelegateExamplesPractice2Main()
 		{
-			Console.WriteLine("\n *********** DELEGATE PRACTICE 2 *********** \n");
+			Console.WriteLine("\n *********** DELEGATE EXAMPLES PRACTICE 2 *********** \n");
 
 			int number1 = 9;
 			int number2 = 6;

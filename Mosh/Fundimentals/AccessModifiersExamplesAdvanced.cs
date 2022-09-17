@@ -10,7 +10,7 @@ namespace PracticeExamples
 	{
 		public static void AccessModifiersExamplesAdvancedMain()
 		{
-			Console.WriteLine("\n *********** ACCESS MODIFIERS *********** \n");
+			Console.WriteLine("\n *********** ACCESS MODIFIERS EXAMPLES ADVANCED *********** \n");
 
 			var publicAccess = new PublicClass(); publicAccess.PublicClassMethod();
 			//var privateClass = new RestrictedAccessModifierClasses.PrivateClass();		//Cannot access private class from outside
@@ -31,17 +31,20 @@ namespace PracticeExamples
 
 	public class PublicClass //Public - Accessable from outside of its scope
 	{
-		public void PublicClassMethod() { Console.WriteLine("Public Class Accessed"); }
+		public void PublicClassMethod() 
+		{ Console.WriteLine("Public Class Accessed"); }
 	}
 
 	internal class InternalClass //Internal - Only accessable 'internally' from within its own class (specifically used for classes)
 	{
-		public void InternalClassMethod() { Console.WriteLine("Internal Class Accessed"); }
+		public void InternalClassMethod() 
+		{ Console.WriteLine("Internal Class Accessed"); }
 	}
 
 	class UnsetClass //No access modifier - defaults to internal
 	{
-		public void UnsetClassMethod() { Console.WriteLine("Unset Class Accessed"); }
+		public void UnsetClassMethod() 
+		{ Console.WriteLine("Unset Class Accessed"); }
 	}
 
 	//Below classes cannot be placed in namespace and must be contained within a parent class
@@ -50,20 +53,25 @@ namespace PracticeExamples
 		///////////
 		private class PrivateClass //Private - Only accessable within the same scope (private fields start with an underscore)
 		{
-			public void PrivateClassMethod() { Console.WriteLine("Private Class Accessed"); }
+			public void PrivateClassMethod() 
+			{ Console.WriteLine("Private Class Accessed"); }
 		}
 
 		///////////
 		protected class ProtectedClass //Protected - Only accessable from within its own class and by inheritance of that class
 		{
-			public void ProtectedClassMethod() { Console.WriteLine("Protected Class Accessed"); }
+			public void ProtectedClassMethod() 
+			{ Console.WriteLine("Protected Class Accessed"); }
 		}
-		public void ProtectedClassOuterMethod() { var pc = new ProtectedClass(); pc.ProtectedClassMethod(); }
+		
+		public void ProtectedClassOuterMethod() 
+		{ var pc = new ProtectedClass(); pc.ProtectedClassMethod(); }
 
 		///////////
 		protected internal class ProtectedInternalClass //Protected Internal - Only accessable 'internally' from within its own class and by inheritance of that class
 		{
-			public void ProtectedInternalClassMethod() { Console.WriteLine("Protected Internal Class Accessed"); }
+			public void ProtectedInternalClassMethod() 
+			{ Console.WriteLine("Protected Internal Class Accessed"); }
 		}
 	}
 }

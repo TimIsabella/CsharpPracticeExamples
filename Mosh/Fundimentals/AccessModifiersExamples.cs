@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void AccessModifiersExamplesMain()
 		{
-			Console.WriteLine("\n *********** ACCESS MODIFIERS *********** \n");
+			Console.WriteLine("\n *********** ACCESS MODIFIERS EXAMPLES *********** \n");
 
 			var person = new EncapsulatedPerson();
 			person.PublicName = "Public Name";

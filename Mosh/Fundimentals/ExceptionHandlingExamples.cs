@@ -11,7 +11,7 @@ namespace PracticeExamples
 	{
 		public static void ExceptionHandlingMain()
 		{
-			Console.WriteLine("\n *********** EXCEPTION HANDLING *********** \n");
+			Console.WriteLine("\n *********** EXCEPTION HANDLING EXAMPLES *********** \n");
 
 			/////////// Exception Message Breakdown ///////////
 			///Message: "Unhandled Exception: System.DivideByZeroException: Attempted to divide by zero."

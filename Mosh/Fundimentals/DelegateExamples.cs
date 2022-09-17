@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void DelegateExamplesMain()
 		{
-			Console.WriteLine("\n *********** DELEGATE *********** \n");
+			Console.WriteLine("\n *********** DELEGATE EXAMPLES *********** \n");
 
 			var processor = new PhotoProcessor();
 

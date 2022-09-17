@@ -7,7 +7,7 @@ namespace PracticeExamples
 	{
 		public static void ListsMain()
 		{
-			Console.WriteLine("\n *********** LISTS *********** \n");
+			Console.WriteLine("\n *********** LIST EXAMPLES *********** \n");
 
 			//List instantiated as a list of ints and filled with ints
 			var listOfInts = new List<int>() { 1, 2, 3 };

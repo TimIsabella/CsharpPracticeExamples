@@ -8,6 +8,7 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 		public static void OpenClosedMain()
 		{
 			Console.WriteLine("\n *********** OPEN-CLOSED PRINCIPAL *********** \n");
+			///- Entities shoud be open for extension and closed for modification
 
 			var fruitProduct = new Product("Apple", ProductColor.Green, ProductSize.Small);
 			var treeProduct = new Product("Tree", ProductColor.Green, ProductSize.Large);
@@ -34,9 +35,6 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 			foreach(var product in multiFilteredProducts)
 			{ Console.WriteLine($"Products filtered by '{colorChoice}' and '{sizeChoice}': {product.Name} is {product.Color}, and size is {product.Size}"); }
 		}
-
-		/// ///////////////////////////////// Open-closed principal /////////////////////////////////
-		//- entities shoud be open for extension and closed for modification
 
 		/////////// Product ///////////
 

@@ -10,7 +10,7 @@ namespace PracticeExamples
 	{
 		public static void StructsExamplesMain()
 		{
-			Console.WriteLine("\n *********** STRUCTS *********** \n");
+			Console.WriteLine("\n *********** STRUCT EXAMPLES *********** \n");
 
 			var position = new Position();
 			position.X = 1.234f; position.Y = 2.345f; position.Z = 3.456f;

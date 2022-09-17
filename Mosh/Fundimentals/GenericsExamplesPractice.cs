@@ -7,7 +7,7 @@ namespace PracticeExamples
 	{
 		public static void GenericsExamplesPracticeMain()
 		{
-			Console.WriteLine("\n *********** GENERICS PRACTICE *********** \n");
+			Console.WriteLine("\n *********** GENERICS EXAMPLES PRACTICE *********** \n");
 
 			int[] intArray = { 1, 2, 3 };
 			double[] doubleArray = { 1.1, 2.2, 3.3 };

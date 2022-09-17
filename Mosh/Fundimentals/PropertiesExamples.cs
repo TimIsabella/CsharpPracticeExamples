@@ -7,7 +7,7 @@ namespace PracticeExamples
 	{
 		public static void PropertiesExerciseMain()
 		{
-			Console.WriteLine("\n *********** PROPERTIES *********** \n");
+			Console.WriteLine("\n *********** PROPERTIES EXAMPLES *********** \n");
 
 			var person = new EncapsulatedPerson();
 			person.PrivateNameProperty = "Private Name Property";

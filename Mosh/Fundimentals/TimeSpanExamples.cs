@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void TimeSpanMain()
 		{
-			Console.WriteLine("\n *********** TIME SPAN *********** \n");
+			Console.WriteLine("\n *********** TIME SPAN EXAMPLES *********** \n");
 
 			//1 hour, 2 minutes, 3 seconds
 			var timSpa1 = new TimeSpan(1, 2, 3);

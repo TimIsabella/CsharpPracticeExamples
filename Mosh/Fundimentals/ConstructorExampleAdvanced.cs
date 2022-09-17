@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void ConstructorExampleAdvancedMain()
 		{
-			Console.WriteLine("\n *********** CONSTRUCTOR ADVANCED *********** \n");
+			Console.WriteLine("\n *********** CONSTRUCTOR ADVANCED EXAMPLES *********** \n");
 
 			//Base 'Vehicle class' will be executed first
 			//Derived 'Car class' will be executed second

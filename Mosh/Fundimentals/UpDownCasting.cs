@@ -6,12 +6,14 @@ namespace PracticeExamples
 	{
 		public static void UpDownCastingMain()
 		{
-			Console.WriteLine("\n *********** UP/DOWN CASTING *********** \n");
+			Console.WriteLine("\n *********** UP/DOWN CASTING EXAMPLES *********** \n");
 
 			var circle = new Circle();
 			var shape = new Shape();
 
+
 			///////////UPCASTING - Conversion from derived class to base class///////////
+			
 			Shape shapeUp = circle;		//Explicit cast (will throw exceptions if not possible)
 			shapeUp.Width = 111;
 			shapeUp.Height = 222;
@@ -27,7 +29,9 @@ namespace PracticeExamples
 
 			else Console.WriteLine("Cannot convert");
 
+
 			///////////DOWNCASTING - Conversion from base class to derived class///////////
+			
 			Circle circleDown = (Circle) shapeUp;     //Explicit cast (will throw exceptions if not possible)
 			circleDown.Width = 123;
 			circleDown.Height = 456;
@@ -47,7 +51,10 @@ namespace PracticeExamples
 			
 		}
 
-		public class Shape { public int Width; public int Height; }
-		public class Circle : Shape { public int Radius; }
+		public class Shape
+		{ public int Width; public int Height; }
+
+		public class Circle : Shape
+		{ public int Radius; }
 	}
 }

@@ -10,14 +10,14 @@ namespace PracticeExamples
 	{
 		public static void DynamicExamplesMain()
 		{
-			Console.WriteLine("\n *********** DYNAMIC *********** \n");
+			Console.WriteLine("\n *********** DYNAMIC EXAMPLES *********** \n");
 
-			//Language types
-			//Static Languages: type resolution is established at compile-time (C#, Java)
-			//Dynamic languages: type resolution is established at run-time (JavaScript, Python)
+			///Language types
+			///- Static Languages: type resolution is established at compile-time (C#, Java)
+			///- Dynamic languages: type resolution is established at run-time (JavaScript, Python)
 
-			//.NET version 4 added 'dynamic' capability
-			//Allows usage of variables to change cast like dynamic languages (JavaScript, Python)
+			///.NET version 4 added 'dynamic' capability
+			///- Allows usage of variables to change cast like dynamic languages (JavaScript, Python)
 
 			dynamic name = "This is a name";
 			Console.WriteLine($"name: {name}");

@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void DelegateExamplesPracticeMain()
 		{
-			Console.WriteLine("\n *********** DELEGATE PRACTICE *********** \n");
+			Console.WriteLine("\n *********** DELEGATE EXAMPLES PRACTICE *********** \n");
 
 			///Directly by class
 			Delegate1 DelegateContainer;

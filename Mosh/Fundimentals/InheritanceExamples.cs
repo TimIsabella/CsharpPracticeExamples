@@ -10,7 +10,7 @@ namespace PracticeExamples
 	{
 		public static void InheritanceExamplesMain()
 		{
-			Console.WriteLine("\n *********** INHERITANCE *********** \n");
+			Console.WriteLine("\n *********** INHERITANCE EXAMPLES *********** \n");
 
 			var text = new Text();
 			text.Width = 123;

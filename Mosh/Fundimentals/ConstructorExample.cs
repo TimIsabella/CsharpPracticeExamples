@@ -1,9 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PracticeExamples
 {
 	public class ConstructorExample
 	{
+		public static void Main()
+		{
+			Console.WriteLine("\n *********** CONSTRUCTOR EXAMPLES *********** \n");
+		}
+		
 		//Fields
 		public int Id;
 		public string FieldName;

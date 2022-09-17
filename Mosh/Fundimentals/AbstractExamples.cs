@@ -7,7 +7,7 @@ namespace PracticeExamples
 	{
 		public static void AbstractExamplesMain()
 		{
-			Console.WriteLine("\n *********** ABSTRACT *********** \n");
+			Console.WriteLine("\n *********** ABSTRACT EXAMPLES *********** \n");
 			
 			var shapes = new List<ShapeObjects.BaseShape>(); //List of 'Shape' as objects below all inherit from 'Shape'
 			shapes.Add(new ShapeObjects.Circle(123.456));

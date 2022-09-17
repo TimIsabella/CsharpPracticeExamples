@@ -11,6 +11,7 @@ namespace PracticeExamples.DesignPatterns.Creational
 		public static void ObserverMain()
 		{
 			Console.WriteLine("\n *********** OBSERVER PATTERN *********** \n");
+
 			/// Defines a one-to-many dependency between objects
 			///- Defines a dependency between objects so that whenever an object changes its state, all its dependents are notified
 

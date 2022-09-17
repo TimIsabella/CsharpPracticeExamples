@@ -7,7 +7,7 @@ namespace PracticeExamples
 	{
 		public static void GenericsExamplesMain()
 		{
-			Console.WriteLine("\n *********** GENERICS *********** \n");
+			Console.WriteLine("\n *********** GENERICS EXAMPLES *********** \n");
 
 			//Normal list -- instantiated to take integers
 			var numList = new List<int>();

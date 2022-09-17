@@ -7,7 +7,7 @@ namespace PracticeExamples
 	{
 		public static void FileIOexamplesMain()
 		{
-			Console.WriteLine("\n *********** FILE I/O *********** \n");
+			Console.WriteLine("\n *********** FILE I/O EXAMPLES *********** \n");
 
 			string fileToDelete = @"d:\test-copy2.txt";
 

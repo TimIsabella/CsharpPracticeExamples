@@ -10,8 +10,8 @@ namespace PracticeExamples
 	{
 		public static void MethodOverridingExamplesMain()
 		{
-			//Method overriding - modifying an implementation of an inherited method
-			Console.WriteLine("\n *********** METHOD OVERRIDING *********** \n");
+			Console.WriteLine("\n *********** METHOD OVERRIDING EXAMPLES *********** \n");
+			///Method overriding - modifying an implementation of an inherited method
 
 			//var draw = new Shapes.BaseShape(); draw.Draw();
 			//var circle = new Shapes.Circle(); circle.Draw();

@@ -1,9 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PracticeExamples
 {
 	public class FieldsExamples
 	{
+		public static void FieldsExamplesMain()
+		{
+			Console.WriteLine("\n *********** FIELDS EXAMPLES *********** \n");
+
+		}
+
+		public void NonStaticMethod()
+		{
+			//Initialize an empty list of 'OrderObject'
+			NotInitializedOrders = new List<OrderObject>();
+		}
+
 		public int Id;
 		public string Name;
 
@@ -22,11 +35,6 @@ namespace PracticeExamples
 			this.Name = name;
 		}
 
-		public void FieldsExamplesMain()
-		{
-			//Initialize an empty list of 'OrderObject'
-			NotInitializedOrders = new List<OrderObject>();
-		}
 		public class OrderObject
 		{
 			int X { get; set; }

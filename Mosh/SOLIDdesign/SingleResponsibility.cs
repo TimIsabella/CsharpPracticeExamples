@@ -9,6 +9,8 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 		public static void SingleResponsibilityMain()
 		{
 			Console.WriteLine("\n *********** SINGLE RESPONSIBILITY PRINCIPAL *********** \n");
+			///- The necessary object should handle the necessary function and not be mixed together
+			///- A 'separation of concerns'
 
 			var journal = new Journal();
 
@@ -23,10 +25,6 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 			var filename = @"D:\journalTest.txt";
 			persist.SaveToFile(journal, filename, true);
 		}
-
-		/// ///////////////////////////////// Single Responsibility  /////////////////////////////////
-		//- The necessary object should handle the necessary function and not be mixed together
-		//- A 'separation of concerns'
 
 		public class Journal
 		{

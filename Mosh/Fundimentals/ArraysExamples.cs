@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void ArraysMain()
 		{
-			Console.WriteLine("\n *********** ARRAYS *********** \n");
+			Console.WriteLine("\n *********** ARRAYS EXAMPLES *********** \n");
 			
 			//Array
 			int[] arr1 = new int[] { 1, 2, 3, };

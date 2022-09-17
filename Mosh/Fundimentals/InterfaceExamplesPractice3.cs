@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void InterfaceExamplesPractice3Main()
 		{
-			Console.WriteLine("\n *********** INTERFACE EXAMPLES PRACTICE3 *********** \n");
+			Console.WriteLine("\n *********** INTERFACE EXAMPLES PRACTICE 3 *********** \n");
 
 			var extender1 = new Extender(123, "one two three");
 			var extendedClass1 = new ClassExtendedByInterface1();

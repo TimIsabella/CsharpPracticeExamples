@@ -10,7 +10,7 @@ namespace PracticeExamples
 
 		public static void IndexerExamplesMain()
 		{
-			Console.WriteLine("\n *********** INDEXER *********** \n");
+			Console.WriteLine("\n *********** INDEXER EXAMPLES *********** \n");
 
 			var dict = new IndexerExamples();
 			dict["name"] = "Rupert";

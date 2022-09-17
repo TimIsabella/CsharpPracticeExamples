@@ -6,6 +6,8 @@ namespace PracticeExamples
 	{
 		public static void EnumExamplesMain()
 		{
+			Console.WriteLine("\n *********** ENUM EXAMPLES  *********** \n");
+
 			var enumNumber = RandomEnumsWithIntegers.Number3;
 			Console.WriteLine($"The enum is {enumNumber}");
 		}

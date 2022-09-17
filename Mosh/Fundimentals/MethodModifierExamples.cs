@@ -2,27 +2,27 @@
 
 namespace PracticeExamples
 {
-	public class MethodExamples
+	public class MethodModifierExamples
 	{
 		public static void MethodExamplesMain()
 		{
-			Console.WriteLine("\n *********** METHOD MODIFIERS *********** \n");
+			Console.WriteLine("\n *********** METHOD MODIFIERS EXAMPLES *********** \n");
 
 			//Params
-			var paramsResult1 = MethodExamples.ParamsModifer(new int[] { 1, 2, 3 });
-			var ParamsResult2 = MethodExamples.ParamsModifer(1, 2, 3, 4, 5, 6, 7);
+			var paramsResult1 = MethodModifierExamples.ParamsModifer(new int[] { 1, 2, 3 });
+			var ParamsResult2 = MethodModifierExamples.ParamsModifer(1, 2, 3, 4, 5, 6, 7);
 
 			//Ref
 			var refVariableA = 11;
 			Console.WriteLine("refVariableA = " + refVariableA); //Before
-			MethodExamples.RefModifier(ref refVariableA);
+			MethodModifierExamples.RefModifier(ref refVariableA);
 			Console.WriteLine("refVariableA = " + refVariableA); //After
 
 			//Out
 			var outVariableStr = "abc";
 			var outVariableInt = 123;
 			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt); //Before
-			MethodExamples.OutModifier(out outVariableStr, out outVariableInt);
+			MethodModifierExamples.OutModifier(out outVariableStr, out outVariableInt);
 			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt); //After
 		}
 
@@ -59,6 +59,5 @@ namespace PracticeExamples
 	}
 
 	public class Point
-	{
-	}
+	{ }
 }

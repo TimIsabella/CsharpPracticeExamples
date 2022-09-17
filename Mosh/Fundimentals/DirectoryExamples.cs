@@ -7,7 +7,7 @@ namespace PracticeExamples
 	{
 		public static void DirectoryExamplesMain()
 		{
-			Console.WriteLine("\n *********** Directory *********** \n");
+			Console.WriteLine("\n *********** DIRECTORY EXAMPLES *********** \n");
 
 			if(Directory.Exists("d:\\testDirectory"))
 			{

@@ -7,7 +7,7 @@ namespace PracticeExamples
 	{
 		public static void FilePathExamplesMain()
 		{
-			Console.WriteLine("\n *********** FILE PATH *********** \n");
+			Console.WriteLine("\n *********** FILE PATH EXAMPLES *********** \n");
 
 			var testPath = @"D:\test-original.txt";
 			Console.WriteLine("Current path: '{0}'", testPath);

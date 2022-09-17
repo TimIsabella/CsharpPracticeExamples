@@ -8,7 +8,7 @@ namespace PracticeExamples
 	{
 		public void BoxingUnboxingExamplesMain()
 		{
-			Console.WriteLine("\n *********** BOXING AND UNBOXING *********** \n");
+			Console.WriteLine("\n *********** BOXING AND UNBOXING EXAMPLES *********** \n");
 
 			//Boxing - Converting a type to an object //
 			int number = 10;			//Stored in the 'stack' as a reference

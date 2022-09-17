@@ -10,7 +10,7 @@ namespace PracticeExamples
 	{
 		public static void NullableExamplesMain()
 		{
-			Console.WriteLine("\n *********** NULLABLE *********** \n");
+			Console.WriteLine("\n *********** NULLABLE EXAMPLES *********** \n");
 
 			///Value types cannot be null///
 			/*

@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void CompositionExamplesPracticeMain()
 		{
-			Console.WriteLine("\n *********** COMPOSITION PRACTICE *********** \n");
+			Console.WriteLine("\n *********** COMPOSITION EXAMPLES PRACTICE *********** \n");
 
 			var animal = new Animal();
 

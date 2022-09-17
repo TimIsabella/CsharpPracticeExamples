@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void InterfaceExamplesPractice4Main()
 		{
-			Console.WriteLine("\n *********** INTERFACE EXAMPLES PRACTICE4 *********** \n");
+			Console.WriteLine("\n *********** INTERFACE EXAMPLES PRACTICE 4 *********** \n");
 
 			var extendedClass1 = new ClassExtendedByInterface1(); //Instantiate 'ClassExtendedByInterface1' which is extended by 'Iinterface'
 			var extender1 = new ExtensionClass1();                //Instantiate 'ExtensionClass1' which provides the link to the interface

@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void EventsExamplesPracticeMain()
 		{
-			Console.WriteLine("\n *********** EVENT PRACTICE *********** \n");
+			Console.WriteLine("\n *********** EVENTS EXAMPLES PRACTICE *********** \n");
 
 			var cat = new Cat() { Id = 1, Name = "Gato", Health = 100};
 

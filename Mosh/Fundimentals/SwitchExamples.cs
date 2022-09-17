@@ -6,6 +6,8 @@ namespace PracticeExamples
 	{
 		public static void SwitchExamplesMain()
 		{
+			Console.WriteLine("\n *********** SWITCH EXAMPLES *********** \n");
+
 			var season = Seasons.Fall;
 
 			switch(season)

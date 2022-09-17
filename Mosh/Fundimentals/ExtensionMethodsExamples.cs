@@ -10,7 +10,7 @@ namespace PracticeExamples
 	{
 		public static void ExtensionMethodsExamplesMain()
 		{
-			Console.WriteLine("\n *********** EXTENSIONS *********** \n");
+			Console.WriteLine("\n *********** EXTENSIONS EXAMPLES *********** \n");
 
 			string words = "These are words";
 			var convertWords = words.ConvertTheseWordsMethod(123456);

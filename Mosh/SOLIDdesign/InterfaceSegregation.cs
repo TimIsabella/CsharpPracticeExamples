@@ -11,9 +11,7 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 		public static void InterfaceSegregationMain()
 		{
 			Console.WriteLine("\n *********** INTERFACE SEGREGATION PRINCIPAL *********** \n");
-
-			/// ///////////////////////////////// Interface Segregation principal /////////////////////////////////
-			//- Break up interfaces into smaller parts as necessary
+			///- Break up interfaces into smaller parts as necessary
 			
 		}
 

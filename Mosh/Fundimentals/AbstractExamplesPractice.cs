@@ -8,7 +8,7 @@ namespace PracticeExamples
 	{
 		public static void AbstractExamplesPracticeMain()
 		{
-			Console.WriteLine("\n *********** ABSTRACT PRACTICE *********** \n");
+			Console.WriteLine("\n *********** ABSTRACT EXAMPLES PRACTICE *********** \n");
 			
 			var buttons = new List<BaseButton>();
 			buttons.Add(new Up());

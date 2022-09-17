@@ -10,8 +10,8 @@ namespace PracticeExamples
 	{
 		public static void SealedModifiersExampleMain()
 		{
-			Console.WriteLine("\n *********** SEALED MODIFIER *********** \n");
-			//'sealed' members provide a slight performance optimization
+			Console.WriteLine("\n *********** SEALED MODIFIER EXAMPLES *********** \n");
+			///'sealed' members provide a slight performance optimization
 
 			var shapes = new List<ShapeObjects.BaseShape>(); //List of 'Shape' as objects below all inherit from 'Shape'
 			shapes.Add(new ShapeObjects.Circle());
@@ -51,6 +51,7 @@ namespace PracticeExamples
 				//'sealed' members can only apply to 'override' cases
 				public sealed override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Circle: This abstract 'Draw' method has been overridden."); }
+
 				public override void OtherMethod()
 				{ }
 			}
@@ -58,8 +59,10 @@ namespace PracticeExamples
 			public class Square : BaseShape
 			{
 				public int Diameter;
+
 				public override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Square: This abstract 'Draw' method has been overridden."); }
+
 				public override void OtherMethod()
 				{ }
 			}
@@ -67,8 +70,10 @@ namespace PracticeExamples
 			public class Triangle : BaseShape
 			{
 				public int Tangent;
+
 				public override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Triangle: This abstract 'Draw' method has been overridden."); }
+
 				public override void OtherMethod()
 				{ }
 			}

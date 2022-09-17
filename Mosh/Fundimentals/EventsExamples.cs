@@ -6,7 +6,7 @@ namespace PracticeExamples
 	{
 		public static void EventsExamplesMain()
 		{
-			Console.WriteLine("\n *********** EVENT *********** \n");
+			Console.WriteLine("\n *********** EVENTS EXAMPLES  *********** \n");
 
 			var classForEvent = new ClassForEvent();
 
@@ -18,7 +18,7 @@ namespace PracticeExamples
 			classForEvent.InitiateEventSequence();
 		}
 
-		//DELEGATE
+		///DELEGATE
 		//Declare delegate for event
 		//Specifies the signature for the event in 'HandlerForEvent':
 		//In this case, it is a method with no parameters
@@ -33,7 +33,7 @@ namespace PracticeExamples
 				CallEvent();
 			}
 
-			//EVENT
+			///EVENT
 			//Declare event 'Event' of 'HandlerForEvent'
 			//Events are a wrapper for delegates
 			public event HandlerForEvent Event;

@@ -9,7 +9,7 @@ namespace PracticeExamples
     {
         public static void AsyncAwaitExamplesMain()
         {
-            Console.WriteLine("\n *********** ASYNC / AWAIT *********** \n");
+            Console.WriteLine("\n *********** ASYNC / AWAIT EXAMPLES *********** \n");
 
             InitiateAsyncMethod();
             InitiateCooking();

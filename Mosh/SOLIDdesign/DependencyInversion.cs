@@ -11,10 +11,8 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 		public static void DependencyInversionMain()
 		{
 			Console.WriteLine("\n *********** DEPENDENCY INVERSION PRINCIPAL *********** \n");
-
-			/// ///////////////////////////////// Dependency Inversion principal /////////////////////////////////
-			//- High level parts of the system should not depend on low level parts of the system directly
-			//- Instead they should depend on abstraction
+			///- High level parts of the system should not depend on low level parts of the system directly
+			///- Instead they should depend on abstraction
 
 			var parent1 = new Person { Name = "John" };
 			var child1_1 = new Person { Name = "Chris" };

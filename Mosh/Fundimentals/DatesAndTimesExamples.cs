@@ -10,7 +10,7 @@ namespace PracticeExamples
 	{
 		public static void DatesAndTimesMain()
 		{
-			Console.WriteLine("\n *********** DATES AND TIMES *********** \n");
+			Console.WriteLine("\n *********** DATES AND TIMES EXAMPLES *********** \n");
 
 			//DateTime objects are immutable
 			var datTimNow = DateTime.Now;
