@@ -39,8 +39,8 @@ namespace PracticeExamples
 			public string PublicName;							//Public - Accessable from outside of its scope
 			private string _privateName;						//Private - Only accessable within the same scope (private fields start with an underscore)
 			internal string InternalName;						//Internal - Only accessable 'internally' from within its own assembly ('internal' field in assembly1.cs cannot be accessed by assembly2.cs)
-			protected string ProtectedName;						//Protected - Only accessable from within its own class or by inheritance of that class
-			protected internal string ProtectedInternalName;    //Protected Internal - Only accessable 'internally' from within its own assembly, and within its own class or by inheritance of that class
+			protected string ProtectedName;						//Protected - Only accessable from within its own scope or by inheritance of its class
+			protected internal string ProtectedInternalName;    //Protected Internal - Only accessable 'internally' from within its own assembly, and within its own scope or by inheritance of its class
 			string UnsetAccessName;								//No access modifier - defaults to internal
 
 			public void SetPrivateAccessName(string privateName)
