@@ -41,7 +41,7 @@ namespace PracticeExamples
 			internal string InternalName;						//Internal - Only accessable 'internally' from within its own assembly ('internal' field in assembly1.cs cannot be accessed by assembly2.cs)
 			protected string ProtectedName;						//Protected - Only accessable from within its own class or by inheritance of that class
 			protected internal string ProtectedInternalName;    //Protected Internal - Only accessable 'internally' from within its own assembly, and within its own class or by inheritance of that class
-			string UnsetAccessName;								//No access modifier - defaults to private
+			string UnsetAccessName;								//No access modifier - defaults to internal
 
 			public void SetPrivateAccessName(string privateName)
 			{ _privateName = privateName; }
