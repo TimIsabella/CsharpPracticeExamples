@@ -3,7 +3,29 @@
 - Should not contain any logic (no loops, conditionals, etc)
 - Each test should be isolated from eachother
 - Not too specific or too general
-
 - Unit tests accompany the production project as a separate project, named with dot notation and 'UnitTests' -- Ex: 'ProjectName.UnitTests'
 -- Each test class of the unit test project mirrors each class of the production project -- Ex: 'ProjectName.ClassName' means the unit test will mirror as 'ProjectName.UnitTest.ClassNameTests'
 - Test method naming: 'MethodUnderTest_ScenaioToBeTested_TheExpectedBehavior'
+
+TEST DRIVEN DEVELOPMENT (TDD) - Writing unit tests first and then production code that fulfills those tests
+- Produces more trustworthy results but can make the process more complicated
+
+UNIT TEST -- Tests a unit of an application without its external dependencies; tests a 'unit of work' (base of the 'test pyramid')
+- Tests a class or multiple classes WITHOUT their external dependencies
+- Example: A test which executes the logic of a class to read a database, but local data is instead used in place of a database
+- Simple to write
+- Quick execution
+- May provide inaccurate tests without including dependancies
+
+INTEGRATION TEST -- Tests the application with its external dependencies (center of the 'test pyramid')
+- Tests a class or multiple classes WITH their external dependencies
+- Example: A test which executes the logic of a class to read a database, and that database is called during the test
+- Longer to execute
+- Provides more confidence
+
+END-TO-END TEST -- Drives an application through its UI (peak of the 'test pyramid')
+- Example: A client logging into a website and interacting with with whatever needs to be tested
+-- 'Selenium' is an end-to-end testing tool that records user interaction and plays it back for end-to-end testing
+- Provides the highest confidence
+- Very slow
+- Fragile since changes to the application breaks the test
