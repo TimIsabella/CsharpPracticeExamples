@@ -1,0 +1,2 @@
+﻿TEST DRIVEN DEVELOPMENT (TDD) - Writing unit tests first and then production code that fulfills those tests
+- Produces more trustworthy results but can make the process more complicated
