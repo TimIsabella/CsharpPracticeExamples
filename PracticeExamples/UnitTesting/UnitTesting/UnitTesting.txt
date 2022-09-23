@@ -1,0 +1,6 @@
+﻿UNIT TESTING -- Tests a unit of an application without its external dependencies; tests a 'unit of work' (base of the 'test pyramid')
+- Tests a class or multiple classes WITHOUT their external dependencies
+- Example: A test which executes the logic of a class to read a database, but local data is instead used in place of a database
+- Simple to write
+- Quick execution
+- May provide inaccurate tests without including dependancies

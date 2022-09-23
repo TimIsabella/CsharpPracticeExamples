@@ -1,0 +1,6 @@
+﻿END-TO-END TEST -- Drives an application through its UI (peak of the 'test pyramid')
+- Example: A client logging into a website and interacting with with whatever needs to be tested
+-- 'Selenium' is an end-to-end testing tool that records user interaction and plays it back for end-to-end testing
+- Provides the highest confidence
+- Very slow
+- Fragile since changes to the application breaks the test

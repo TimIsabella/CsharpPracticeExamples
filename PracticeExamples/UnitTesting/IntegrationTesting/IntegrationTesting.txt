@@ -1,0 +1,5 @@
+﻿INTEGRATION TEST -- Tests the application with its external dependencies (center of the 'test pyramid')
+- Tests a class or multiple classes WITH their external dependencies
+- Example: A test which executes the logic of a class to read a database, and that database is called during the test
+- Longer to execute
+- Provides more confidence
