@@ -1,14 +1,18 @@
 ﻿FUNDIMENTALS OF UNIT TESTING
-- Tests are as importamt as production code, so it must be clean, maintainable, and as simple as possible (single responsibility)
+- Tests are as important as production code, so it must be clean, maintainable, and as simple as possible
 - Should not contain any logic (no loops, conditionals, etc)
-- Each test should be isolated from eachother
+- Each test should be isolated from eachother (single responsibility)
 - Not too specific or too general
-- Unit tests accompany the production project as a separate project, named with dot notation and 'UnitTests' -- Ex: 'ProjectName.UnitTests'
+- Unit tests accompany the production project as a separate project, named with dot notation as 'UnitTests' -- Ex: 'ProjectName.UnitTests'
 -- Each test class of the unit test project mirrors each class of the production project -- Ex: 'ProjectName.ClassName' means the unit test will mirror as 'ProjectName.UnitTest.ClassNameTests'
 - Test method naming: 'MethodUnderTest_ScenaioToBeTested_TheExpectedBehavior'
 
 TEST DRIVEN DEVELOPMENT (TDD) - Writing unit tests first and then production code that fulfills those tests
-- Produces more trustworthy results but can make the process more complicated
+- Produces more trustworthy results
+- Makes the process more complicated
+
+
+--- TYPES OF TESTS ---
 
 UNIT TEST -- Tests a unit of an application without its external dependencies; tests a 'unit of work' (base of the 'test pyramid')
 - Tests a class or multiple classes WITHOUT their external dependencies
