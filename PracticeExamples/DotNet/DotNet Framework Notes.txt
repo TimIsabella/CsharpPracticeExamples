@@ -1,0 +1,20 @@
+﻿.NET FRAMEWORKS
+
+.NET Framework: a platform to build upon
+-- Any language can be used to develop on the .NET Framework
+-- Common Intermediate Language (CIL): Transpiles code into an 'intermediate language' for the .NET Framework
+-- Just In Time compiler (JIT): Compiles CIL code to machine code for the CLR.
+-- Common Language Runtime (CLR): Executes x86 machine code.
+
+.NET Core: ver 3.1, same as 'Framework' but streamlined for modern machines and languages by removing legacy support
+-- Much faster than 'Framework'
+-- Requires minor changes to code
+
+.NET: 'Core' ver 5 and later and same as 'Core'.
+-- Just a later version of 'Core'
+
+.NET Standard: All compatibility to .NET types
+- Includes compatibility for third party libraries like Unity and Xamerin
+
+.NET ver 6: Consolidation of all versions and compatibilites for everything
+- Yet to be released

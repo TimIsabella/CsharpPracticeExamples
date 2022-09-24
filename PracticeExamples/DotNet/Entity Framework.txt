@@ -1,0 +1,20 @@
+﻿Entity Framework (EF): Relational mapping framework for ADO.NET
+- Layered between the database and the application
+
+EF Database Context: Bridge between entity classes and database tables
+
+///
+
+DATABASE WORKFLOWS
+
+Database First:
+-- Design tables in the database
+-- EF generates domain classes based on database
+
+Code First:
+-- Create domain classes
+-- EF generates database tables based on classes
+
+Model First:
+-- Create visual classes which 'model' associations (UML diagram)
+-- EF creates domain classes and database
