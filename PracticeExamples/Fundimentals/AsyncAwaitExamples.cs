@@ -16,7 +16,7 @@ namespace PracticeExamples
 
             //Thread pausing and asynchronus processing
             /*
-            //InitiateCooking().Wait(); -- '.Wait()'  - waits for to completion before continuing following code
+            //InitiateCooking().Wait(); -- '.Wait()'  - waits for completion before continuing following code
             Thread.Sleep(3333);         -- '.Sleep()' - stops ALL thread processes in the program
             Task.Delay(3333);           -- '.Delay()' - pauses thread process at the current scope (used for 'async' processing)
             await Task.Delay(11);       -- 'await'    - like a pause, stops process in current scope but allows other processes to continue                  
