@@ -1,4 +1,4 @@
-﻿FUNDIMENTALS OF UNIT TESTING
+﻿FUNDAMENTALS OF UNIT TESTING
 - Tests are as important as production code, so it must be clean, maintainable, and as simple as possible
 - Should not contain any logic (no loops, conditionals, etc)
 - Each test should be isolated from eachother (single responsibility)
