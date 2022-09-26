@@ -22,11 +22,12 @@ UNIT TEST -- Tests a unit of an application without its external dependencies; t
 - May provide inaccurate tests without including dependancies
 
 INTEGRATION TEST -- Tests the application with its external dependencies (center of the 'test pyramid')
-- Tests a class or multiple classes WITH their external dependencies
+- 'Interaction Testing' -- Tests a class or multiple classes WITH their external dependant resources
 - Example: A test which executes the logic of a class to read a database, and that database is called during the test
 - Longer to execute
 - Provides more confidence
-- Requires the use of 'Fake Object' or 'Test Double' which mimics external dependant resources used in production code
+- Requires the use of a 'Fake Object', 'Test Double', or "Mocking" which mimics external dependant resources used in production code
+-- Mocking frameworks: Moq, NSubstitute, FakeItEasy, Rhino Mocks
 
 END-TO-END TEST -- Drives an application through its UI (peak of the 'test pyramid')
 - Example: A client logging into a website and interacting with with whatever needs to be tested
