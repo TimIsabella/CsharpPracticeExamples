@@ -14,6 +14,7 @@ namespace PracticeExamples
 		public int Id;
 		public string FieldName;
 		public List<OrderObject> Orders;
+		private double _doubleNumber;
 
 		//Constructor (no parameters)
 		public ConstructorExamples()
@@ -22,19 +23,27 @@ namespace PracticeExamples
 		}
 
 		//Constructor (one parameter)
-		//'this' inherits the above constructor (constructor without parameters)
-		public ConstructorExamples(int id) : this()
+		public ConstructorExamples(int id)
 		{
-			this.Id = id;
+			Id = id;
 		}
 
 		//Constructor (two parameters)
 		//'this' inherits the above constructor (constructor with only one parameter)
 		public ConstructorExamples(int id, string constructorParamName) : this(id)
 		{
-			this.FieldName = constructorParamName;
-			this.Id = id;
+			FieldName = constructorParamName;
+
+			//This is inherited from the above constructor with the 'id' parameter using 'this'
+			//Id = id;
 		}
+
+		//Constructor with lambda (one parameter)
+		public ConstructorExamples(double doubleNumber) => _doubleNumber = doubleNumber;
+
+
+		///////////
+
 
 		public class OrderObject
 		{
