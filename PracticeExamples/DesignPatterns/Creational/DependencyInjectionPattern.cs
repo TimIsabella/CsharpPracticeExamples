@@ -12,21 +12,24 @@ namespace PracticeExamples.DesignPatterns.Creational
 		{
 			Console.WriteLine("\n *********** DEPENDENCY INJECTION EXAMPLES *********** \n");
 
+			//By Constructor
 			var constructorInjection = new ConstructorInjection(new TextPrinter());
-			constructorInjection.Print();
+			constructorInjection.Print("constructor");
 
+			//By Method
 			var methodInjection = new MethodInjection();
-			methodInjection.Print(new TextPrinter());
+			methodInjection.Print(new TextPrinter(), "method");
 
+			//By Property
 			var propertyInjection = new PropertyInjection();
 			propertyInjection.Text = new TextPrinter();
-			propertyInjection.Print();
+			propertyInjection.Print("property");
 		}
 
 		class TextPrinter : IText
 		{
-			public void Print()
-			{ Console.WriteLine("TextPrinter: Print method called."); }
+			public void Print(string injectionType)
+			{ Console.WriteLine($"TextPrinter: Print method called by {injectionType}."); }
 		}
 
 		/// Construtor Dependancy Injection
@@ -37,15 +40,15 @@ namespace PracticeExamples.DesignPatterns.Creational
 			public ConstructorInjection(IText text)
 			{ _text = text; }
 
-			public void Print()
-			{ _text.Print();}
+			public void Print(string injectionType)
+			{ _text.Print(injectionType);}
 		}
 
 		/// Method Dependancy Injection
 		public class MethodInjection
 		{
-			public void Print(IText text)
-			{ text.Print(); }
+			public void Print(IText text, string injectionType)
+			{ text.Print(injectionType); }
 		}
 
 		/// Property Dependancy Injection
@@ -53,13 +56,13 @@ namespace PracticeExamples.DesignPatterns.Creational
 		{
 			public IText Text { get; set; }
 
-			public void Print()
-			{ Text.Print(); }
+			public void Print(string injectionType)
+			{ Text.Print(injectionType); }
 		}
 
 		/////////// Interface ///////////
 
 		public interface IText
-		{ void Print(); }
+		{ void Print(string injectionType); }
 	}
 }
