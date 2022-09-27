@@ -26,12 +26,6 @@ namespace PracticeExamples.DesignPatterns.Creational
 			propertyInjection.Print("property");
 		}
 
-		class TextPrinter : IText
-		{
-			public void Print(string injectionType)
-			{ Console.WriteLine($"TextPrinter: Print method called by {injectionType}."); }
-		}
-
 		/// Construtor Dependancy Injection
 		public class ConstructorInjection
 		{
@@ -60,9 +54,17 @@ namespace PracticeExamples.DesignPatterns.Creational
 			{ Text.Print(injectionType); }
 		}
 
-		/////////// Interface ///////////
+		/////////////////////////////////
 
+		///Interface
 		public interface IText
 		{ void Print(string injectionType); }
+
+		///Class Extended by Interface
+		class TextPrinter : IText
+		{
+			public void Print(string injectionType)
+			{ Console.WriteLine($"TextPrinter: Print method called by {injectionType}."); }
+		}
 	}
 }
