@@ -80,11 +80,12 @@ namespace PracticeExamples
 			DecoratorPattern.DecoratorMain();
 			FacadePattern.FacadeMain();
 			FlyweightPattern.FlyweightMain();
-			*/
-
 			InterfaceExamplesPractice5.InterfaceExamplesPractice5Main();
 			AccessModifiersExamples.AccessModifiersExamplesMain();
 			DependencyInjectionPattern.DependencyInjectionPatternMain();
+			*/
+
+			DelegateExamplesPractice2.DelegateExamplesPractice2Main();
 		}
 	}
 }
