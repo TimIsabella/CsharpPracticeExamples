@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace PracticeExamples
 {
-	public class AbstractExamplesPractice
+	public class AbstractExamplesPractice1
 	{
-		public static void AbstractExamplesPracticeMain()
+		public static void AbstractExamplesPractice1Main()
 		{
-			Console.WriteLine("\n *********** ABSTRACT EXAMPLES PRACTICE *********** \n");
+			Console.WriteLine("\n *********** ABSTRACT EXAMPLES PRACTICE 1 *********** \n");
 			
 			var buttons = new List<BaseButton>();
 

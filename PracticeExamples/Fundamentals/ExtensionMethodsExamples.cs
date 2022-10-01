@@ -12,8 +12,8 @@ namespace PracticeExamples
 		{
 			Console.WriteLine("\n *********** EXTENSIONS EXAMPLES *********** \n");
 
-			string words = "These are words";
-			var convertWords = words.ConvertTheseWordsMethod(123456);
+			string wordsString = "These are words";
+			var convertWords = wordsString.ConvertTheseWordsMethod(123456);
 
 			Console.WriteLine($"Converted words: {convertWords}");
 		}
@@ -21,7 +21,7 @@ namespace PracticeExamples
 
 	//Extends custom methods to instance members
 	//- Class and method must be 'public' and 'static'
-	//- First argument must be 'this' represending the instance for which it is applied
+	//- First argument must be 'this' representing the instance for which it is applied
 	public static class Extension
 	{
 		public static string ConvertTheseWordsMethod(this string words, int nums)

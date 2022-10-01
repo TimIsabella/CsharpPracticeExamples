@@ -83,9 +83,11 @@ namespace PracticeExamples
 			InterfaceExamplesPractice5.InterfaceExamplesPractice5Main();
 			AccessModifiersExamples.AccessModifiersExamplesMain();
 			DependencyInjectionPattern.DependencyInjectionPatternMain();
+			DelegateExamplesPractice2.DelegateExamplesPractice2Main();
 			*/
 
-			DelegateExamplesPractice2.DelegateExamplesPractice2Main();
+			ExtensionMethodsExamples.ExtensionMethodsExamplesMain();
+			AbstractExamplesPractice2.AbstractExamplesPractice2Main();
 		}
 	}
 }

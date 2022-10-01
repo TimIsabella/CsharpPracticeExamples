@@ -50,7 +50,8 @@ namespace PracticeExamples
 			//- Just like T-SQL operators
 			//- Below code is the same as above
 			IEnumerable<BookRepository.Book> allBooksIEnumerable4 = new BookRepository().GetBooks();
-			var cheaperBooks = from bookElement in allBooksIEnumerable4
+			var cheaperBooks = from bookElement 
+							   in allBooksIEnumerable4
 							   where bookElement.Price < 9
 							   orderby bookElement.Title
 							   select bookElement.Title;
@@ -59,7 +60,8 @@ namespace PracticeExamples
 
 			//Single element returned by query operators
 			IEnumerable<BookRepository.Book> allBooksIEnumerable5 = new BookRepository().GetBooks();
-			var singleBook1 = from bookElement in allBooksIEnumerable5
+			var singleBook1 = from bookElement 
+							  in allBooksIEnumerable5
 							  where bookElement.Title == "Book D"
 							  select bookElement.Title;
 			
