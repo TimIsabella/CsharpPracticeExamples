@@ -46,7 +46,7 @@ namespace PracticeExamples
 			{
 				private double _radius;
 
-				//'base()' inherits the the base constructor
+				//'base()' inherits the the 'BaseShape' constructor
 				public Circle(double radius) : base(radius)
 				{ _radius = radius; }
 
@@ -61,7 +61,7 @@ namespace PracticeExamples
 			{
 				private double _diameter;
 
-				//'base()' inherits the the base constructor
+				//'base()' inherits the the 'BaseShape' constructor
 				public Square(double diameter) : base(diameter)
 				{ _diameter = diameter; }
 
@@ -76,7 +76,7 @@ namespace PracticeExamples
 			{
 				private double _tangent;
 
-				//'base()' inherits the the base constructor
+				//'base()' inherits the the 'BaseShape' constructor
 				public Triangle(double tangent) : base(tangent)
 				{ _tangent = tangent; }
 
