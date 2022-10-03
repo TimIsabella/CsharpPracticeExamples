@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace PracticeExamples.DotNet.Fundamentals
 {
-    public class IqueryableExamples
+    public class IQueryableExamples
 	{
-        public static void IqueryableExamplesMain()
+        public static void IQueryableExamplesMain()
         {
             Console.WriteLine("\n *********** IQUERYABLE EXAMPLES *********** \n");    
 

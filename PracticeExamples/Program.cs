@@ -3,6 +3,7 @@ using PracticeExamples.DesignPatterns;
 using PracticeExamples.DesignPatterns.SOLIDdesign;
 using PracticeExamples.DesignPatterns.Creational;
 using PracticeExamples.DesignPatterns.Structural;
+using PracticeExamples.DotNet.Fundamentals;
 
 namespace PracticeExamples
 {
@@ -84,10 +85,11 @@ namespace PracticeExamples
 			AccessModifiersExamples.AccessModifiersExamplesMain();
 			DependencyInjectionPattern.DependencyInjectionPatternMain();
 			DelegateExamplesPractice2.DelegateExamplesPractice2Main();
-			*/
-
 			ExtensionMethodsExamples.ExtensionMethodsExamplesMain();
 			AbstractExamplesPractice2.AbstractExamplesPractice2Main();
+			*/
+
+			IEnumerableExamples.IEnumerableExamplesMain();
 		}
 	}
 }
