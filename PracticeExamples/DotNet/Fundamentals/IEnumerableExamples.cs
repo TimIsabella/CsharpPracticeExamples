@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Linq;
 
 namespace PracticeExamples.DotNet.Fundamentals
 {
@@ -38,7 +37,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////
 
-		//'Params' implements 'IEnumerable' interface to supports a simple iteration over a collection (foreach functionality)
+		//'Params' implements 'IEnumerable' interface to support simple iteration over a collection (foreach functionality)
 		public class Params : IEnumerable<int>
 		{
 			private int _a, _b, _c;
