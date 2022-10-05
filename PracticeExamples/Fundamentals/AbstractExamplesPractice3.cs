@@ -10,54 +10,54 @@ namespace PracticeExamples
 		{
 			Console.WriteLine("\n *********** ABSTRACT EXAMPLES PRACTICE 3 *********** \n");
 
-			var dwellings = new List<Building>();
+			var overriddenClasses = new List<BaseClass>();
 
-			dwellings.Add(new House());
-			dwellings.Add(new Condo());
-			dwellings.Add(new Apartment());
+			overriddenClasses.Add(new OverrideClass1());
+			overriddenClasses.Add(new OverrideClass2());
+			overriddenClasses.Add(new OverrideClass3());
 
-			dwellings[0].Roof();
-			dwellings[1].Roof();
-			dwellings[2].Roof();
+			overriddenClasses[0].Method3();
+			overriddenClasses[1].Method2();
+			overriddenClasses[2].Method1();
 		}
 
 		/////////// Base abstract class ///////////
-		public abstract class Building
+		public abstract class BaseClass
 		{
-			public abstract void Windows();
-			public abstract void Doors();
-			public abstract void Roof();
+			public abstract void Method1();
+			public abstract void Method2();
+			public abstract void Method3();
 		}
 
 		/////////// Override classes ///////////
-		public class House : Building
+		class OverrideClass1 : BaseClass
 		{
-			public override void Windows()
+			public override void Method1()
 			{ }
-			public override void Doors()
+			public override void Method2()
 			{ }
-			public override void Roof()
-			{ Console.WriteLine("The roof is covered in shingles."); }
+			public override void Method3()
+			{ }
 		}
 
-		public class Condo : Building
+		class OverrideClass2 : BaseClass
 		{
-			public override void Windows()
+			public override void Method1()
 			{ }
-			public override void Doors()
+			public override void Method2()
 			{ }
-			public override void Roof()
-			{ Console.WriteLine("The roof is covered in tile."); }
+			public override void Method3()
+			{ }
 		}
 
-		public class Apartment : Building
+		class OverrideClass3 : BaseClass
 		{
-			public override void Windows()
+			public override void Method1()
 			{ }
-			public override void Doors()
+			public override void Method2()
 			{ }
-			public override void Roof()
-			{ Console.WriteLine("The roof is covered in tar paper."); }
+			public override void Method3()
+			{ }
 		}
 	}
 }
