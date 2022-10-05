@@ -17,4 +17,4 @@
 - Includes compatibility for third party libraries like Unity and Xamerin
 
 .NET ver 6: Consolidation of all versions and compatibilites for everything
-- Yet to be released
+- Less boilerplate such as namespaces
