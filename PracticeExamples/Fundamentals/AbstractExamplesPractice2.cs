@@ -33,7 +33,7 @@ namespace PracticeExamples
 		public class Cat : BaseAnimal
 		{
 			public override void Eyes()
-			{}
+			{ }
 			public override void Mouth()
 			{ }
 			public override void Speak()
