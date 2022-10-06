@@ -9,7 +9,7 @@ namespace PracticeExamples
 		{
 			Console.WriteLine("\n *********** PROPERTIES EXAMPLES *********** \n");
 
-			var person = new EncapsulatedPerson();
+			var person = new Person();
 			person.PrivateNameProperty = "Private Name Property";
 			person.UnsetAccessNameProperty = "Unset Access Name";
 			person.PublicName = "Public Name";
@@ -22,12 +22,12 @@ namespace PracticeExamples
 			Console.WriteLine(person.LoopOfInts[1]);
 		}
 
-		public class EncapsulatedPerson
+		public class Person
 		{
-			//Fields and separate properties
-			//Ppropertis must be separated since fields and private and unset
 			private string _privateName;
 			string UnsetAccessName;
+
+			//Fields and properties are separated
 
 			public string PrivateNameProperty
 			{
@@ -46,15 +46,16 @@ namespace PracticeExamples
 			public string PublicName { get; set; }
 			internal string InternalName { get; set; }
 
-			///////////
+			//Returns current time and cannot be set
 			public DateTime CurrentTime
 			{
 				get { return DateTime.Now; }
 			}
 
-			///////////
+			//List of ints property
 			public List<int> ListInts { get; set; }
 
+			//List of ints property with getter logic
 			public List<int> LoopOfInts
 			{
 				get
