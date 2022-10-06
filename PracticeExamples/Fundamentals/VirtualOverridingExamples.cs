@@ -11,7 +11,7 @@ namespace PracticeExamples
 		public static void VirtualOverridingExamplesMain()
 		{
 			Console.WriteLine("\n *********** VIRTUAL / OVERRIDING EXAMPLES *********** \n");
-			///Virtual / Overriding - modifying an implementation of an inherited method
+			///Virtual / Overriding - modifying an implementation of an inherited method or peroperty
 
 			//var draw = new Shapes.BaseShape(); draw.Draw();
 			//var circle = new Shapes.Circle(); circle.Draw();
@@ -25,9 +25,7 @@ namespace PracticeExamples
 			shapes.Add(new ShapeObjects.Triangle());
 
 			foreach(var shape in shapes)
-			{
-				shape.Draw();
-			}
+			{ shape.Draw(); }
 		}
 
 		//All Shapes
@@ -38,7 +36,9 @@ namespace PracticeExamples
 			{
 				public int Width;
 				public int Height;
-				public virtual void Draw()  //'virtual' designation allows derived objects to replace this default method when inherited
+
+				public virtual string ShapeInfo { get; set; }   //'virtual' designation allows derived objects to replace this default member when inherited
+				public virtual void Draw()						//'virtual' designation allows derived objects to replace this default member when inherited
 				{ Console.WriteLine("BaseShape: This is the default 'Draw' method."); }
 			}
 
@@ -47,6 +47,8 @@ namespace PracticeExamples
 				public int Radius;
 				public override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Circle: This 'Draw' method has been overridden."); }
+
+				//All other members are inherited
 			}
 
 			public class Square : BaseShape
@@ -54,6 +56,8 @@ namespace PracticeExamples
 				public int Diameter;
 				public override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Square: This 'Draw' method has been overridden."); }
+
+				//All other members are inherited
 			}
 
 			public class Triangle : BaseShape
@@ -61,16 +65,17 @@ namespace PracticeExamples
 				public int Tangent;
 				public override void Draw()  //Replacement of inherited method by using 'override'
 				{ Console.WriteLine("Triangle: This 'Draw' method has been overridden."); }
+
+				//All other members are inherited
 			}
 
 			//No method override
 			public class Image : BaseShape
 			{
 				public int Resolution;
+				public override string ShapeInfo { get; set; }  //Replacement of inherited property by using 'override'
 
-				//No method override, so default method inherited from 'BaseShape' will be used
-				//public override void Draw()
-				//{ Console.WriteLine("Image: This 'Draw' method has been overridden"); }
+				//All other members are inherited
 			}
 		}
 	}
