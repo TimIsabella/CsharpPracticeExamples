@@ -9,20 +9,20 @@ namespace PracticeExamples
 			Console.WriteLine("\n *********** METHOD MODIFIERS EXAMPLES *********** \n");
 
 			//Params
-			var paramsResult1 = MethodModifierExamples.ParamsModifer(new int[] { 1, 2, 3 });
-			var ParamsResult2 = MethodModifierExamples.ParamsModifer(1, 2, 3, 4, 5, 6, 7);
+			var paramsResult1 = ParamsModifer(new int[] { 1, 2, 3 });
+			var ParamsResult2 = ParamsModifer(1, 2, 3, 4, 5, 6, 7);
 
 			//Ref
 			var refVariableA = 11;
 			Console.WriteLine("refVariableA = " + refVariableA); //Before
-			MethodModifierExamples.RefModifier(ref refVariableA);
+			RefModifier(ref refVariableA);
 			Console.WriteLine("refVariableA = " + refVariableA); //After
 
 			//Out
 			var outVariableStr = "abc";
 			var outVariableInt = 123;
 			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt); //Before
-			MethodModifierExamples.OutModifier(out outVariableStr, out outVariableInt);
+			OutModifier(out outVariableStr, out outVariableInt);
 			Console.WriteLine("outVariable = {0}, outVariableInt = {1}", outVariableStr, outVariableInt); //After
 		}
 

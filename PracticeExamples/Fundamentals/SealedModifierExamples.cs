@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PracticeExamples
 {
-	public class SealedModifiersExample
+	public class SealedModifierExample
 	{
-		public static void SealedModifiersExampleMain()
+		public static void SealedModifierExampleMain()
 		{
 			Console.WriteLine("\n *********** SEALED MODIFIER EXAMPLES *********** \n");
 			///'sealed' members provide a slight performance optimization

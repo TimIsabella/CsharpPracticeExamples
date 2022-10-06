@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PracticeExamples
 {
-	public class VirtualMethodOverridingExamples
+	public class VirtualOverridingExamples
 	{
-		public static void VirtualMethodOverridingExamplesMain()
+		public static void VirtualOverridingExamplesMain()
 		{
-			Console.WriteLine("\n *********** VIRTUAL METHOD OVERRIDING EXAMPLES *********** \n");
-			///Virtual Method overriding - modifying an implementation of an inherited method
+			Console.WriteLine("\n *********** VIRTUAL / OVERRIDING EXAMPLES *********** \n");
+			///Virtual / Overriding - modifying an implementation of an inherited method
 
 			//var draw = new Shapes.BaseShape(); draw.Draw();
 			//var circle = new Shapes.Circle(); circle.Draw();
