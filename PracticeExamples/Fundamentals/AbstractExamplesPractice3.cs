@@ -9,7 +9,7 @@ namespace PracticeExamples
 		public static void AbstractExamplesPractice3Main()
 		{
 			Console.WriteLine("\n *********** ABSTRACT EXAMPLES PRACTICE 3 *********** \n");
-			///the 'abstract' keyword is applied to both classes and methods
+			///the 'abstract' keyword is applied to classes, methods, and properties
 			///- Abstract classes cannot be instantiated
 			///- Abstract methods contain no implimentation (no curly braces or logic)
 
@@ -30,9 +30,10 @@ namespace PracticeExamples
 		/////////// Base abstract class ///////////
 		public abstract class BaseClass
 		{
-			public int numbers; //Fields cannot be abstract
-			
-			public BaseClass() //Constructors cannot be abstract
+			public abstract int SomeProperty { get; set; }
+			public int Numbers;	//Fields cannot be abstract
+
+			public BaseClass()	//Constructors cannot be abstract
 			{ }
 
 			public abstract void Method1();
@@ -43,6 +44,8 @@ namespace PracticeExamples
 		/////////// Override classes ///////////
 		class OverrideClass1 : BaseClass
 		{
+			public override int SomeProperty { get; set; }
+
 			public override void Method1()
 			{ }
 			public override void Method2()
@@ -53,6 +56,8 @@ namespace PracticeExamples
 
 		class OverrideClass2 : BaseClass
 		{
+			public override int SomeProperty { get; set; }
+
 			public override void Method1()
 			{ }
 			public override void Method2()
@@ -63,6 +68,8 @@ namespace PracticeExamples
 
 		class OverrideClass3 : BaseClass
 		{
+			public override int SomeProperty { get; set; }
+
 			public override void Method1()
 			{ }
 			public override void Method2()

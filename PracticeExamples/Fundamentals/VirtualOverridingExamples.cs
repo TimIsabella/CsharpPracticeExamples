@@ -12,6 +12,7 @@ namespace PracticeExamples
 		{
 			Console.WriteLine("\n *********** VIRTUAL / OVERRIDING EXAMPLES *********** \n");
 			///Virtual / Overriding - modifying an implementation of an inherited method or peroperty
+			///- Must match the exact signature of the member
 
 			//var draw = new Shapes.BaseShape(); draw.Draw();
 			//var circle = new Shapes.Circle(); circle.Draw();
