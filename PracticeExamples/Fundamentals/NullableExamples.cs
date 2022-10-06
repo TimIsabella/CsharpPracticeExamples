@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PracticeExamples
 {
@@ -12,9 +8,8 @@ namespace PracticeExamples
 		{
 			Console.WriteLine("\n *********** NULLABLE EXAMPLES *********** \n");
 
-			///Value types cannot be null///
+			/// Value types cannot be null -- Below results in compiler errors ///
 			/*
-			//ERROR: cannot be null
 			bool boolNum = null;
 			int numberNull = null;
 			float floatNull = null;
@@ -22,26 +17,33 @@ namespace PracticeExamples
 			DateTime dateTimeNull = null;
 			*/
 
-			//'Nullable' - wraps types to allow them to be nullable
+			/// 'Nullable' - wraps types to allow them to be nullable ///
 			Nullable<bool> boolNull = null;
 			Nullable<int> numberNull = null;
 			Nullable <float> floatNull = null;
 			Nullable<char> charNull = null;
 			Nullable<DateTime> dateTimeNull = null;
 
-			//String is a refrence type and is nullable
-			string stringNull = null;
+			/// Simplified 'Nullable' - Same as above by using a '?' preceeding the type casting ///
+			bool? boolNullQ = null;
+			int? numberNullQ = null;
+			float? floatNullQ = null;
+			char? charNullQ = null;
+			DateTime? dateTimeNullQ = null;
 
+			/// Cannot create reference to nullable type for non-nullable type --  -- Below results in a compiler error ///
 			/*
-			//ERROR: cannot create reference to nullable type for non-nullable type
 			bool boolNull2 = boolNull;
 			*/
-			
-			//This works to reference from nullable types
+
+			/// String is a refrence type and is nullable ///
+			string stringNull = null;
+
+			/// This works to reference from 'Nullable<>' types ///
 			bool boolNull2 = boolNull.GetValueOrDefault();
 
-			//'Coalescing' -- double ?? is check for null
-			//if numberNull is not null, use numberNull, otherwise use 123
+			/// 'Coalescing' -- double ?? is check for null ///
+			//- if numberNull is not null, use numberNull, otherwise use 123
 			int numberNull2 = numberNull ?? 123;
 
 			//////////////////////////////////////////////////////////////////
