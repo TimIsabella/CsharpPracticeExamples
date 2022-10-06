@@ -94,6 +94,7 @@ namespace PracticeExamples
 			RefModifierExamples.RefModifierExamplesMain();
 			OutModifierExamples.OutModifierExamplesMain();
 			InModifierExamples.InModifierExamplesMain();
+			InterfaceExamplesPractice5.InterfaceExamplesPractice5Main();
 		}
 	}
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace PracticeExamples
 {
-	public class GenericsExamplesPractice
+	public class GenericsExamplesPractice2
 	{
-		public static void GenericsExamplesPracticeMain()
+		public static void GenericsExamplesPractice2Main()
 		{
-			Console.WriteLine("\n *********** GENERICS EXAMPLES PRACTICE *********** \n");
+			Console.WriteLine("\n *********** GENERICS EXAMPLES PRACTICE 2 *********** \n");
 
 			int[] intArray = { 1, 2, 3 };
 			double[] doubleArray = { 1.1, 2.2, 3.3 };
