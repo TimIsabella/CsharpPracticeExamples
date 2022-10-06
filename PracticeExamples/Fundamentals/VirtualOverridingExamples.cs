@@ -63,7 +63,7 @@ namespace PracticeExamples
 			public class Triangle : BaseShape
 			{
 				public int Tangent;
-				public override string ShapeInfo { get; set; }  //Replacement of inherited property by using 'override'
+				public override string ShapeInfo { get { return "Overridden property"; } }  //Replacement of inherited property by using 'override'
 
 				//All other members are inherited
 			}
