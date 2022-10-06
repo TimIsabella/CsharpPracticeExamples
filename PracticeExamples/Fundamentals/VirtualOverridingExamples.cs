@@ -63,16 +63,6 @@ namespace PracticeExamples
 			public class Triangle : BaseShape
 			{
 				public int Tangent;
-				public override void Draw()  //Replacement of inherited method by using 'override'
-				{ Console.WriteLine("Triangle: This 'Draw' method has been overridden."); }
-
-				//All other members are inherited
-			}
-
-			//No method override
-			public class Image : BaseShape
-			{
-				public int Resolution;
 				public override string ShapeInfo { get; set; }  //Replacement of inherited property by using 'override'
 
 				//All other members are inherited
