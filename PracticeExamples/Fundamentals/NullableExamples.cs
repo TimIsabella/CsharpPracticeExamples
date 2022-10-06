@@ -42,7 +42,7 @@ namespace PracticeExamples
 			/// This works to reference from 'Nullable<>' types ///
 			bool boolNull2 = boolNull.GetValueOrDefault();
 
-			/// 'Coalescing' -- double '??' is check for null ///
+			/// 'Coalescing' -- '??' is check for null ///
 			//- if numberNull is not null, use numberNull, otherwise use 123
 			int numberNull2 = numberNull ?? 123;
 
