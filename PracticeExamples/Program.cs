@@ -90,6 +90,7 @@ namespace PracticeExamples
 			*/
 
 			IEnumerableExamples.IEnumerableExamplesMain();
+			RefModifierExamples.RefModifierExamplesMain();
 		}
 	}
 }

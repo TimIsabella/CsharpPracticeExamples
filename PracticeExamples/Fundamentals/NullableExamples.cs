@@ -43,7 +43,7 @@ namespace PracticeExamples
 			bool boolNull2 = boolNull.GetValueOrDefault();
 
 			/// 'Coalescing' -- '??' is check for null ///
-			//- if numberNull is not null, use numberNull, otherwise use 123
+			//- if numberNull is not null, use numberNull, otherwise use '123'
 			int numberNull2 = numberNull ?? 123;
 
 			//////////////////////////////////////////////////////////////////
