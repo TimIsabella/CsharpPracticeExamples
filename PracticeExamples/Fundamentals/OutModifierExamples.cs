@@ -11,14 +11,14 @@ namespace PracticeExamples
 			
 			var outVariableStr = "abc";
 			var outVariableInt = 123;
-			Console.WriteLine($"outVariable = {outVariableStr}, outVariableInt = {outVariableInt}"); //Before
+			Console.WriteLine($"BEFORE: outVariable = {outVariableStr}, outVariableInt = {outVariableInt}");
 
 			//Method called with 'out' variable argument
 			//- Method REPLACES the variables in the argument with those from within the method
 			//- Arguments ARE NOT passed into the method
 			OutModifier(out outVariableStr, out outVariableInt);
 
-			Console.WriteLine($"outVariable = {outVariableStr}, outVariableInt = {outVariableInt}"); //After
+			Console.WriteLine($"AFTER: outVariable = {outVariableStr}, outVariableInt = {outVariableInt}");
 		}
 
 		/////////////////////////////////

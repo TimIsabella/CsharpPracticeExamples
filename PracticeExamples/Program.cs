@@ -91,7 +91,9 @@ namespace PracticeExamples
 			*/
 
 			IEnumerableExamples.IEnumerableExamplesMain();
+			RefModifierExamples.RefModifierExamplesMain();
 			OutModifierExamples.OutModifierExamplesMain();
+			InModifierExamples.InModifierExamplesMain();
 		}
 	}
 }

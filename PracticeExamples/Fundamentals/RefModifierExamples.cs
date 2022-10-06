@@ -11,14 +11,14 @@ namespace PracticeExamples
 			/// Ref modifier -- directly changes the variable reference ///
 			
 			var refVariableA = 11;
-			Console.WriteLine("refVariableA = " + refVariableA); //Before
+			Console.WriteLine("BEFORE: refVariableA = " + refVariableA);
 
 			//Method called with 'out' variable argument
 			//- Method PASSES IN the refrence variable which can be CHANGED DIRECTLY by the method
 			//- Capturing a return and setting 'refVariableA' is not necessary
 			RefModifier(ref refVariableA);
 
-			Console.WriteLine("refVariableA = " + refVariableA); //After
+			Console.WriteLine("AFTER: refVariableA = " + refVariableA);
 		}
 
 		/////////////////////////////////
