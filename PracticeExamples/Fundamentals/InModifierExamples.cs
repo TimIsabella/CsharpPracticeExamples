@@ -11,20 +11,23 @@ namespace PracticeExamples
 			
 			var inVariableStr = "abc";
 			var inVariableInt = 123;
-			InModifier(inVariableStr, inVariableInt);
+			InModifier(inVariableStr, in inVariableInt); //Invoking 'in' on the argument is not necessary
 		}
 
 		/////////////////////////////////
 		
 		public static void InModifier(in string inResultStr, in int inResultInt)
 		{
-			//in parameters become READONLY so cannot be modified -- the below results in a compile error
+			//'in' parameters become READONLY so cannot be modified -- the below results in a compile error
 			/*
 			inResultStr = "xyz";
 			inResultInt = 456;
 			*/
 
-			Console.WriteLine($"READ ONLY: inResultStr = {inResultStr}, inResultStr = {inResultInt}"); //After
+			string newVariable = inResultStr + "def";
+
+			Console.WriteLine($"READ ONLY: inResultStr = {inResultStr}, inResultStr = {inResultInt}");
+			Console.WriteLine($"inResultStr + 'def' = {newVariable}");
 		}
 	}
 }
