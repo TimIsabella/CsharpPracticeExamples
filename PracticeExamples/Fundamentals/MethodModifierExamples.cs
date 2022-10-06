@@ -4,7 +4,7 @@ namespace PracticeExamples
 {
 	public class MethodModifierExamples
 	{
-		public static void MethodExamplesMain()
+		public static void MethodModifierExamplesMain()
 		{
 			Console.WriteLine("\n *********** METHOD MODIFIERS EXAMPLES *********** \n");
 

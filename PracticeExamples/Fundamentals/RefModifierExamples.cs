@@ -13,9 +13,9 @@ namespace PracticeExamples
 			var refVariableA = 11;
 			Console.WriteLine("refVariableA = " + refVariableA); //Before
 
-			//Method called with 'ref' variable argument
-			//- Method can directly changes the variable
-			//- No capturing the return and setting 'refVariableA' necessary
+			//Method called with 'out' variable argument
+			//- Method PASSES IN the refrence variable which can be CHANGED DIRECTLY by the method
+			//- Capturing a return and setting 'refVariableA' is not necessary
 			RefModifier(ref refVariableA);
 
 			Console.WriteLine("refVariableA = " + refVariableA); //After
@@ -25,7 +25,7 @@ namespace PracticeExamples
 		
 		public static void RefModifier(ref int refVariableB)
 		{
-			//'refVariableB' from outside of the method scope is changed
+			//'refVariableB' passed into the method is directly modified
 			//- No return necessary
 			refVariableB += 22;
 		}

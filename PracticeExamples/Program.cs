@@ -87,10 +87,11 @@ namespace PracticeExamples
 			DelegateExamplesPractice2.DelegateExamplesPractice2Main();
 			ExtensionMethodsExamples.ExtensionMethodsExamplesMain();
 			AbstractExamplesPractice2.AbstractExamplesPractice2Main();
+			RefModifierExamples.RefModifierExamplesMain();
 			*/
 
 			IEnumerableExamples.IEnumerableExamplesMain();
-			RefModifierExamples.RefModifierExamplesMain();
+			OutModifierExamples.OutModifierExamplesMain();
 		}
 	}
 }
