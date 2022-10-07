@@ -17,12 +17,12 @@ namespace PracticeExamples
 
 
 		/// Base class
-		public class BasePerson
+		public class Person
 		{
 			public int Numbers;
 			public string Strings;
 			
-			public BasePerson(int numbers, string strings)
+			public Person(int numbers, string strings)
 			{
 				Numbers = numbers;
 				Strings = strings;
@@ -33,7 +33,7 @@ namespace PracticeExamples
 		}
 
 		/// Derived class
-		public class Employee : BasePerson
+		public class Employee : Person
 		{
 			public double Doubles;
 
@@ -46,9 +46,9 @@ namespace PracticeExamples
 				Doubles = doubles;
 			}
 
-			public override void GetInfo()                          //Overriding the derived class method
+			public override void GetInfo()                          //Overriding the base class method
 			{
-				base.GetInfo();                                     ///'base' representing the derived class and calling that method directly
+				base.GetInfo();                                     ///'base' representing the base class and calling that method directly
 				Console.WriteLine("Derived Employee: GetInfo() called");
 			}
 		}
