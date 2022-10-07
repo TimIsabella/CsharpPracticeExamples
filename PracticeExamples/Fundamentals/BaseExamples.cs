@@ -12,14 +12,13 @@ namespace PracticeExamples
 			var employee = new Employee(123, "abc", 1.618);
 			employee.GetInfo();
 			Console.WriteLine("Employee.Numbers: ", employee.Numbers);
-			Console.WriteLine("Eployee.Strings: ", employee.Strings);
+			Console.WriteLine("Employee.Strings: ", employee.Strings);
 		}
 
 
 		//////////////////////////////////////////////////////////////////
 		public class BasePerson
 		{
-			//'Protected' allows fields to be inherited
 			public int Numbers;
 			public string Strings;
 			
