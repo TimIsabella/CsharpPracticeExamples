@@ -9,35 +9,36 @@ namespace PracticeExamples
 		{
 			Console.WriteLine("\n *********** BASE EXAMPLES *********** \n");
 
-			var derivedObject = new DerivedClass(123, "abc", 1.618);
-			derivedObject.GetInfo();
-			Console.WriteLine("derivedObject.Numbers: ", derivedObject.Numbers);
-			Console.WriteLine("derivedObject.Strings: ", derivedObject.Strings);
+			var employee = new Employee(123, "abc", 1.618);
+			employee.GetInfo();
+			Console.WriteLine("Derived Employee.Numbers: ", employee.Numbers);
+			Console.WriteLine("Derived Employee.Strings: ", employee.Strings);
 		}
 
 
-		//////////////////////////////////////////////////////////////////
-		public class BaseClass
+		/// Base class
+		public class BasePerson
 		{
 			public int Numbers;
 			public string Strings;
 			
-			public BaseClass(int numbers, string strings)
+			public BasePerson(int numbers, string strings)
 			{
 				Numbers = numbers;
 				Strings = strings;
 			}
 			
 			public virtual void GetInfo()
-			{ Console.WriteLine("Person class: GetInfo() called"); }
+			{ Console.WriteLine("Base Person class: GetInfo() called"); }
 		}
 
-		public class DerivedClass : BaseClass
+		/// Derived class
+		public class Employee : BasePerson
 		{
 			public double Doubles;
 
-			///'base' specifies that properties for this constructor are inherited from the base class (BaseClass)
-			public DerivedClass(int numbers, string strings, double doubles) : base(numbers, strings)
+			///'base' specifies that properties for this constructor are inherited from the base class (Person)
+			public Employee(int numbers, string strings, double doubles) : base(numbers, strings)
 			{
 				//Numbers = numbers; -- Inherited by 'base'
 				//Strings = strings; -- Inherited by 'base'
@@ -48,7 +49,7 @@ namespace PracticeExamples
 			public override void GetInfo()                          //Overriding the derived class method
 			{
 				base.GetInfo();                                     ///'base' representing the derived class and calling that method directly
-				Console.WriteLine("Employee: GetInfo() called");
+				Console.WriteLine("Derived Employee: GetInfo() called");
 			}
 		}
 	}
