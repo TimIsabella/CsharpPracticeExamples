@@ -11,6 +11,8 @@ namespace PracticeExamples
 
 			var employee = new Employee(123, "abc", 1.618);
 			employee.GetInfo();
+			Console.WriteLine("Employee.Numbers: ", employee.Numbers);
+			Console.WriteLine("Eployee.Strings: ", employee.Strings);
 		}
 
 
@@ -18,8 +20,8 @@ namespace PracticeExamples
 		public class BasePerson
 		{
 			//'Protected' allows fields to be inherited
-			protected int Numbers;
-			protected string Strings;
+			public int Numbers;
+			public string Strings;
 			
 			public BasePerson(int numbers, string strings)
 			{
@@ -33,13 +35,14 @@ namespace PracticeExamples
 
 		public class Employee : BasePerson
 		{
-			double Doubles;
+			public double Doubles;
 
-			///'base' specifies that properties for this constructor are for the base class (Person)
+			///'base' specifies that properties for this constructor are inherited from the base class (Person)
 			public Employee(int numbers, string strings, double doubles) : base(numbers, strings)
-			{ 
-				Numbers = numbers;
-				Strings = strings;
+			{
+				//Numbers = numbers; -- Inherited by 'base'
+				//Strings = strings; -- Inherited by 'base'
+
 				Doubles = doubles;
 			}
 
