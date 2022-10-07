@@ -13,6 +13,7 @@ namespace PracticeExamples
 			genericClass.OutputGeneric("string");
 			genericClass.OutputGenericArray(new int[] { 1, 2, 3 });
 			genericClass.OutputGenericMultiple(1.618, new double[] { 1.23, 4.56, 7.89 });
+			genericClass.OutputGenericMixed(1, new int[] { 11, 22, 33 }, "Hello string!");
 		}
 
 		//////////////////////////////////////////////////////////////////
@@ -38,6 +39,17 @@ namespace PracticeExamples
 
 				foreach(Thing i in genericThingArray)
 				{ Console.WriteLine($"OutputGenericMultiple Thing[] genericThingArray: {i}"); }
+			}
+
+			//Parameters can be mixed
+			public void OutputGenericMixed<Other>(Other genericThing, Other[] genericThingArray, string stringParam)
+			{
+				Console.WriteLine($"OutputGenericMixed Other genericThing: {genericThing}");
+
+				foreach(Other i in genericThingArray)
+				{ Console.WriteLine($"OutputGenericMixed Other[] genericThingArray: {i}"); }
+
+				Console.WriteLine($"OutputGenericMixed Other stringParam: {stringParam}");
 			}
 		}
 		
