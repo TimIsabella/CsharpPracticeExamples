@@ -96,6 +96,7 @@ namespace PracticeExamples
 			InModifierExamples.InModifierExamplesMain();
 			InterfaceExamplesPractice5.InterfaceExamplesPractice5Main();
 			BaseExamples.BaseExamplesMain();
+			GenericsExamplesPractice2.GenericsExamplesPractice2Main();
 
 		}
 	}
