@@ -9,20 +9,20 @@ namespace PracticeExamples
 		{
 			Console.WriteLine("\n *********** BASE EXAMPLES *********** \n");
 
-			var employee = new Employee(123, "abc", 1.618);
-			employee.GetInfo();
-			Console.WriteLine("Employee.Numbers: ", employee.Numbers);
-			Console.WriteLine("Employee.Strings: ", employee.Strings);
+			var derivedObject = new DerivedClass(123, "abc", 1.618);
+			derivedObject.GetInfo();
+			Console.WriteLine("derivedObject.Numbers: ", derivedObject.Numbers);
+			Console.WriteLine("derivedObject.Strings: ", derivedObject.Strings);
 		}
 
 
 		//////////////////////////////////////////////////////////////////
-		public class BasePerson
+		public class BaseClass
 		{
 			public int Numbers;
 			public string Strings;
 			
-			public BasePerson(int numbers, string strings)
+			public BaseClass(int numbers, string strings)
 			{
 				Numbers = numbers;
 				Strings = strings;
@@ -32,12 +32,12 @@ namespace PracticeExamples
 			{ Console.WriteLine("Person class: GetInfo() called"); }
 		}
 
-		public class Employee : BasePerson
+		public class DerivedClass : BaseClass
 		{
 			public double Doubles;
 
-			///'base' specifies that properties for this constructor are inherited from the base class (Person)
-			public Employee(int numbers, string strings, double doubles) : base(numbers, strings)
+			///'base' specifies that properties for this constructor are inherited from the base class (BaseClass)
+			public DerivedClass(int numbers, string strings, double doubles) : base(numbers, strings)
 			{
 				//Numbers = numbers; -- Inherited by 'base'
 				//Strings = strings; -- Inherited by 'base'
