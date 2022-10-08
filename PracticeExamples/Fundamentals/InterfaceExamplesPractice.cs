@@ -23,6 +23,7 @@ namespace PracticeExamples
 			interface1.Method1();
 			interface1.Method3("This is a string");
 		}
+
 		public static void TestInterface2(Iinterface1 interface1, Iinterface2 interface2)
 		{
 			interface1.Method2(123);

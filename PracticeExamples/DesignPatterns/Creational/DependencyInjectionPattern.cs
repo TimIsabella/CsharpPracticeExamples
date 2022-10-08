@@ -29,6 +29,19 @@ namespace PracticeExamples.DesignPatterns.Creational
 			var fieldInjection = new FieldInjection();
 			fieldInjection.Text = new TextPrinter();
 			fieldInjection.Print("Dependency injection by field");
+
+			/////////// By Statics ///////////
+
+			//By static method
+			StaticMethodInjection(new TextPrinter(), "Dependency injection by static method");
+
+			//By static property
+			StaticPropertyInjection = new TextPrinter();
+			StaticPropertyInjection.Print("Dependency injection by static property");
+
+			//By static field
+			StaticFieldInjection = new TextPrinter();
+			StaticFieldInjection.Print("Dependency injection by static field");
 		}
 
 		//////////////////////////////////////////////////////////////////
@@ -72,6 +85,18 @@ namespace PracticeExamples.DesignPatterns.Creational
 			public void Print(string injectionType)
 			{ Text.Print(injectionType); }
 		}
+
+		/// /////////// Statics ///////////
+
+		/// Static Method Dependancy Injection
+		public static void StaticMethodInjection(IText text, string injectionType)
+		{ text.Print(injectionType); }
+
+		/// Static Property Dependancy Injection
+		public static IText StaticPropertyInjection { get; set; }
+
+		/// Static Field Dependancy Injection
+		public static IText StaticFieldInjection;
 
 		/////////////////////////////////
 
