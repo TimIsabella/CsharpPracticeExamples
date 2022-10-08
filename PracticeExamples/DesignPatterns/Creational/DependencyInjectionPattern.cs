@@ -25,7 +25,7 @@ namespace PracticeExamples.DesignPatterns.Creational
 			propertyInjection.Text = new TextPrinter();
 			propertyInjection.Print("Dependency injection by property");
 
-			//By Property
+			//By Field
 			var fieldInjection = new FieldInjection();
 			fieldInjection.Text = new TextPrinter();
 			fieldInjection.Print("Dependency injection by field");
