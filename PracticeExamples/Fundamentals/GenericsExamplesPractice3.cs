@@ -18,7 +18,7 @@ namespace PracticeExamples
 		{
 			private Galaxy _galaxy;
 			private Galaxy<SolarSystem> _galaxySolarSystem;										///Galaxy takes a generic of 'SolarSystem' which does not take a generic
-			private Galaxy<SolarSystem<Planet>> _galaxySolarSystemPlanet;						///Galaxy takes a generic of 'SolarSystem' which DOES take a generic
+			private Galaxy<SolarSystem<Planet>> _galaxySolarSystemPlanet;						///Galaxy takes a generic of 'SolarSystem<>' which DOES take a generic
 			private Galaxy<SolarSystem<Planet<Satellite>>> _galaxySolarSystemPlanetSatellite;
 
 			public Galaxy GalaxyMethod()
