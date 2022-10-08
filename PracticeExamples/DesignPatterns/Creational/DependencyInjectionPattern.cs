@@ -14,16 +14,21 @@ namespace PracticeExamples.DesignPatterns.Creational
 
 			//By Constructor
 			var constructorInjection = new ConstructorInjection(new TextPrinter());
-			constructorInjection.Print("Dependency injection by constructor.");
+			constructorInjection.Print("Dependency injection by constructor");
 
 			//By Method
 			var methodInjection = new MethodInjection();
-			methodInjection.Print(new TextPrinter(), "Dependency injection by method.");
+			methodInjection.Print(new TextPrinter(), "Dependency injection by method");
 
 			//By Property
 			var propertyInjection = new PropertyInjection();
 			propertyInjection.Text = new TextPrinter();
-			propertyInjection.Print("Dependency injection by property.");
+			propertyInjection.Print("Dependency injection by property");
+
+			//By Property
+			var fieldInjection = new FieldInjection();
+			fieldInjection.Text = new TextPrinter();
+			fieldInjection.Print("Dependency injection by field");
 		}
 
 		/// Construtor Dependancy Injection
@@ -49,6 +54,15 @@ namespace PracticeExamples.DesignPatterns.Creational
 		public class PropertyInjection
 		{
 			public IText Text { get; set; }
+
+			public void Print(string injectionType)
+			{ Text.Print(injectionType); }
+		}
+
+		/// Field Dependancy Injection
+		public class FieldInjection
+		{
+			public IText Text;
 
 			public void Print(string injectionType)
 			{ Text.Print(injectionType); }
