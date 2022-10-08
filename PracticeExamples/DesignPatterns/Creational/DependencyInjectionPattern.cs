@@ -33,7 +33,7 @@ namespace PracticeExamples.DesignPatterns.Creational
 
 		//////////////////////////////////////////////////////////////////
 		///The below makes the connection between passed in class and matching interface 
-		///- The connection of matching the interface and class method signature is called "Late Binding" or "Dynamic Dispatch"
+		///- The connection of matching the class and interface method contract signature is called "Late Binding" or "Dynamic Dispatch"
 		///- This dynamic connection is established at runtime and is a type of polymorphism
 
 		/// Construtor Dependancy Injection
