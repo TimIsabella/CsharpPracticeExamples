@@ -85,7 +85,7 @@ namespace PracticeExamples
 									  };
 			Console.WriteLine("mat4[2][4]: " + mat4[2][4]);
 
-			///////////Objects///////////////////////////////////////////////////////////////////////////////////////////////////
+			///////////////////////////////// Objects /////////////////////////////////
 
 			//Array Object
 			Arrays arrObj2 = new Arrays(new int[] { 1, 2, 3 }, new double[] { 4.4, 5.5, 6.6 }, new string[] { "This", "That", "Other" });
