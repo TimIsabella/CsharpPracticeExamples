@@ -11,7 +11,7 @@ namespace PracticeExamples
 			Console.WriteLine("\n *********** ABSTRACT EXAMPLES PRACTICE 3 *********** \n");
 			///The 'abstract' keyword is applied to classes, methods, and properties to create a base class of members in which to override
 			///- ALL abstract methods and properties of the base abstract class MUST be implimented (similar to interfaces)
-			///- Abstract methods contain no implimentation (no curly braces or logic, similar to interfaces)
+			///- Abstract methods contain no implimentation (no curly braces and logic, similar to interfaces)
 			///- Abstract classes cannot be instantiated
 
 			var overriddenClasses = new List<BaseClass>();
