@@ -17,8 +17,9 @@ namespace PracticeExamples
 		public class Generic
 		{
 			private Galaxy _galaxy;
-			private Galaxy<SolarSystem> _galaxyWithSolarSystem;                     ///Galaxy takes a ganeric of 'SolarSystem' which does not take a generic
-			private Galaxy<SolarSystem<Planet>> _galaxyWithSolarSystemAndPlanet;    ///Galaxy takes a ganeric of 'SolarSystem' which DOES take a generic
+			private Galaxy<SolarSystem> _galaxySolarSystem;										///Galaxy takes a generic of 'SolarSystem' which does not take a generic
+			private Galaxy<SolarSystem<Planet>> _galaxySolarSystemPlanet;						///Galaxy takes a generic of 'SolarSystem' which DOES take a generic
+			private Galaxy<SolarSystem<Planet<Satellite>>> _galaxySolarSystemPlanetSatellite;
 
 			public Galaxy GalaxyMethod()
 			{
@@ -28,18 +29,25 @@ namespace PracticeExamples
 
 			public Galaxy<SolarSystem> SolarSystemMethod()
 			{
-				_galaxyWithSolarSystem = new Galaxy<SolarSystem>();
-				return _galaxyWithSolarSystem;
+				_galaxySolarSystem = new Galaxy<SolarSystem>();
+				return _galaxySolarSystem;
 			}
 
 			public Galaxy<SolarSystem<Planet>> PlanetMethod()
 			{
-				_galaxyWithSolarSystemAndPlanet = new Galaxy<SolarSystem<Planet>>();
-				return _galaxyWithSolarSystemAndPlanet;
+				_galaxySolarSystemPlanet = new Galaxy<SolarSystem<Planet>>();
+				return _galaxySolarSystemPlanet;
+			}
+
+			public Galaxy<SolarSystem<Planet<Satellite>>> SatelliteMethod()
+			{
+				_galaxySolarSystemPlanetSatellite = new Galaxy<SolarSystem<Planet<Satellite>>>();
+				return _galaxySolarSystemPlanetSatellite;
 			}
 		}
 
 		///Need both non-generic and generic class combinations to complete the above
+		///- Classes cannot be used interchangeable for generic and non-generic
 
 		public class Galaxy
 		{ }
@@ -54,6 +62,12 @@ namespace PracticeExamples
 		{ }
 
 		public class Planet
+		{ }
+
+		public class Planet<T>
+		{ }
+
+		public class Satellite
 		{ }
 	}
 }
