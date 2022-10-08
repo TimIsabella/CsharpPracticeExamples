@@ -31,6 +31,11 @@ namespace PracticeExamples.DesignPatterns.Creational
 			fieldInjection.Print("Dependency injection by field");
 		}
 
+		//////////////////////////////////////////////////////////////////
+		///The below makes the connection between passed in class and matching interface 
+		///- The connection of matching the interface and class method signature is called "Late Binding" or "Dynamic Dispatch"
+		///- This dynamic connection is established at runtime and is a type of polymorphism
+
 		/// Construtor Dependancy Injection
 		public class ConstructorInjection
 		{
