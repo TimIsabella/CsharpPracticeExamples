@@ -14,16 +14,16 @@ namespace PracticeExamples.DesignPatterns.Creational
 
 			//By Constructor
 			var constructorInjection = new ConstructorInjection(new TextPrinter());
-			constructorInjection.Print("constructor");
+			constructorInjection.Print("By constructor.");
 
 			//By Method
 			var methodInjection = new MethodInjection();
-			methodInjection.Print(new TextPrinter(), "method");
+			methodInjection.Print(new TextPrinter(), "By method.");
 
 			//By Property
 			var propertyInjection = new PropertyInjection();
 			propertyInjection.Text = new TextPrinter();
-			propertyInjection.Print("property");
+			propertyInjection.Print("By property.");
 		}
 
 		/// Construtor Dependancy Injection

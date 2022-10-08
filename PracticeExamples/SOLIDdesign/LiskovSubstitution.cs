@@ -13,9 +13,9 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 			///- Don't make sub-classes which don't have the same functionality of the super-class if they are expected to be used interchangeably
 			//
 			///- Example
-			///-- 1. We have a parent class
-			///-- 2. We then have a class named "world" which calls a child
-			///-- 3. Class "world" should be able to swap the child class for the parent class without having the code modified
+			///-- 1. We have a parent class named 'Parent'
+			///-- 2. We then have a class named 'Family' which calls a child class named 'Child'
+			///-- 3. 'Family' should be able to swap 'Child' for 'Parent' without having the code modified
 
 			//Square
 			var square = new Square(3, 3, "Red");
