@@ -37,10 +37,10 @@ namespace PracticeExamples.DotNet.Fundamentals
 			///- 'IEnumerable' will make server calls procedurally by queries, which may call the same data repeatedly
 
 			//'List' collection cast as 'IQueryable'
-			IQueryable<Person> peopleListQueryable = (IQueryable<Person>)peopleList;
+			IQueryable<Person> peopleListQueryable = peopleList.AsQueryable(); //Converted with '.AsQueryable()'
 
 			//'IEnumerable' collection cast as 'IQueryable'
-			IQueryable<Person> peopleEnumerableQueryable = (IQueryable<Person>)peopleArrayEnumerable;
+			IQueryable<Person> peopleEnumerableQueryable = (IQueryable<Person>)peopleArrayEnumerable; //'Explicit conversion' using parenthesis
 
 			//////////////////////////////////////////////////////////////////
 
