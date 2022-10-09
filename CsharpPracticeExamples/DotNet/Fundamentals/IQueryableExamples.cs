@@ -26,10 +26,12 @@ namespace PracticeExamples.DotNet.Fundamentals
 
 			//'List' collection down casted to 'IEnumerable'
 			//- 'List' is a higher form of 'IEnumerable'
-			IEnumerable<Person> peopleListEnumerable = peopleList;
+			//- Converted using '.AsEnumerable()'
+			IEnumerable<Person> peopleListEnumerable = peopleList.AsEnumerable();
 
 			//Array converted and extended by 'IEnumerable'
 			//- 'IEnumerable' extension methods can now be called on the array
+			//- Direct conversion since it is compatible
 			IEnumerable<Person> peopleArrayEnumerable = peopleArray;
 
 			///'IQueryable' vs 'IEnumerable'
