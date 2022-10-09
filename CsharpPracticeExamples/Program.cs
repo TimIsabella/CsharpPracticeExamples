@@ -98,6 +98,7 @@ namespace PracticeExamples
 			BaseExamples.BaseExamplesMain();
 			GenericsExamplesPractice2.GenericsExamplesPractice2Main();
 			DependencyInjectionPattern.DependencyInjectionPatternMain();
+			IQueryableExamples.IQueryableExamplesMain();
 
 		}
 	}
