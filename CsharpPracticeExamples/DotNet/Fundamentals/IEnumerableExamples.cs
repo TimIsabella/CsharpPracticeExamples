@@ -70,7 +70,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 
 			//'foreach' is part of 'IEnumerable'
 			foreach(Person person in enumerableQuery1)
-			{ Console.WriteLine($" Person ID {person.Id} = '{person.Name}' who lives in '{person.Location}'"); }
+			{ Console.WriteLine($"enumerableQuery1 -- Person ID {person.Id} = '{person.Name}' who lives in '{person.Location}'"); }
 
 			//Returns an 'IEnumerable'
 			//- Object string 'Name' is returned
@@ -84,7 +84,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 
 			//'foreach' is part of 'IEnumerable'
 			foreach(string person in enumerableQuery2)
-			{ Console.WriteLine($" Person ID 2 Name = '{person}'"); }
+			{ Console.WriteLine($"enumerableQuery2 -- Person ID 2 Name = '{person}'"); }
 		}
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////

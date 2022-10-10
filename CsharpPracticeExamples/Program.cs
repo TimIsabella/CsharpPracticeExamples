@@ -88,9 +88,6 @@ namespace PracticeExamples
 			ExtensionMethodsExamples.ExtensionMethodsExamplesMain();
 			AbstractExamplesPractice2.AbstractExamplesPractice2Main();
 			RefModifierExamples.RefModifierExamplesMain();
-			*/
-
-			IEnumerableExamples.IEnumerableExamplesMain();
 			RefModifierExamples.RefModifierExamplesMain();
 			OutModifierExamples.OutModifierExamplesMain();
 			InModifierExamples.InModifierExamplesMain();
@@ -98,6 +95,9 @@ namespace PracticeExamples
 			BaseExamples.BaseExamplesMain();
 			GenericsExamplesPractice2.GenericsExamplesPractice2Main();
 			DependencyInjectionPattern.DependencyInjectionPatternMain();
+			*/
+
+			IEnumerableExamples.IEnumerableExamplesMain();
 			IQueryableExamples.IQueryableExamplesMain();
 
 		}

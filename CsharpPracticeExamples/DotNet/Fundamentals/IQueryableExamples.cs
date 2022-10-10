@@ -42,7 +42,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			IQueryable<Person> peopleListQueryable = peopleList.AsQueryable(); //Converted with '.AsQueryable()'
 
 			//'IEnumerable' collection cast as 'IQueryable'
-			IQueryable<Person> peopleEnumerableQueryable = (IQueryable<Person>)peopleArrayEnumerable; //'Explicit conversion' using parenthesis
+			IQueryable<Person> peopleEnumerableQueryable = peopleArrayEnumerable.AsQueryable();  //Converted with '.AsQueryable()'
 
 			/// //////////////////////////////////////////////////////////////////
 
@@ -55,7 +55,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 
 			//'foreach' is part of 'IQueryable'
 			foreach(Person person in queryableQuery1)
-			{ Console.WriteLine($" Person ID {person.Id} = '{person.Name}' who lives in '{person.Location}'"); }
+			{ Console.WriteLine($"queryableQuery1 -- Person ID {person.Id} = '{person.Name}' who lives in '{person.Location}'"); }
 
 			//Returns an 'IQueryable'
 			//- Object string 'Name' is returned
@@ -69,7 +69,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 
 			//'foreach' is part of 'IQueryable'
 			foreach(string person in queryableQuery2)
-			{ Console.WriteLine($" Person ID 2 Name = '{person}'"); }
+			{ Console.WriteLine($"queryableQuery2 -- Person ID 2 Name = '{person}'"); }
 		}
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////
