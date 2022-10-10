@@ -4,6 +4,7 @@ using PracticeExamples.DesignPatterns.SOLIDdesign;
 using PracticeExamples.DesignPatterns.Creational;
 using PracticeExamples.DesignPatterns.Structural;
 using PracticeExamples.DotNet.Fundamentals;
+using CsharpPracticeExamples.DotNet.Fundamentals;
 
 namespace PracticeExamples
 {
@@ -49,7 +50,6 @@ namespace PracticeExamples
 			DelegateExamples.DelegateExamplesMain();
 			EventsExamples.EventsExamplesMain();
 			ExtensionMethodsExamples.ExtensionMethodsExamplesMain();
-			LINQexamples.LINQexamplesMain();
 			NullableExamples.NullableExamplesMain();
 			DynamicExamples.DynamicExamplesMain();
 			ExceptionHandlingExamples.ExceptionHandlingMain();
@@ -99,7 +99,6 @@ namespace PracticeExamples
 
 			IEnumerableExamples.IEnumerableExamplesMain();
 			IQueryableExamples.IQueryableExamplesMain();
-
 		}
 	}
 }
