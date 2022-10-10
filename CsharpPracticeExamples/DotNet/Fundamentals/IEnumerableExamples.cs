@@ -11,15 +11,15 @@ namespace PracticeExamples.DotNet.Fundamentals
 		{
 			Console.WriteLine("\n *********** IENUMERABLE EXAMPLES *********** \n");
 			/// IEnumerable<T> is the base interface for ALL non-generic collections in .NET -- it is the basic support for iteration or traversing a collection
-			//- Provides a simple way to enumerate the contents of a collection
-			//- All .NET collection types (arrays, List<T>, etc.) implement IEnumerable<T>
+			///- Provides a simple way to enumerate the contents of a collection
+			///- All .NET collection types (arrays, List<T>, etc.) implement IEnumerable<T>
 
 			///LINQ
-			//- IEnumerable<T> is the CENTRAL interface for LINQ operations
-			//- Doses not have LINQ operators built in so must implement those operators with a 'Func<T>' argument -- known as 'LINQ to Objects'
-			//- Since IEnumerable does not have LINQ built in, its process of LINQ operators is a 'deferres execution'
-			//- The deferred execution is a major performance advantage by querying objects in memory AFTER the full query has been established
-			//- The alternative would be to write multiple nested for loops and run the logic therein
+			///- IEnumerable<T> is the CENTRAL interface for LINQ operations
+			///- Doses not have LINQ operators built in so must implement those operators with a 'Func<T>' argument -- known as 'LINQ to Objects'
+			///- Since IEnumerable does not have LINQ built in, its process of LINQ operators is a 'deferres execution'
+			///- The deferred execution is a major performance advantage by querying objects in memory AFTER the full query has been established
+			///- The alternative would be to write multiple nested for loops and run the logic therein
 
 			var para1 = new Params { A = 1, B = 2, C = 3 };					// All these are cast as 'IEnumerable<int>'
 			Params para2 = new Params { A = 4, B = 5, C = 6 };              //

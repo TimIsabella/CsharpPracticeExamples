@@ -9,6 +9,9 @@ namespace PracticeExamples.DotNet.Fundamentals
 		public static void IQueryableExamplesMain()
 		{
 			Console.WriteLine("\n *********** IQUERYABLE EXAMPLES *********** \n");
+			///'IQueryable' vs 'IEnumerable'
+			///- 'IQueryable' is the same as 'IEnumerable' except that on server calls ONLY the requested data will be queried
+			///- 'IEnumerable' will make server calls procedurally by queries, which may call the same data repeatedly
 
 			var personYeild = new Person { Id = 3, Name = "Bill Williams", Location = "Texas" };
 
@@ -28,15 +31,6 @@ namespace PracticeExamples.DotNet.Fundamentals
 											new Person { Id = 1, Name = "Sarah Connor", Location = "Nevada"},
 											new Person { Id = 2, Name = "Jake Phillips", Location = "Florida"},
 										 };
-			
-			//Array converted and extended by 'IEnumerable'
-			//- 'IEnumerable' extension methods can now be called on the array
-			//- Direct conversion since it is compatible
-			IEnumerable<Person> peopleArrayEnumerable = peopleArray;
-
-			///'IQueryable' vs 'IEnumerable'
-			///- 'IQueryable' is the same as 'IEnumerable' except that on server calls ONLY the requested data will be queried
-			///- 'IEnumerable' will make server calls procedurally by queries, which may call the same data repeatedly
 
 			//'List' collection cast as 'IQueryable'
 			IQueryable<Person> peopleListQueryable = peopleList.AsQueryable(); //Converted with '.AsQueryable()'
