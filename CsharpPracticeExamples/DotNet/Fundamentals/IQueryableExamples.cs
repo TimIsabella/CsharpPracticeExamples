@@ -40,7 +40,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			//Array converted and extended by 'IQueryable'
 			//- 'IQueryable' extension methods can now be called on the array
 			//- Converted using '.AsQueryable()'
-			IQueryable<Person> peopleEnumerableQueryable = peopleArray.AsQueryable();  //Converted with '.AsQueryable()'
+			IQueryable<Person> peopleArrayQueryable = peopleArray.AsQueryable();  //Converted with '.AsQueryable()'
 
 			/// //////////////////////////////////////////////////////////////////
 
@@ -58,7 +58,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			//Returns an 'IQueryable'
 			//- Object string 'Name' is returned
 			var queryableQuery2 = from people
-								  in peopleEnumerableQueryable
+								  in peopleArrayQueryable
 								  where people.Id == 2
 								  select people.Name;
 
