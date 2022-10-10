@@ -32,11 +32,15 @@ namespace PracticeExamples.DotNet.Fundamentals
 											new Person { Id = 2, Name = "Jake Phillips", Location = "Florida"},
 										 };
 
-			//'List' collection cast as 'IQueryable'
+			//'List' collection down casted to 'IQueryable'
+			//- 'List' is a higher form of 'IQueryable'
+			//- Converted using '.AsQueryable()'
 			IQueryable<Person> peopleListQueryable = peopleList.AsQueryable(); //Converted with '.AsQueryable()'
 
-			//'IEnumerable' collection cast as 'IQueryable'
-			IQueryable<Person> peopleEnumerableQueryable = peopleArrayEnumerable.AsQueryable();  //Converted with '.AsQueryable()'
+			//Array converted and extended by 'IQueryable'
+			//- 'IQueryable' extension methods can now be called on the array
+			//- Converted using '.AsQueryable()'
+			IQueryable<Person> peopleEnumerableQueryable = peopleArray.AsQueryable();  //Converted with '.AsQueryable()'
 
 			/// //////////////////////////////////////////////////////////////////
 
