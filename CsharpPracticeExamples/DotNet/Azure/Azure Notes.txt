@@ -1,0 +1,15 @@
+﻿AZURE NOTES
+
+
+SAAS: "SOFTWARE as a service"
+-- Invoicing, Yahoo, Gmail, Accounting
+
+PAAS: "PLATFORM as a service"
+-- OS, Framework, Web Server, Database
+
+IAAS: "INFRASTRUCTURE as a service"
+-- Firewall, Virtual Machine, Bandwidth, Network
+
+
+- Azure is Microsoft's cloud hosting service which provides for all of the above services.
+- Azure is pay as you go based on usage and plan selection
