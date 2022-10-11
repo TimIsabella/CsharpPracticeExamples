@@ -1,15 +1,28 @@
 ﻿AZURE NOTES
 
-
-SAAS: "SOFTWARE as a service"
--- Invoicing, Yahoo, Gmail, Accounting
-
-PAAS: "PLATFORM as a service"
--- OS, Framework, Web Server, Database
-
-IAAS: "INFRASTRUCTURE as a service"
--- Firewall, Virtual Machine, Bandwidth, Network
-
-
 - Azure is Microsoft's cloud hosting service which provides for all of the above services.
 - Azure is pay as you go based on usage and plan selection
+
+CapEx: 'Capital Expense' -- Upfront investment for usage (EG. buying a server and maintaining it)
+OpEx: 'Operating Expense' -- Paying for usage (EG. renting server space)
+
+SAAS: 'SOFTWARE as a service' -- Invoicing, Yahoo, Gmail, Accounting
+PAAS: 'PLATFORM as a service' -- OS, Framework, Web Server, Database
+IAAS: 'INFRASTRUCTURE as a service' -- Firewall, Virtual Machine, Bandwidth, Network
+SLA: 'Service Level Agreement' -- The guaranteed uptime percentage of a cloud service
+
+Cloud Types: 
+Public -- (AWS, Azure, Google Cloud, IBM Cloud)
+- Setup publicly and managed by large companies
+- Accessed through the internet
+- Available to all clients
+
+Private -- (VMware cloud, Red Hat Openshift, Azure Stack)
+- Setup privately in organization's location and managed by their IT team
+- Accessed through private intranet
+- Restricted to organization users
+
+Hybrid -- (Azure Arc, AWS Outposts)
+- Setup in organization's location and connected to a public cloud, partly managed by IT team
+- Accessed both publicly and privately depending on resources
+- Available depending on clients and users
