@@ -15,12 +15,12 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 			///- Instead they should depend on abstraction
 
 			///Interface based dependency inversion
-			ILogger fileLogger = new FileLogger(); //Class inheriting 'ILogger' interface is instantiated as the interface
-			fileLogger.Log("Hello world!");        //Interface is called which is connected to the class
+			ILogger fileLogger = new FileLogger();  //Class inheriting 'ILogger' interface is instantiated as the same interface
+			fileLogger.Log("Hello world!");         //Interface is called which is connected to the class
 
 			///Setter based dependency inversion (dependency injection)
-			var consoleLogger = new DependencyInjection(new ConsoleLogger());
-			consoleLogger.CallLog("Hello world!");
+			var consoleLogger = new DependencyInjection(new ConsoleLogger());  //DI class instantiated and class passed into constructor as an interface
+			consoleLogger.CallLog("Hello world!");							   //Method of DI class called which interacts with passed in class through the interface
 		}
 
 		//////////////////////////////////////////////////////////////////
