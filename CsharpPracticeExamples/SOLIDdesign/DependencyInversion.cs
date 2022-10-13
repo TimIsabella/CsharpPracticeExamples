@@ -29,10 +29,11 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 			relationships.AddParentAndChild(parent2, child2_1);
 			relationships.AddParentAndChild(parent2, child2_2);
 
-			new Research(relationships, "John");
-			new Research(relationships, "Parent2");
-
+			var research1 = new Research(relationships, "John");
+			var research2 = new Research(relationships, "Parent2");
 		}
+
+		//////////////////////////////////////////////////////////////////
 
 		public class Person
 		{ public string Name; }
