@@ -55,12 +55,12 @@ namespace PracticeExamples.DotNet.Fundamentals
 			var task3 = new Task<int>(taskLogic4.TextLength, text1);
 			task3.Start();
 
-			Console.WriteLine($"Task 3 output length: '{task3.Result}'");
+			Console.WriteLine($"Task 3 output length: '{task3.Result}'"); //Result if output of '.TextLength' return
 
 			//Same as above as above but automatically starts with '.StartNew'
 			Task<int> task4 = Task.Factory.StartNew<int>(taskLogic4.TextLength, text2);
 
-			Console.WriteLine($"Task 4 output length: '{task4.Result}'");
+			Console.WriteLine($"Task 4 output length: '{task4.Result}'"); //Result if output of '.TextLength' return
 		}
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////
