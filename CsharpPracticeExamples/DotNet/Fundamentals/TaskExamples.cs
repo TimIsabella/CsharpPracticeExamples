@@ -43,6 +43,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			var task2 = new Task(taskLogic3.WriteObjects, "Object argument");
 			task2.Start();
 
+			Console.WriteLine("\nPress any key to continue...");
 			Console.ReadLine();
 
 			/// Create new generic 'Task' ///
@@ -63,6 +64,9 @@ namespace PracticeExamples.DotNet.Fundamentals
 
 			Console.WriteLine($"Task 4 output length: '{task4.Result}'"); //Result if output of '.TextLength' return
 
+			Console.WriteLine("\nPress any key to continue...");
+			Console.ReadLine();
+
 			/// Canceling Tasks ///
 			///- 'Cancellation token' is used to stop a task
 
@@ -76,10 +80,10 @@ namespace PracticeExamples.DotNet.Fundamentals
 						int i = 0;
 						while(true)
 						{
-							if(cancelToken.IsCancellationRequested) //'break' if 'cancelToken' is true
-							{ break; }
+							Console.WriteLine($"While loop index: '{i}'. Press any key to stop (automatically stops at 1111)."); i++;
 
-							Console.WriteLine($"While loop index: '{i}'. Press any key to stop."); i++; 
+							if(cancelToken.IsCancellationRequested || i > 11111) //'break' if 'cancelToken' is true
+							{ break; }
 						}
 
 					}, cancelToken ); //Second overload takes the cancel token
