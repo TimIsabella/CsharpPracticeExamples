@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PracticeExamples.DotNet.Fundamentals
@@ -61,6 +62,32 @@ namespace PracticeExamples.DotNet.Fundamentals
 			Task<int> task4 = Task.Factory.StartNew<int>(taskLogic4.TextLength, text2);
 
 			Console.WriteLine($"Task 4 output length: '{task4.Result}'"); //Result if output of '.TextLength' return
+
+			/// Canceling Tasks ///
+			///- 'Cancellation token' is used to stop a task
+
+			var cancellationTokenSource = new CancellationTokenSource(); //Instantiate 'CancellationTokenSource' (CTS)
+			var cancelToken = cancellationTokenSource.Token;			 //Create CTS cancel token with '.Token'
+
+			//Create task with lambda containing infinite loop
+			var infiniteTask = new Task(() =>
+					{
+						//Infinite loop
+						int i = 0;
+						while(true)
+						{
+							if(cancelToken.IsCancellationRequested) //'break' if 'cancelToken' is true
+							{ break; }
+
+							Console.WriteLine($"While loop index: '{i}'. Press any key to stop."); i++; 
+						}
+
+					}, cancelToken ); //Second overload takes the cancel token
+
+			infiniteTask.Start();
+
+			Console.ReadKey();
+			cancellationTokenSource.Cancel(); //Call CTS task to stop
 		}
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////
