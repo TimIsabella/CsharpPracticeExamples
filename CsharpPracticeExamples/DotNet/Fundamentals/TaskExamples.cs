@@ -129,16 +129,17 @@ namespace PracticeExamples.DotNet.Fundamentals
 
 			Console.ReadKey();
 
-			/// Automatic cancel by time interval ///
+			/// Task pausing with '.Waitone()' ///
 			///- '.WaitOne()' applied to '.WaitHandle' of cancel token pauses the task
-			///- Interval in miliseconds applied to pause
+			///- Interval in miliseconds can be applied to pause
 			var cancellationTokenSource3 = new CancellationTokenSource();  //Instantiate 'CancellationTokenSource' (CTS)
 			var cancelToken3 = cancellationTokenSource3.Token;             //Create CTS cancel token with '.Token'
 
 			Task.Factory.StartNew(() =>
 			{
+				Console.WriteLine("Wait handle applied...");
 				cancelToken3.WaitHandle.WaitOne(2222);		//Wait 2 seconds and then continue
-				Console.WriteLine("Wait handle released. ");
+				Console.WriteLine("Wait handle released!");
 			});
 
 			Console.ReadKey();
