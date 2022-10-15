@@ -119,6 +119,13 @@ namespace PracticeExamples.DotNet.Fundamentals
 			Console.ReadKey();
 			cancellationTokenSource2.Cancel(); //Call CTS task to stop
 
+			/////////// Get cancellation notification ///////////
+			//'.Register()' of token gets notified of cancellation by token
+			cancelToken2.Register(() => 
+			{ 
+				Console.WriteLine("cancelToken2 task cancelled"); 
+			});
+
 			Console.ReadKey();
 		}
 
