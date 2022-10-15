@@ -19,6 +19,8 @@ namespace PracticeExamples.DotNet.Fundamentals
 			/// Below tasks all run asynchronusly
 			///- They compete for the same console space which causes output overlapping issues
 
+			/// ///////////////////////////////// Starting Tasks /////////////////////////////////
+
 			/// Create and start a 'Task' ///
 			var taskLogic1 = new TaskLogic();
 			Task.Factory.StartNew(() => taskLogic1.WriteChars('.'));
@@ -67,36 +69,38 @@ namespace PracticeExamples.DotNet.Fundamentals
 			Console.WriteLine("\nPress any key to continue...");
 			Console.ReadLine();
 
-			/// Canceling Tasks ///
+			/// ///////////////////////////////// Canceling Tasks /////////////////////////////////
 			///- 'Cancellation token' is used to stop a task
 
-			/////////// Create task with lambda containing infinite loop and cancel after 'ReadKey' ///////////
+			/// Create task with lambda containing infinite loop and cancel after 'ReadKey' ///
 			var cancellationTokenSource1 = new CancellationTokenSource();  //Instantiate 'CancellationTokenSource' (CTS)
 			var cancelToken1 = cancellationTokenSource1.Token;              //Create CTS cancel token with '.Token'
 
 			var infiniteTask = new Task(() =>
-					{
-						//Infinite loop
-						int i = 0;
-						while(true)
-						{
-							Console.WriteLine($"While loop index: '{i}'. Press any key to stop (automatically stops at 11111)."); i++;
+			{
+				//Infinite loop
+				int i = 0;
+				while(true)
+				{
+					Console.WriteLine($"While loop index: '{i}'. Press any key to stop (automatically stops at 11111)."); i++;
 
-							if(cancelToken1.IsCancellationRequested) //'break' if '.IsCancellationRequested' is true
-							{ break; }
+					//'break' if '.IsCancellationRequested' is true
+					if(cancelToken1.IsCancellationRequested)
+					{ break; }
 
-							if(i > 11111)                           //Throw exception at 11111 which breaks the loop
-							{ throw new OperationCanceledException(); }
-						}
+					//Throw exception at 11111 which breaks the loop
+					if(i > 11111)
+					{ throw new OperationCanceledException(); }
+				}
 
-					}, cancelToken1 ); //Second overload takes the cancel token
+			}, cancelToken1 ); //Second overload takes the cancel token
 
 			infiniteTask.Start();
 
 			Console.ReadKey();
 			cancellationTokenSource1.Cancel(); //Call CTS task to stop
 
-			/////////// Create task with lambda containing infinite loop and cancel after 'ReadKey' ///////////
+			/// Create task with lambda containing infinite loop and cancel after 'ReadKey' ///
 			var cancellationTokenSource2 = new CancellationTokenSource();  //Instantiate 'CancellationTokenSource' (CTS)
 			var cancelToken2 = cancellationTokenSource2.Token;             //Create CTS cancel token with '.Token'
 
@@ -106,10 +110,9 @@ namespace PracticeExamples.DotNet.Fundamentals
 				int i = 0;
 				while(true)
 				{
-					Console.WriteLine($"While loop index: '{i}'. Will throw token cancellation at 111.");
-					i++;
-
-					cancelToken2.ThrowIfCancellationRequested(); //Throw at token cancellation
+					//Throw at token cancellation
+					cancelToken2.ThrowIfCancellationRequested();
+					Console.WriteLine($"While loop index: '{i}'. Will throw token cancellation at 111."); i++;
 				}
 
 			}, cancelToken2); //Second overload takes the cancel token
@@ -119,17 +122,29 @@ namespace PracticeExamples.DotNet.Fundamentals
 			Console.ReadKey();
 			cancellationTokenSource2.Cancel(); //Call CTS task to stop
 
-			/////////// Get cancellation notification ///////////
-			//'.Register()' of token gets notified of cancellation by token
+			/// Get cancellation notification ///
+			///- '.Register()' of token gets notified of cancellation by token ///
 			cancelToken2.Register(() => 
-			{ 
-				Console.WriteLine("cancelToken2 task cancelled"); 
+			{ Console.WriteLine("cancelToken2 task cancelled"); });
+
+			Console.ReadKey();
+
+			/// Automatic cancel by time interval ///
+			///- '.WaitOne()' applied to '.WaitHandle' of cancel token pauses the task
+			///- Interval in miliseconds applied to pause
+			var cancellationTokenSource3 = new CancellationTokenSource();  //Instantiate 'CancellationTokenSource' (CTS)
+			var cancelToken3 = cancellationTokenSource3.Token;             //Create CTS cancel token with '.Token'
+
+			Task.Factory.StartNew(() =>
+			{
+				cancelToken3.WaitHandle.WaitOne(2222);		//Wait 2 seconds and then continue
+				Console.WriteLine("Wait handle released. ");
 			});
 
 			Console.ReadKey();
 		}
 
-		///////////////////////////////////////////////////////////////////////////////////////////////////
+		/// ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public class TaskLogic
 		{
