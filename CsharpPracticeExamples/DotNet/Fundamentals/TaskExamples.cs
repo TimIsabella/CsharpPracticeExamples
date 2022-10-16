@@ -24,7 +24,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			/// Create and start a 'Task' ///
 			Console.WriteLine("Task Example #1 --");
 			var taskLogic1 = new TaskLogic();
-			Task.Factory.StartNew(() => taskLogic1.WriteChars('.'));
+			Task.Factory.StartNew(() => taskLogic1.WriteChars('.'));  //'WriteChars()' contains a loop which runs 111 times
 
 			//Readline can be used as a break to prevent the asynchronus overlap in the console
 			Console.WriteLine("Press enter continue...\n");
@@ -34,7 +34,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			//- Logic passed in by lambda
 			Console.WriteLine("Task Example #2 --");
 			var taskLogic2 = new TaskLogic();
-			var task2 = new Task(() => taskLogic2.WriteChars('?'));
+			var task2 = new Task(() => taskLogic2.WriteChars('?'));  //'WriteChars()' contains a loop which runs 111 times
 			task2.Start();
 
 			Console.WriteLine("Press enter continue...\n");
@@ -47,7 +47,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			//'action' is the 'taskLogic3' method and 'state' is the string
 			//'action' has no return type
 			Console.WriteLine("Task Example #3 --");
-			var task3 = new Task(taskLogic3.WriteObjects, "Object argument");
+			var task3 = new Task(taskLogic3.WriteObjects, "Object argument");  //'WriteObjects()' contains a loop which runs 111 times
 			task3.Start();
 
 			Console.WriteLine("Press enter continue...\n");
