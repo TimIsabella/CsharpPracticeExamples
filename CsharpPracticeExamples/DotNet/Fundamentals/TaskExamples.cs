@@ -97,8 +97,8 @@ namespace PracticeExamples.DotNet.Fundamentals
 					//Throw exception at 11 which breaks the loop
 					if(i > 11) { throw new OperationCanceledException(); }
 
-					Thread.Sleep(500);
 					Console.WriteLine($"Task Example #6 -- While loop index: '{i}'. Press any key to stop (throws exception at 11)."); i++;
+					Thread.Sleep(500);
 				}
 
 			}, cancelToken1 ); //Second overload takes the cancel token
@@ -123,8 +123,8 @@ namespace PracticeExamples.DotNet.Fundamentals
 				{
 					//Throw at token cancellation
 					cancelToken2.ThrowIfCancellationRequested();
-					Thread.Sleep(500);
 					Console.WriteLine($"Task Example #7 -- While loop index: '{i}'. Press any key to stop..."); i++;
+					Thread.Sleep(500);
 				}
 
 			}, cancelToken2); //Second overload takes the cancel token
@@ -152,8 +152,8 @@ namespace PracticeExamples.DotNet.Fundamentals
 				{
 					//Throw at token cancellation
 					cancelToken3.ThrowIfCancellationRequested();
-					Thread.Sleep(500);
 					Console.WriteLine($"Task Example #8 -- While loop index: '{i}'. Press any key to stop..."); i++;
+					Thread.Sleep(500);
 				}
 
 			}, cancelToken3); //Second overload takes the cancel token
@@ -203,8 +203,8 @@ namespace PracticeExamples.DotNet.Fundamentals
 				{
 					//Throw at token cancellation
 					linkedCancelToken.Token.ThrowIfCancellationRequested();
-					Thread.Sleep(500);
 					Console.WriteLine($"Task Example #10 -- While loop index: '{i}'."); i++;
+					Thread.Sleep(500);
 				}
 			}, linkedCancelToken.Token);
 
