@@ -24,7 +24,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			/// Create and start a 'Task' ///
 			Console.WriteLine("Task Example #1 --");
 			var taskLogic1 = new TaskLogic();
-			Task.Factory.StartNew(() => taskLogic1.WriteChars('.'));  //'WriteChars()' contains a loop which runs 111 times
+			Task.Factory.StartNew(() => taskLogic1.WriteChars('.'));	//'WriteChars()' contains a loop which runs 111 times
 
 			//Readline can be used as a break to prevent the asynchronus overlap in the console
 			Console.WriteLine("Press enter continue...\n");
@@ -34,7 +34,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			//- Logic passed in by lambda
 			Console.WriteLine("Task Example #2 --");
 			var taskLogic2 = new TaskLogic();
-			var task2 = new Task(() => taskLogic2.WriteChars('?'));  //'WriteChars()' contains a loop which runs 111 times
+			var task2 = new Task(() => taskLogic2.WriteChars('?'));		//'WriteChars()' contains a loop which runs 111 times
 			task2.Start();
 
 			Console.WriteLine("Press enter continue...\n");
@@ -47,7 +47,7 @@ namespace PracticeExamples.DotNet.Fundamentals
 			//'action' is the 'taskLogic3' method and 'state' is the string
 			//'action' has no return type
 			Console.WriteLine("Task Example #3 --");
-			var task3 = new Task(taskLogic3.WriteObjects, "Object argument");  //'WriteObjects()' contains a loop which runs 111 times
+			var task3 = new Task(taskLogic3.WriteObjects, "Object argument");		//'WriteObjects()' contains a loop which runs 111 times
 			task3.Start();
 
 			Console.WriteLine("Press enter continue...\n");
@@ -62,18 +62,18 @@ namespace PracticeExamples.DotNet.Fundamentals
 			//'action' is the 'taskLogic4' method and 'state' is the string
 			//'action' method return type is 'int' so 'Task' must provide generic for 'int'
 			Console.WriteLine("\nTask Example #4 --");
-			var task4 = new Task<int>(taskLogic4.TextLength, text1);
+			var task4 = new Task<int>(taskLogic4.TextLength, text1);    //'TextLength()' runs only once therefore the task only runs once
 			task4.Start();
 
-			Console.WriteLine($"Task Example #4 -- Output length: '{task4.Result}'"); //Result if output of '.TextLength' return
+			Console.WriteLine($"Task Example #4 -- Output length: '{task4.Result}'");	//Result if output of '.TextLength' return
 
 			Console.WriteLine("Press enter continue...\n");
 			Console.ReadLine();
 
 			//Same as above as above but automatically starts with '.StartNew'
-			Task<int> task5 = Task.Factory.StartNew<int>(taskLogic4.TextLength, text2);
+			Task<int> task5 = Task.Factory.StartNew<int>(taskLogic4.TextLength, text2);    //'TextLength()' runs only once therefore the task only runs once
 
-			Console.WriteLine($"Task Example #5 -- Output length: '{task5.Result}'"); //Result if output of '.TextLength' return
+			Console.WriteLine($"Task Example #5 -- Output length: '{task5.Result}'");	//Result if output of '.TextLength' return
 
 			Console.WriteLine("Press enter continue...\n");
 			Console.ReadLine();
