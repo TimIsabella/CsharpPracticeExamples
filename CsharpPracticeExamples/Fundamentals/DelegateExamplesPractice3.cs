@@ -31,7 +31,7 @@ namespace PracticeExamples
 			string delegateName = "consoleDelegate multicast --";
 			string delegateString = "Message from delegate!";
 
-			//'ConsoleDelegate' instantiated as 'consoleDelegate' and provided a multiple anonymus delegates
+			//'ConsoleDelegate' instantiated as 'consoleDelegate' and provided multiple anonymus delegates
 			ConsoleDelegate consoleDelegate = delegate (string string1, string string2) { Console.WriteLine($"{string1} {string2}"); };
 							consoleDelegate += delegate (string string1, string string2) { Console.WriteLine($"{string1} {string2}"); };
 							consoleDelegate += delegate (string string1, string string2) { Console.WriteLine($"{string1} {string2}"); };
