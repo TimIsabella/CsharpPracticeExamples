@@ -24,8 +24,7 @@ namespace PracticeExamples
 			DelegateForMethod delegateHandler = DelegateMethod;
 			delegateHandler("delegateHandler: This is a string");
 
-			//Call method and pass in delegate as a callback
-			//- Delegate to be used within method
+			//Pass in delegate as a callback to be used within method
 			MethodWithCallback(123, 456, delegateHandler);
 
 			///
