@@ -22,13 +22,13 @@ namespace PracticeExamples
 			double delegateResult = sumDelegate(number1, number2);		
 
 			//Output results
-			Console.WriteLine($"sumDelegate singlecast -- {number1} + {number2} = " + delegateResult);
+			Console.WriteLine($"sumDelegate: Singlecast Delegate -- {number1} + {number2} = " + delegateResult);
 
 			/// /////////// Anonymus Multicast Delegate Invocation ///////////
 			//- Multi-casting a delegate adds multiple methods to its invocation list
 			//- This delegate is thought of as 'pointing' to multiple methods
 
-			string delegateName = "consoleDelegate multicast --";
+			string delegateName = "consoleDelegate: Anonymus Multicast Delegate List --";
 			string delegateString = "Message from delegate!";
 
 			//'ConsoleDelegate' instantiated as 'consoleDelegate' and provided multiple anonymus delegates
@@ -47,23 +47,22 @@ namespace PracticeExamples
 			//- A delegate can be passed into a method as a parameter
 			//- A method passed into a method is a 'callback'
 			DelegateForMethod delegateHandler = DelegateMethod;
-			delegateHandler("delegateHandler: This is a string");
 
 			//Method is called which includes the above delegate wrapped method passed in as a callback
-			//- The callback will be invoked within the method below
+			//- The delegate wrapped callback will be invoked within the method below
 			MethodWithCallback(123, 456, delegateHandler);
 
 			/// /////////// Multicast Delegate Invocation ///////////
 
-			AnotherDelegate anotherDelegateContainer;
-							anotherDelegateContainer = AnotherMethod2;	 //Add
-							anotherDelegateContainer -= AnotherMethod2;  //Remove
-							anotherDelegateContainer += AnotherMethod1;  //Add
-							anotherDelegateContainer += AnotherMethod2;  //Add
-							anotherDelegateContainer += delegate (int num1, string num2) { Console.WriteLine("Anonymus Delegate..."); }; //Add anonymus delegate of matching signature
+			AnotherDelegate anotherDelegate;
+							anotherDelegate = AnotherMethod2;	//Add
+							anotherDelegate -= AnotherMethod2;  //Remove
+							anotherDelegate += AnotherMethod1;  //Add
+							anotherDelegate += AnotherMethod2;  //Add
+							anotherDelegate += delegate (int num1, string num2) { Console.WriteLine("anotherDelegate: Multicast Delegate List -- Anonymus Delegate."); }; //Add anonymus delegate of matching signature
 
 			//Invoke delegate list with arguments
-			anotherDelegateContainer(123, "Another string");
+			anotherDelegate(123, "Another string");
 		}
 
 		/// /////////// Delegates ///////////
@@ -81,15 +80,15 @@ namespace PracticeExamples
 		public static void MethodWithCallback(int intParam1, int intParam2, DelegateForMethod callbackDelegate)
 		{ 
 			//Callback delegate method invoked
-			callbackDelegate($"callbackDelegate -- Param1: {intParam1}, Param2: {intParam2}"); 
+			callbackDelegate($"delegateHandler: Delegate Wrapped Method Callback -- Param1: {intParam1}, Param2: {intParam2}"); 
 		}
 
 		///////////
 
 		public static void AnotherMethod1(int intParam, string stringParam)
-		{ Console.WriteLine($"'AnotherMethod1' delegate -- Int input: '{intParam}' , String input: '{stringParam}'"); }
+		{ Console.WriteLine($"anotherDelegate: Multicast Delegate List -- AnotherMethod1 -- Int input: '{intParam}' , String input: '{stringParam}'"); }
 
 		public static void AnotherMethod2(int intParam, string stringParam)
-		{ Console.WriteLine($"'AnotherMethod2' delegate -- Int input: '{intParam}' , String input: '{stringParam}'"); }
+		{ Console.WriteLine($"anotherDelegate: Multicast Delegate List -- AnotherMethod2 -- Int input: '{intParam}' , String input: '{stringParam}'"); }
 	}
 }
