@@ -99,7 +99,9 @@ namespace PracticeExamples
 			IQueryableExamples.IQueryableExamplesMain();
 			*/
 
-			TaskExamples.TaskExamplesMain();
+			//TaskExamples.TaskExamplesMain();
+
+			DelegateExamplesPractice3.DelegateExamplesPractice3Main();
 		}
 	}
 }

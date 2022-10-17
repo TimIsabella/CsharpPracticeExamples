@@ -14,10 +14,10 @@ namespace PracticeExamples
 
 			//List instantiated as an array of objects and filled with object arrays of multiple types
 			var listOfArrays = new List<object[]>() { 
-												    new object[] { 1, 2, 3 },
-													new object[] { true , false },
-													new object[] { "this" , "that", "those" },
-												   };
+														new object[] { 1, 2, 3 },
+														new object[] { true , false },
+														new object[] { "this" , "that", "those" },
+												    };
 
 			///////////List instance memebers: accessable for objects///////////
 			
