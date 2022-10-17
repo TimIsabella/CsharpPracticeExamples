@@ -54,6 +54,7 @@ namespace PracticeExamples
 
 			/// /////////// Multicast Delegate Invocation ///////////
 
+			//'AnotherDelegate' instantiated as 'anotherDelegate' and provided multiple methods of matching delegate signature
 			AnotherDelegate anotherDelegate;
 							anotherDelegate = AnotherMethod2;	//Add
 							anotherDelegate -= AnotherMethod2;  //Remove
