@@ -8,7 +8,7 @@ namespace PracticeExamples
 		public static void DelegateExamplesPractice3Main()
 		{
 			Console.WriteLine("\n *********** DELEGATE EXAMPLES PRACTICE 3 *********** \n");
-			/// A delegate is a class which encapsulates a method signature, and is one of the base types in .Net
+			/// A delegate is a type which declares a signature to be associated with a method, and is one of the base types in .Net
 			///- Delegates are used to pass methods as parameters or used to define event handlers
 			///- Delegates can be either single or multi casted
 
@@ -71,7 +71,8 @@ namespace PracticeExamples
 		public delegate double GetSumDelegate(double numInput1, double numInput2);			//Two double parameters, returns double
 		public delegate void ConsoleDelegate(string stringParam1, string stringParam2);		//Two string parameters, returns void
 		public delegate void DelegateForMethod(string message);								//One string parameter, returns void
-		public delegate void AnotherDelegate(int intParam, string stringParam);				//One int and one string parameter, returns void
+		public delegate void AnotherDelegate(int intParam, string stringParam);             //One int and one string parameter, returns void
+		public delegate void VoidDelegate();												//No parameters, returns void
 
 		///////////
 
