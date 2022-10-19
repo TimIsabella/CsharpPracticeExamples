@@ -97,11 +97,12 @@ namespace PracticeExamples
 			DependencyInjectionPattern.DependencyInjectionPatternMain();
 			IEnumerableExamples.IEnumerableExamplesMain();
 			IQueryableExamples.IQueryableExamplesMain();
+			DelegateExamplesPractice3.DelegateExamplesPractice3Main();
 			*/
 
 			//TaskExamples.TaskExamplesMain();
 
-			DelegateExamplesPractice3.DelegateExamplesPractice3Main();
+			DelegateExamplesPractice4.DelegateExamplesPractice4Main();
 		}
 	}
 }

@@ -23,14 +23,15 @@ namespace PracticeExamples
 
 			Action action1 = () => { Console.WriteLine("action1"); };
 			Action<int, double> action2 = (intParam, doubleParam) => { Console.WriteLine($"action2 -- Param1: {intParam}, Param2: {doubleParam}"); };
-			Action<SomeClass> action3 = (someClass) => { Console.WriteLine("action2."); };
+			Action<SomeClass> action3 = (someClass) => { Console.WriteLine("action3..."); };
 			Action<string> action4 = (stringMessage) => { ActionDelegateMethod(stringMessage); };
 
 			//Invoke the action delegate
 			action1();
 			action2(123, 1.618);
 			action3(new SomeClass());
-			action4("Message for Action Delegate Method");
+
+			ActionMethodWithCallback(action4, "Message for Action Delegate Method");
 
 			/// /////////// Func Delegate ///////////
 
@@ -74,10 +75,12 @@ namespace PracticeExamples
 			callback($"MethodWithCallback: Delegate Wrapped Method Callback -- Param1: {intParam1}, Param2: {intParam2}");
 		}
 
-		public static void ActionMethodWithCallback(Action<string> callback)
+		public static void ActionMethodWithCallback(Action<string> callback, string stringParam)
 		{
-			Console.Write("ActionMethodWithCallback: Action Delegate Wrapped Method Callback -- ");
-			callback("This is a string"); //Callback action delegate method invoked
+			Console.Write($"ActionMethodWithCallback: Action Delegate Wrapped Method Callback... ");
+
+			//Callback action delegate method invoked with string
+			callback(stringParam);
 		}
 
 		public class SomeClass
