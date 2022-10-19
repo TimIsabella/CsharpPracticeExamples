@@ -24,13 +24,14 @@ namespace PracticeExamples
 			Action action1 = () => { Console.WriteLine("action1"); };
 			Action<int, double> action2 = (intParam, doubleParam) => { Console.WriteLine($"action2 -- Param1: {intParam}, Param2: {doubleParam}"); };
 			Action<SomeClass> action3 = (someClass) => { Console.WriteLine("action3..."); };
-			Action<string> action4 = (stringMessage) => { ActionDelegateMethod(stringMessage); };
+			Action<string> action4 = (stringMessage) => { ActionDelegateMethod(stringMessage); }; //Action delegate as callback
 
 			//Invoke the action delegate
 			action1();
 			action2(123, 1.618);
 			action3(new SomeClass());
 
+			//Pass Action delegate callback to method
 			ActionMethodWithCallback(action4, "Message for Action Delegate Method");
 
 			/// /////////// Func Delegate ///////////
@@ -41,11 +42,12 @@ namespace PracticeExamples
 
 		/// /////////// Delegates  
 																	///Delegate signature
-		public delegate void DelegateSignature(string message);		//One string parameter, returns void
+		public delegate void DelegateSignature(string message);     //One string parameter, returns void
 
 		/// /////////// Built-in delegates: Action ///////////
 		//- A delegate type that represents a method
-		//- Takes a generic as parameters and returns void
+		//- Takes generic parameters up to 16 and returns void
+		//- Compiled as static so do not have to be defined before use
 
 		public Action action1;				//No parameters, returns void
 		public Action<int, double> action2; //Two parameters, returns void
@@ -54,7 +56,7 @@ namespace PracticeExamples
 		/// /////////// Built-in delegates: Func ///////////
 		//- A delegate type that represents anonymus functions (lambda) that can be called
 		//- Can be used to create anonymus methods or to encapsulate method calls
-		//- Takes generic parameters up to 16, and last parameter is the result  or return type
+		//- Takes generic parameters up to 16, and last parameter is the result or return type
 
 		public Func<bool> func1;  //Returns bool
 		public Func<int, double> func2;  //Takes int and returns double
