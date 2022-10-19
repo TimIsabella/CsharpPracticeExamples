@@ -12,16 +12,14 @@ namespace PracticeExamples
 			/// A delegate is a type which declares a signature to be associated with a method, and is one of the base types in .Net
 			///- Delegates are used to pass methods as parameters or used to define event handlers
 			///- Delegates can be either single or multi casted
-
-
-
+			
 			//Method wrapped in a delegate
 			DelegateSignature delegateCallback = DelegateMethod;
 
 			//Method is called which includes the above delegate wrapped method passed in as a callback
 			MethodWithCallback(123, 456, delegateCallback);
 
-			/// /////////// Action ///////////
+			/// /////////// Action Delegate ///////////
 
 			Action action1 = () => { Console.WriteLine("action1"); };
 
@@ -38,6 +36,7 @@ namespace PracticeExamples
 		public delegate void DelegateSignature(string message);		//One string parameter, returns void
 
 		/// /////////// Built-in delegates: Action ///////////
+		//- A delegate type that represents a method, accepts parameters, and returns void
 
 		public Action action1;				//No parameters, returns void
 		public Action<int, double> action2; //Two parameters, returns void
