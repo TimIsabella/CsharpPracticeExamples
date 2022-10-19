@@ -19,28 +19,43 @@ namespace PracticeExamples
 			//Method is called which includes the above delegate wrapped method passed in as a callback
 			MethodWithCallback(123, 456, delegateCallback);
 
+			int newInt = 123;
+			double newDouble = 1.618;
+
 			/// /////////// Action Delegate ///////////
 
 			Action action1 = () => { Console.WriteLine("action1"); };
 
-			int newInt = 123;
-			double newDouble = 1.618;
 			Action<int, double> action2 = (newInt, newDouble) => { Console.WriteLine("action2."); };
 
 			var someClass = new SomeClass();
 			Action<SomeClass> action3 = (someClass) => { Console.WriteLine("action2."); };
+
+			/// /////////// Func Delegate ///////////
+
+			Func<bool> func1 = () => false;
+			Func<int, double> func2 = (newInt) => { return 1.23 + newInt; };
 		}
 
-		/// /////////// Delegates ///////////
+		/// /////////// Delegates  
 																	///Delegate signature
 		public delegate void DelegateSignature(string message);		//One string parameter, returns void
 
 		/// /////////// Built-in delegates: Action ///////////
-		//- A delegate type that represents a method, accepts parameters, and returns void
+		//- A delegate type that represents a method
+		//- Takes a generic as parameters and returns void
 
 		public Action action1;				//No parameters, returns void
 		public Action<int, double> action2; //Two parameters, returns void
 		public Action<SomeClass> action3;   //One generic parameter of 'SomeClass', returns void
+
+		/// /////////// Built-in delegates: Func ///////////
+		//- A delegate type that represents anonymus functions (lambda) that can be called
+		//- Can be used to create anonymus methods or to encapsulate method calls
+		//- Takes generic parameters up to 16, and last parameter is the result  or return type
+
+		public Func<bool> func1;  //Returns bool
+		public Func<int, double> func2;  //Takes int and returns double
 
 		///////////
 
