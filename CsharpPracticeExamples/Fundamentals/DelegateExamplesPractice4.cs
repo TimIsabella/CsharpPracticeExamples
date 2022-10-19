@@ -22,19 +22,26 @@ namespace PracticeExamples
 			MethodWithCallback(123, 456, delegateCallback);
 
 			/// /////////// Action ///////////
-			actionDelegate1 = () => { Console.WriteLine("actionDelegate1"); };
-			actionDelegate2 = (123, 1.618) => { Console.WriteLine("actionDelegate2"); };
+
+			Action action1 = () => { Console.WriteLine("action1"); };
+
+			int newInt = 123;
+			double newDouble = 1.618;
+			Action<int, double> action2 = (newInt, newDouble) => { Console.WriteLine("action2."); };
+
+			var someClass = new SomeClass();
+			Action<SomeClass> action3 = (someClass) => { Console.WriteLine("action2."); };
 		}
 
 		/// /////////// Delegates ///////////
 																	///Delegate signature
 		public delegate void DelegateSignature(string message);		//One string parameter, returns void
 
-		/// /////////// Built-in delegates ///////////
+		/// /////////// Built-in delegates: Action ///////////
 
-		public Action actionDelegate1;				//No parameters, returns void
-		public Action<int, double> actionDelegate2; //Two parameters, returns void
-		public Action<SomeClass> actionDelegate3;   //One generic parameter of 'SomeClass', returns void
+		public Action action1;				//No parameters, returns void
+		public Action<int, double> action2; //Two parameters, returns void
+		public Action<SomeClass> action3;   //One generic parameter of 'SomeClass', returns void
 
 		///////////
 
