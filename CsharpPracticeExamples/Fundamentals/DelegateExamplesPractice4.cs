@@ -34,7 +34,7 @@ namespace PracticeExamples
 			/// /////////// Func Delegate ///////////
 
 			Func<bool> func1 = () => false;
-			Func<int, double> func2 = (newInt) => { return 1.23 + newInt; };
+			Func<int, double> func2 = (newInt) => { return 1.23 + newInt; };  //One int parameter and return type double
 		}
 
 		/// /////////// Delegates  
