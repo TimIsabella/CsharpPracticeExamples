@@ -13,21 +13,24 @@ namespace PracticeExamples
 			///- Delegates are used to pass methods as parameters or used to define event handlers
 			///- Delegates can be either single or multi casted
 			
-			//Method wrapped in a delegate
+			//Delegate 'invoked' and method wrapped in that delegate
 			DelegateSignature delegateCallback = DelegateMethod;
 
 			//Method is called which includes the above delegate wrapped method passed in as a callback
 			MethodWithCallback(123, 456, delegateCallback);
 
-			int newInt = 123;
-			double newDouble = 1.618;
-			var someClass = new SomeClass();
-
 			/// /////////// Action Delegate ///////////
 
 			Action action1 = () => { Console.WriteLine("action1"); };
-			Action<int, double> action2 = (newInt, newDouble) => { Console.WriteLine("action2."); };
+			Action<int, double> action2 = (intParam, doubleParam) => { Console.WriteLine($"action2 -- Param1: {intParam}, Param2: {doubleParam}"); };
 			Action<SomeClass> action3 = (someClass) => { Console.WriteLine("action2."); };
+			Action<string> action4 = (stringMessage) => { ActionDelegateMethod(stringMessage); };
+
+			//Invoke the action delegate
+			action1();
+			action2(123, 1.618);
+			action3(new SomeClass());
+			action4("Message for Action Delegate Method");
 
 			/// /////////// Func Delegate ///////////
 
@@ -55,15 +58,26 @@ namespace PracticeExamples
 		public Func<bool> func1;  //Returns bool
 		public Func<int, double> func2;  //Takes int and returns double
 
-		///////////
+		/// //////////////////////////////////////////////////////////////////
 
+		/////////// Methods for callback ///////////
 		public static void DelegateMethod(string message)
 		{ Console.WriteLine(message); }
 
-		public static void MethodWithCallback(int intParam1, int intParam2, DelegateSignature callbackDelegate)
+		public static void ActionDelegateMethod(string message)
+		{ Console.WriteLine(message); }
+
+		/////////// Other ///////////
+		public static void MethodWithCallback(int intParam1, int intParam2, DelegateSignature callback)
 		{
 			//Callback delegate method invoked
-			callbackDelegate($"delegateCallback: Delegate Wrapped Method Callback -- Param1: {intParam1}, Param2: {intParam2}");
+			callback($"MethodWithCallback: Delegate Wrapped Method Callback -- Param1: {intParam1}, Param2: {intParam2}");
+		}
+
+		public static void ActionMethodWithCallback(Action<string> callback)
+		{
+			Console.Write("ActionMethodWithCallback: Action Delegate Wrapped Method Callback -- ");
+			callback("This is a string"); //Callback action delegate method invoked
 		}
 
 		public class SomeClass
