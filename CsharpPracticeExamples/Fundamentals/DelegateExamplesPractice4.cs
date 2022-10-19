@@ -21,14 +21,12 @@ namespace PracticeExamples
 
 			int newInt = 123;
 			double newDouble = 1.618;
+			var someClass = new SomeClass();
 
 			/// /////////// Action Delegate ///////////
 
 			Action action1 = () => { Console.WriteLine("action1"); };
-
 			Action<int, double> action2 = (newInt, newDouble) => { Console.WriteLine("action2."); };
-
-			var someClass = new SomeClass();
 			Action<SomeClass> action3 = (someClass) => { Console.WriteLine("action2."); };
 
 			/// /////////// Func Delegate ///////////
