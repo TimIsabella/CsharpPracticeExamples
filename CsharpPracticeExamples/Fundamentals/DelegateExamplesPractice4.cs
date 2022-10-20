@@ -36,20 +36,22 @@ namespace PracticeExamples
 
 			/// /////////// Func Delegate ///////////
 
-			Func<bool> func1 = () => false;									  //No parameter and bool return
-			Func<int, double> func2 = (newInt) => { return 1.23 + newInt; };  //One int parameter and return type double
+			Func<int> func1 = () => { Console.WriteLine("func1 firing"); return 123; };	  //No parameter return type int
+			Func<bool> func2 = () => false;												  //No parameter and bool return
+			Func<int, double> func3 = (newInt) => { return 1.23 + newInt; };              //One int parameter and return type double
 
 			//Invoke the Func
-			Console.WriteLine($"func1: {func1()}");
-			Console.WriteLine($"func2: {func2(123)}");
+			Console.WriteLine($"func1: {func1()}");		//Outputs WriteLine and then returns value
+			Console.WriteLine($"func2: {func2()}");
+			Console.WriteLine($"func3: {func3(123)}");
 		}
 
 		/// /////////// Delegates  
 																	///Delegate signature
 		public delegate void DelegateSignature(string message);     //One string parameter, returns void
 
-		/// /////////// Built-in delegates: Action ///////////
-		//- A delegate type that represents a method
+		/// /////////// Built-in delegates: 'Action' ///////////
+		//- A delegate type that represents a method or anonymus function (lambda) that can be called
 		//- Takes generic parameters up to 16 and returns void
 		//- Compiled as static so do not have to be defined before use
 
@@ -57,13 +59,15 @@ namespace PracticeExamples
 		public Action<int, double> actionField2; //Two parameters, returns void
 		public Action<SomeClass> actionField3;   //One generic parameter of 'SomeClass', returns void
 
-		/// /////////// Built-in delegates: Func ///////////
+		/// /////////// Built-in delegates: 'Func' ///////////
 		//- A delegate type that represents anonymus functions (lambda) that can be called
 		//- Can be used to create anonymus methods or to encapsulate method calls
 		//- Takes generic parameters up to 16, and last parameter is the result or return type
+		//- Cannot return void so must have a return type
 
-		public Func<bool> funcField1;  //Returns bool
-		public Func<int, double> funcField2;  //Takes int and returns double
+		public Func<int> funcField1;		  //Returns int
+		public Func<bool> funcField2;		  //Returns bool
+		public Func<int, double> funcField3;  //Takes int and returns double
 
 		/// //////////////////////////////////////////////////////////////////
 
