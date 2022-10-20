@@ -36,8 +36,12 @@ namespace PracticeExamples
 
 			/// /////////// Func Delegate ///////////
 
-			Func<bool> func1 = () => false;
+			Func<bool> func1 = () => false;									  //No parameter and bool return
 			Func<int, double> func2 = (newInt) => { return 1.23 + newInt; };  //One int parameter and return type double
+
+			//Invoke the Func
+			Console.WriteLine($"func1: {func1()}");
+			Console.WriteLine($"func2: {func2(123)}");
 		}
 
 		/// /////////// Delegates  
@@ -49,17 +53,17 @@ namespace PracticeExamples
 		//- Takes generic parameters up to 16 and returns void
 		//- Compiled as static so do not have to be defined before use
 
-		public Action action1;				//No parameters, returns void
-		public Action<int, double> action2; //Two parameters, returns void
-		public Action<SomeClass> action3;   //One generic parameter of 'SomeClass', returns void
+		public Action actionField1;				//No parameters, returns void
+		public Action<int, double> actionField2; //Two parameters, returns void
+		public Action<SomeClass> actionField3;   //One generic parameter of 'SomeClass', returns void
 
 		/// /////////// Built-in delegates: Func ///////////
 		//- A delegate type that represents anonymus functions (lambda) that can be called
 		//- Can be used to create anonymus methods or to encapsulate method calls
 		//- Takes generic parameters up to 16, and last parameter is the result or return type
 
-		public Func<bool> func1;  //Returns bool
-		public Func<int, double> func2;  //Takes int and returns double
+		public Func<bool> funcField1;  //Returns bool
+		public Func<int, double> funcField2;  //Takes int and returns double
 
 		/// //////////////////////////////////////////////////////////////////
 
