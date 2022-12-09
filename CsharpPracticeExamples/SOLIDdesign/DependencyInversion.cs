@@ -74,7 +74,7 @@ namespace PracticeExamples.DesignPatterns.SOLIDdesign
 		}
 
 		/*
-		/////////// Complicated Way ///////////
+		/////////// More Complicated Way ///////////
 		public class Relationships
 		{
 			private List<(Person, Relationship, Person)> _relationsTuple = new List<(Person, Relationship, Person)>();
