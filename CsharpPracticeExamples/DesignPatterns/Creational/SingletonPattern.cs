@@ -32,7 +32,7 @@ namespace PracticeExamples.DesignPatterns.Creational
         public class Singleton
         {
             //A singleton's instance is stored in a static field
-            //- Marked as 'static' ensures that the Singleton can only be instantiated one time
+            //- Marked as 'static' ensures that the singleton can only be instantiated one time
             //- Subsequent calles to '.Instance()' returns the SAME original instantiation
             private static Singleton _instance;
             private int _num;
